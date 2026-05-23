@@ -61,7 +61,8 @@
   .cta-row{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
   .micro{margin-top:16px;font-size:13.5px;color:var(--gray)}
   .micro b{color:var(--red)}
-  .hero-art{position:relative;aspect-ratio:4/3.4;border-radius:var(--r-lg);overflow:hidden;background:radial-gradient(120% 90% at 75% 8%, #FCE9C8 0%, #F6D9A8 30%, transparent 60%),linear-gradient(160deg,#FDF3E3,#F4EEE4);border:1px solid var(--line);box-shadow:var(--shadow-lg)}
+  .hero-art{position:relative;aspect-ratio:4/3.4;border-radius:var(--r-lg);overflow:hidden;background:linear-gradient(160deg,#FDF3E3,#F4EEE4);border:1px solid var(--line);box-shadow:var(--shadow-lg)}
+  .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   .hero-art .sun{position:absolute;top:30px;right:44px;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#F4A93C,#E8893D);box-shadow:0 0 50px 12px rgba(232,163,61,.45)}
   .hero-art .photo-note{position:absolute;inset:0;display:grid;place-items:center;color:#B59B73;font-size:14px;font-weight:600;text-align:center;padding:24px}
   .hero-art .card{position:absolute;background:var(--cream);border-radius:var(--r-md);padding:14px 16px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:11px;font-weight:700;font-size:14px}
@@ -167,6 +168,14 @@
   .review .src{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:5px}
   .reviews-cta{margin-top:26px}
   @media(max-width:560px){.review-cards{grid-template-columns:1fr}}
+
+  /* ── 갤러리 ── */
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .gallery figure{margin:0;position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:1/1;box-shadow:var(--shadow-sm);border:1px solid var(--line)}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+  .gallery figure:hover img{transform:scale(1.06)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:14px 12px 10px;font-size:12.5px;font-weight:700;color:#fff;background:linear-gradient(transparent,rgba(28,42,58,.72))}
+  @media(max-width:880px){.gallery{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -209,9 +218,8 @@
       </div>
       <p class="micro" data-i18n="micro"><b>오늘 신청</b> · 카카오톡으로 1분이면 예약 완료</p>
     </div>
-    <div class="hero-art" role="img" data-i18n-aria="heroArt" aria-label="센터에서 돌봄을 받는 아이들 사진이 들어갈 자리">
-      <div class="sun" aria-hidden="true"></div>
-      <div class="photo-note" data-i18n="photoNote">📷 실제 센터·아이들·핫런치 사진이<br>이 자리에 들어갑니다<br><span style="font-size:12px;opacity:.7">(부모는 실제 공간을 봐야 안심합니다)</span></div>
+    <div class="hero-art">
+      <img src="img/hero.jpg" alt="JC 애프터스쿨에서 선생님과 함께 공부하는 아이들" loading="eager" fetchpriority="high">
       <div class="card c1"><span class="ic" style="background:#FDEDEA;color:var(--red)" aria-hidden="true">🚌</span> <span data-i18n="heroCard1">학교 앞 안전 픽업</span></div>
       <div class="card c2"><span class="ic" style="background:#FBF0DC;color:var(--amber)" aria-hidden="true">🍪</span> <span data-i18n="heroCard2">따뜻한 간식 제공</span></div>
     </div>
@@ -252,6 +260,18 @@
         <ul><li data-i18n="c3li1">IELTS (이민·유학·취업)</li><li data-i18n="c3li2">프랑스어 TEF · TCF</li><li data-i18n="c3li3">무료 체험 후 등록</li></ul>
         <a class="more" href="#contact" data-i18n="c3more">무료 체험 신청 →</a>
       </article>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0" id="gallery" aria-labelledby="gal-title">
+    <p class="sec-label">Inside JC</p>
+    <h2 class="sec-title" id="gal-title" data-i18n="galTitle">센터의 하루</h2>
+    <p class="sec-sub" data-i18n="galSub">픽업 후 돌봄, 신나는 활동, 그리고 따뜻한 간식까지.</p>
+    <div class="gallery">
+      <figure><img src="img/care1.jpg" alt="쿠킹 클래스에서 함께 요리하는 아이들" loading="lazy"><figcaption data-i18n="galCap1">쿠킹 클래스</figcaption></figure>
+      <figure><img src="img/lunch1.jpg" alt="정성껏 준비한 간식 — 사과·너겟·고구마" loading="lazy"><figcaption data-i18n="galCap2">따뜻한 간식</figcaption></figure>
+      <figure><img src="img/care2.jpg" alt="떡볶이 만들기 활동" loading="lazy"><figcaption data-i18n="galCap3">신나는 활동</figcaption></figure>
+      <figure><img src="img/lunch3.jpg" alt="간식과 만두" loading="lazy"><figcaption data-i18n="galCap4">든든한 런치</figcaption></figure>
     </div>
   </section>
 
@@ -410,6 +430,8 @@
     statN2: `Small`, statL1: `years parents have trusted us`, statL2: `small-group, personal care`, statL3: `care + learning, all grades`,
     revTitle: `Real parent reviews`, revSub: `Genuine reviews left on Google Maps.`,
     revCta: `⭐ See all Google reviews →`,
+    galTitle: `A day at JC`, galSub: `Pickup and care, fun activities, and warm snacks.`,
+    galCap1: `Cooking class`, galCap2: `Warm snacks`, galCap3: `Fun activities`, galCap4: `Hearty lunch`,
     ftTitle: `Try a free day first.`,
     ftP: `Let your child experience it and decide. Leave your details and we'll reach out soon. Prefer KakaoTalk? It only takes a minute.`,
     ftKakao: `💬 Apply on KakaoTalk`,
