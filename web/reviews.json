@@ -1,0 +1,19 @@
+{
+  "rating": 5,
+  "total": 5,
+  "reviews": [
+    {
+      "name": "Mk K",
+      "rating": 5,
+      "text": "원장님 선생님 너무너무 친절하시고 아이들이 너무 좋아합니다^^",
+      "when": "2년 전"
+    },
+    {
+      "name": "Joshua Kim",
+      "rating": 5,
+      "text": "매우 좋은!",
+      "when": "3년 전"
+    }
+  ],
+  "place_id": "ChIJ4YzXflV5hlQRVbvCp3d9zhA"
+}

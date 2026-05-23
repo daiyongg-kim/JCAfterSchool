@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>정철 애프터스쿨 JC After School · Coquitlam 방과후 돌봄 · 튜터링</title>
+<meta name="description" content="Coquitlam 한인 방과후 돌봄. 학교 픽업부터 돌봄·간식, 수학·과학·영어 성적까지 한 곳에서. 무료 체험 신청하세요.">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<!-- EmailJS SDK (client-side email, no backend). Loads global `emailjs`. -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+  :root{
+    --cream:#FBF8F3; --cream-2:#F4EEE4;
+    --navy:#1C2A3A; --navy-soft:#34465A;
+    --red:#D6402F; --red-dark:#B8331F;
+    --amber:#E8A33D; --gray:#8A8178; --line:#E7DFD3;
+    --kr:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+    --en:'Fraunces',Georgia,serif;
+    --r-sm:6px; --r-md:8px; --r-lg:12px; --r-btn:8px;
+    --shadow-sm:0 10px 26px -16px rgba(28,42,58,.30);
+    --shadow-md:0 20px 50px -28px rgba(28,42,58,.42);
+    --shadow-lg:0 34px 72px -34px rgba(28,42,58,.5);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  body{font-family:var(--kr);background:var(--cream);color:var(--navy);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+  .skip{position:absolute;left:-9999px;top:8px;background:var(--navy);color:#fff;padding:10px 16px;border-radius:var(--r-sm);z-index:100}
+  .skip:focus{left:16px}
+
+  header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--cream) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:28px;height:72px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+  .logo .mark{display:grid;place-items:center;width:34px;height:34px;border-radius:var(--r-sm);background:var(--red);color:#fff;font-weight:900;font-size:15px;font-family:var(--en)}
+  .logo .sub{font-size:11px;color:var(--gray);font-weight:600;letter-spacing:.04em}
+  nav.menu{display:flex;gap:24px;margin-left:12px;font-weight:600;font-size:15px;color:var(--navy-soft)}
+  nav.menu a:hover{color:var(--red)}
+  .nav .right{margin-left:auto;display:flex;align-items:center;gap:14px}
+  .lang{display:flex;gap:2px;font-size:13px;font-weight:700;color:var(--gray);border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
+  .lang button{font:inherit;border:0;background:transparent;color:var(--gray);padding:5px 11px;cursor:pointer}
+  .lang button[aria-pressed="true"]{background:var(--navy);color:var(--cream)}
+  .btn{font-family:var(--kr);font-weight:700;border-radius:var(--r-btn);padding:11px 22px;font-size:15px;cursor:pointer;border:none;transition:.18s;display:inline-block;text-align:center}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 12px 24px -12px rgba(214,64,47,.55)}
+  .btn-primary:hover{background:var(--red-dark);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+  .btn-ghost:hover{background:var(--navy);color:var(--cream)}
+  .menu-toggle{display:none;background:transparent;border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 10px;cursor:pointer;font-size:18px;color:var(--navy)}
+
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:72px 0 56px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--red);background:var(--cream);border:1px solid var(--line);padding:7px 14px;border-radius:var(--r-sm);margin-bottom:22px;box-shadow:var(--shadow-sm)}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}
+  h1{font-size:clamp(34px,4.6vw,52px);line-height:1.18;letter-spacing:-.03em;font-weight:800;margin-bottom:20px}
+  h1 .accent{color:var(--red)}
+  .lead{font-size:18px;color:var(--navy-soft);max-width:440px;margin-bottom:14px}
+  .lead .tags{font-weight:700;color:var(--navy)}
+  .cta-row{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+  .micro{margin-top:16px;font-size:13.5px;color:var(--gray)}
+  .micro b{color:var(--red)}
+  .hero-art{position:relative;aspect-ratio:4/3.4;border-radius:var(--r-lg);overflow:hidden;background:radial-gradient(120% 90% at 75% 8%, #FCE9C8 0%, #F6D9A8 30%, transparent 60%),linear-gradient(160deg,#FDF3E3,#F4EEE4);border:1px solid var(--line);box-shadow:var(--shadow-lg)}
+  .hero-art .sun{position:absolute;top:30px;right:44px;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#F4A93C,#E8893D);box-shadow:0 0 50px 12px rgba(232,163,61,.45)}
+  .hero-art .photo-note{position:absolute;inset:0;display:grid;place-items:center;color:#B59B73;font-size:14px;font-weight:600;text-align:center;padding:24px}
+  .hero-art .card{position:absolute;background:var(--cream);border-radius:var(--r-md);padding:14px 16px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:11px;font-weight:700;font-size:14px}
+  .hero-art .c1{left:22px;bottom:88px}.hero-art .c2{right:22px;bottom:26px}
+  .hero-art .ic{width:34px;height:34px;border-radius:var(--r-sm);display:grid;place-items:center;font-size:17px}
+
+  .strip{background:var(--navy);color:var(--cream);border-radius:var(--r-lg);padding:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:8px 0 16px;box-shadow:var(--shadow-md)}
+  .strip .item{display:flex;align-items:center;gap:13px}
+  .strip .ic{width:46px;height:46px;border-radius:var(--r-md);background:rgba(255,255,255,.09);display:grid;place-items:center;font-size:22px;flex-shrink:0}
+  .strip .t{font-weight:800;font-size:16px}
+  .strip .d{font-size:13px;color:#A9B4C0}
+
+  section.block{padding:72px 0}
+  .sec-label{font-family:var(--en);font-style:italic;font-size:16px;color:var(--red);margin-bottom:8px}
+  .sec-title{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .sec-sub{color:var(--navy-soft);margin-bottom:36px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card-p{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;transition:.2s;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .card-p:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent}
+  .card-p .tag{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--red)}
+  .card-p h3{font-size:21px;font-weight:800;margin:12px 0 8px;letter-spacing:-.02em}
+  .card-p p{font-size:14.5px;color:var(--navy-soft);margin-bottom:16px}
+  .card-p ul{list-style:none;margin-bottom:6px}
+  .card-p li{font-size:14px;color:var(--navy-soft);padding:5px 0 5px 22px;position:relative}
+  .card-p li:before{content:"";position:absolute;left:4px;top:13px;width:7px;height:7px;border-radius:50%;background:var(--amber)}
+  .card-p .more{margin-top:auto;padding-top:14px;font-weight:700;font-size:14px;color:var(--red)}
+  .badge-star{background:var(--cream-2);border:1px solid var(--line)}
+
+  .stats{background:linear-gradient(135deg,var(--cream),#FBF4E9);border:1px solid var(--line);border-radius:var(--r-lg);padding:40px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center;box-shadow:var(--shadow-sm)}
+  .stats .n{font-size:40px;font-weight:800;color:var(--red);letter-spacing:-.03em;font-family:var(--en)}
+  .stats .l{font-size:14px;color:var(--navy-soft);font-weight:600}
+
+  .ctaband{background:var(--navy);color:var(--cream);border-radius:var(--r-lg);padding:54px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+  .ctaband:before{content:"";position:absolute;top:-60px;right:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(232,163,61,.4),transparent 70%)}
+  .ctaband h2{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;position:relative}
+  .ctaband p{color:#A9B4C0;margin-bottom:26px;position:relative}
+
+  footer{padding:48px 0 60px;border-top:1px solid var(--line);margin-top:72px;font-size:14px;color:var(--navy-soft)}
+  footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+  footer b{display:block;color:var(--navy);margin-bottom:8px;font-size:13px;letter-spacing:.03em}
+  footer a:hover{color:var(--red)}
+
+  @media(max-width:880px){
+    .hero{grid-template-columns:1fr;gap:28px;padding-top:48px}
+    .strip,.cards,.stats,footer .grid{grid-template-columns:1fr 1fr}
+    nav.menu{position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--cream);border-bottom:1px solid var(--line);padding:12px 24px;gap:4px;display:none}
+    nav.menu.open{display:flex}
+    nav.menu a{padding:10px 0}
+    .menu-toggle{display:block;order:-1}
+    .nav .right .btn-primary{display:none}
+  }
+  @media(max-width:560px){.strip,.cards,.stats,footer .grid{grid-template-columns:1fr}}
+
+  /* ── 무료 체험 신청 폼 ── */
+  .apply{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start;margin-top:28px}
+  .apply-intro .sec-label{font-family:var(--en);font-style:italic;font-size:16px;color:var(--red);margin-bottom:8px}
+  .apply-intro h2{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+  .apply-intro p{color:var(--navy-soft);margin-bottom:20px}
+  .apply-kakao{display:inline-flex;align-items:center;gap:8px;background:#FAE100;color:#3A1D1D;font-weight:800;border-radius:var(--r-btn);padding:12px 18px;font-size:14.5px}
+  .apply-kakao:hover{filter:brightness(.96)}
+  .apply-alt{margin-top:14px;font-size:13.5px;color:var(--gray)}
+  .apply-alt a{color:var(--red);font-weight:700}
+  .form-card{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow-md)}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{margin-bottom:16px;display:flex;flex-direction:column}
+  .field label{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px}
+  .field .req{color:var(--red)}
+  .field input,.field select,.field textarea{font-family:var(--kr);font-size:15px;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:11px 13px;transition:.15s;width:100%}
+  .field textarea{resize:vertical;min-height:88px}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(214,64,47,.14)}
+  .field input.invalid,.field select.invalid,.field textarea.invalid{border-color:var(--red)}
+  .field .err{font-size:12px;color:var(--red);margin-top:5px;display:none}
+  .field.has-error .err{display:block}
+  .submit-btn{width:100%;font-family:var(--kr);font-weight:800;font-size:16px;color:#fff;background:var(--red);border:none;border-radius:var(--r-btn);padding:14px;cursor:pointer;transition:.18s;box-shadow:0 12px 24px -12px rgba(214,64,47,.55);margin-top:4px}
+  .submit-btn:hover{background:var(--red-dark);transform:translateY(-1px)}
+  .submit-btn:disabled{opacity:.7;cursor:default;transform:none}
+  .form-note{font-size:12.5px;color:var(--gray);margin-top:12px;text-align:center}
+  .form-msg{display:none;align-items:center;gap:10px;padding:14px 16px;border-radius:var(--r-md);margin-top:14px;font-size:14px;font-weight:600}
+  .form-msg.show{display:flex}
+  .form-msg.ok{background:#EAF6EE;color:#1F7A43;border:1px solid #BFE3CC}
+  .form-msg.bad{background:#FDEDEA;color:var(--red-dark);border:1px solid #F3C9C1}
+  @media(max-width:880px){.apply{grid-template-columns:1fr;gap:20px}}
+  @media(max-width:560px){.form-row{grid-template-columns:1fr}}
+
+  /* ── 학부모 후기 ── */
+  .review-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .review{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .review .stars{color:var(--amber);font-size:16px;letter-spacing:3px;margin-bottom:12px}
+  .review .quote{font-size:15.5px;color:var(--navy);line-height:1.7;margin-bottom:18px;flex:1}
+  .review .who{display:flex;align-items:center;gap:11px}
+  .review .avatar{width:40px;height:40px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;font-weight:800;color:var(--navy-soft);flex-shrink:0}
+  .review .name{font-weight:700;font-size:14px}
+  .review .src{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:5px}
+  .reviews-cta{margin-top:26px}
+  @media(max-width:560px){.review-cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+
+<header>
+  <div class="wrap nav">
+    <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sitemenu">☰</button>
+    <a class="logo" href="#" aria-label="정철 애프터스쿨 홈">
+      <span class="mark" aria-hidden="true">JC</span>
+      <span>정철 애프터스쿨<br><span class="sub">JC AFTER SCHOOL · COQUITLAM</span></span>
+    </a>
+    <nav class="menu" id="sitemenu" aria-label="주요 메뉴">
+      <a href="#care">방과후 돌봄</a>
+      <a href="#kids">자녀 학습</a>
+      <a href="#adult">성인 어학</a>
+      <a href="#reviews">후기</a>
+      <a href="#contact">문의</a>
+    </nav>
+    <div class="right">
+      <div class="lang" role="group" aria-label="언어 선택">
+        <button type="button" aria-pressed="true">한국어</button>
+        <button type="button" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary" href="#contact">무료 체험 신청</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <div>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Tri-City · Burnaby · Surrey 픽업</span>
+      <h1 id="hero-title" data-pretext contenteditable="true" spellcheck="false">아이 학교 픽업부터 <span class="accent">성적</span>까지, 한 곳에서.</h1>
+      <p class="lead"><span class="tags">픽업 · 돌봄 · 간식 · 수학·과학·영어</span><br>바쁜 부모를 위한 가장 믿음직한 방과후.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">무료 체험 신청 →</a>
+        <a class="btn btn-ghost" href="#care">프로그램 보기</a>
+      </div>
+      <p class="micro"><b>오늘 신청</b> · 카카오톡으로 1분이면 예약 완료</p>
+    </div>
+    <div class="hero-art" role="img" aria-label="센터에서 돌봄을 받는 아이들 사진이 들어갈 자리">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="photo-note">📷 실제 센터·아이들·핫런치 사진이<br>이 자리에 들어갑니다<br><span style="font-size:12px;opacity:.7">(부모는 실제 공간을 봐야 안심합니다)</span></div>
+      <div class="card c1"><span class="ic" style="background:#FDEDEA;color:var(--red)" aria-hidden="true">🚌</span> 학교 앞 안전 픽업</div>
+      <div class="card c2"><span class="ic" style="background:#FBF0DC;color:var(--amber)" aria-hidden="true">🍪</span> 따뜻한 간식 제공</div>
+    </div>
+  </section>
+
+  <ul class="strip" aria-label="JC 방과후의 4가지 차별점">
+    <li class="item"><span class="ic" aria-hidden="true">🚌</span><div><div class="t">픽업</div><div class="d">학교 앞에서 안전하게</div></div></li>
+    <li class="item"><span class="ic" aria-hidden="true">🏠</span><div><div class="t">돌봄</div><div class="d">선생님이 함께</div></div></li>
+    <li class="item"><span class="ic" aria-hidden="true">🍪</span><div><div class="t">간식</div><div class="d">매일 따뜻하게</div></div></li>
+    <li class="item"><span class="ic" aria-hidden="true">📈</span><div><div class="t">성적</div><div class="d">수학·과학·영어</div></div></li>
+  </ul>
+</div>
+
+<div class="wrap">
+  <section class="block" id="care" aria-labelledby="prog-title">
+    <p class="sec-label">Our Programs</p>
+    <h2 class="sec-title" id="prog-title" data-pretext>맡기면, 성적까지.</h2>
+    <p class="sec-sub">돌봄이 본체입니다. 그 안에서 학업까지 챙깁니다.</p>
+    <div class="cards">
+      <article class="card-p badge-star">
+        <span class="tag">★ 간판 프로그램</span>
+        <h3>방과후 돌봄</h3>
+        <p>학교 픽업부터 돌봄·간식·숙제까지, 부모가 퇴근할 때까지 안전하게.</p>
+        <ul><li>Kinder–Grade 7 등원 (픽업)</li><li>Tri-City · Burnaby · Surrey 픽업</li><li>방학 캠프 (핫런치 제공)</li></ul>
+        <a class="more" href="#contact">무료 체험 신청 →</a>
+      </article>
+      <article class="card-p" id="kids">
+        <span class="tag">Grade 7–12</span>
+        <h3>자녀 학습</h3>
+        <p>경력 교사의 소수 정예 수업으로 실력을 끌어올립니다.</p>
+        <ul><li>수학 · 과학 (G7–12)</li><li>ELL 영어 부진 탈출</li><li>SAT · AP · IB 대비</li></ul>
+        <a class="more" href="#contact">자세히 보기 →</a>
+      </article>
+      <article class="card-p" id="adult">
+        <span class="tag">성인 · 이민</span>
+        <h3>성인 어학</h3>
+        <p>이민·시민권·취업에 필요한 점수를 목표 기간 안에.</p>
+        <ul><li>IELTS (이민·유학·취업)</li><li>프랑스어 TEF · TCF</li><li>무료 체험 후 등록</li></ul>
+        <a class="more" href="#contact">무료 체험 신청 →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0" id="trust" aria-label="신뢰 지표">
+    <div class="stats">
+      <div><div class="n">15+</div><div class="l">년 동네 학부모의 선택</div></div>
+      <div><div class="n">소수</div><div class="l">정예 개별 관리</div></div>
+      <div><div class="n">K–12</div><div class="l">전 학년 돌봄 + 학습</div></div>
+    </div>
+  </section>
+
+  <section class="block" id="reviews" aria-labelledby="rev-title">
+    <p class="sec-label">Reviews</p>
+    <h2 class="sec-title" id="rev-title">학부모들의 진짜 후기</h2>
+    <p class="sec-sub">구글 지도에 직접 남겨주신 실제 후기입니다.</p>
+    <div class="review-cards">
+      <!-- 후기 추가: 아래 <article> 한 칸을 복사해서 별점·내용·이름·출처만 바꾸면 됩니다. -->
+      <article class="review">
+        <div class="stars" aria-label="별점 5점 만점">★★★★★</div>
+        <p class="quote">“원장님 선생님 너무너무 친절하시고 아이들이 너무 좋아합니다 ^^”</p>
+        <div class="who"><span class="avatar" aria-hidden="true">M</span><div><div class="name">Mk K</div><div class="src">⭐ Google 리뷰 · 2년 전</div></div></div>
+      </article>
+      <article class="review">
+        <div class="stars" aria-label="별점 5점 만점">★★★★★</div>
+        <p class="quote">“매우 좋은! <span style="color:var(--gray)">(Excellent!)</span>”</p>
+        <div class="who"><span class="avatar" aria-hidden="true">J</span><div><div class="name">Joshua Kim</div><div class="src">⭐ Google 지역가이드 · 3년 전</div></div></div>
+      </article>
+      <article class="review" style="background:var(--cream-2);justify-content:center;text-align:center">
+        <p class="quote" style="margin:0">⭐️⭐️⭐️⭐️⭐️<br><strong>5.0</strong> · 구글 리뷰 5개<br><span style="font-size:13px;color:var(--navy-soft)">더 많은 후기는 구글에서 확인하세요</span></p>
+      </article>
+    </div>
+    <div class="reviews-cta">
+      <a class="btn btn-ghost" href="https://search.google.com/local/reviews?placeid=ChIJ4YzXflV5hlQRVbvCp3d9zhA" target="_blank" rel="noopener">⭐ 구글 리뷰 전체 보기 →</a>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0" id="contact" aria-labelledby="cta-title">
+    <div class="apply">
+      <div class="apply-intro">
+        <p class="sec-label">Free Trial</p>
+        <h2 id="cta-title">먼저 하루, 무료로 맡겨보세요.</h2>
+        <p>아이가 직접 경험하고 결정하세요. 아래 폼을 남겨주시면 빠르게 연락드립니다. 카카오톡이 더 편하시면 1분이면 됩니다.</p>
+        <a class="apply-kakao" href="https://open.kakao.com/o/sn2X2Kii" target="_blank" rel="noopener">💬 카카오톡으로 바로 신청</a>
+        <p class="apply-alt">전화 <a href="tel:+17782582223">778-258-2223</a> · 위치 Coquitlam #130–1140 Austin Ave</p>
+      </div>
+
+      <form class="form-card" id="trial-form" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-name">학부모 이름 <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="홍길동">
+            <span class="err">학부모 이름을 입력해 주세요</span>
+          </div>
+          <div class="field">
+            <label for="f-student">학생 이름</label>
+            <input type="text" id="f-student" name="student" placeholder="자녀 이름">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-phone">연락처 <span class="req">*</span></label>
+            <input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="778-000-0000">
+            <span class="err">연락처를 입력해 주세요</span>
+          </div>
+          <div class="field">
+            <label for="f-grade">학생 학년</label>
+            <input type="text" id="f-grade" name="grade" placeholder="예: Grade 5 / Kinder / 성인">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="f-program">관심 프로그램 <span class="req">*</span></label>
+            <select id="f-program" name="program" required>
+              <option value="" selected disabled>선택해 주세요</option>
+              <option>방과후 돌봄 (픽업·돌봄·간식)</option>
+              <option>자녀 학습 (수학·과학·ELL)</option>
+              <option>성인 어학 (IELTS·프랑스어)</option>
+              <option>기타 / 잘 모르겠어요</option>
+            </select>
+            <span class="err">프로그램을 선택해 주세요</span>
+          </div>
+          <div class="field">
+            <label for="f-email">이메일 <span style="color:var(--gray);font-weight:600">(선택)</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" placeholder="you@example.com">
+            <span class="err">올바른 이메일 형식이 아닙니다</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-message">문의 내용 <span style="color:var(--gray);font-weight:600">(선택)</span></label>
+          <textarea id="f-message" name="message" placeholder="궁금한 점이나 희망 체험일을 남겨주세요"></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="trial-submit">무료 체험 신청하기 →</button>
+        <p class="form-note">신청 후 영업시간 내 빠르게 연락드립니다. 개인정보는 상담 목적으로만 사용됩니다.</p>
+        <div class="form-msg ok" id="trial-ok" role="status">✅ 신청이 접수되었습니다. 곧 연락드릴게요!</div>
+        <div class="form-msg bad" id="trial-bad" role="alert">⚠️ 전송에 실패했습니다. 카카오톡(💬) 또는 778-258-2223으로 연락 부탁드립니다.</div>
+      </form>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap grid">
+    <div>
+      <a class="logo" href="#" style="margin-bottom:12px" aria-label="정철 애프터스쿨"><span class="mark" aria-hidden="true">JC</span><span>정철 애프터스쿨</span></a>
+      <p>#130 – 1140 Austin Ave, Coquitlam, BC<br>믿고 맡기는 방과후, 성적까지 책임집니다.</p>
+    </div>
+    <div>
+      <b>연락처</b>
+      <a href="tel:+17782582223">778-258-2223</a><br>
+      <a href="https://open.kakao.com/o/sn2X2Kii" target="_blank" rel="noopener">카카오톡 채널 상담</a><br>
+      <a href="mailto:jcbibleschool@gmail.com">이메일 문의</a>
+    </div>
+    <div>
+      <b>프로그램</b>
+      <a href="#care">방과후 돌봄</a><br>
+      <a href="#kids">자녀 학습 (수학·과학·ELL)</a><br>
+      <a href="#adult">성인 어학 (IELTS·불어)</a>
+    </div>
+  </div>
+</footer>
+
+<script type="module">
+  // ── Mobile menu toggle ──────────────────────────────
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('sitemenu');
+  toggle?.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  });
+  menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open'); toggle?.setAttribute('aria-expanded', 'false');
+  }));
+
+  // ── Language toggle (UI only; i18n wiring later) ─────
+  document.querySelectorAll('.lang button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    });
+  });
+
+  // ── 무료 체험 신청 폼 → EmailJS ───────────────────────
+  // TODO: EmailJS 대시보드에서 받은 값으로 아래 4개를 교체하세요.
+  //   1) Email Services → Service ID
+  //   2) Email Templates → Template ID
+  //       (템플릿 변수: {{from_name}} {{from_phone}} {{from_email}}
+  //        {{student_grade}} {{program}} {{message}} {{request_date}},
+  //        "To Email"은 JC 수신 주소 또는 {{to_email}})
+  //   3) Account → General → Public Key
+  //   4) toEmail: 문의를 받을 JC 이메일 주소
+  // 값이 placeholder 상태면 실제 전송 대신 데모 모드(접수 성공 표시)로 동작합니다.
+  const EMAIL_CONFIG = {
+    serviceId:  'service_ejg4a6t',                 // ✓ 입력됨
+    templateId: 'template_ptm8jye',                // ✓ 입력됨
+    publicKey:  'tDrvIwbUI4F5Nr_7g',               // ✓ 입력됨
+    toEmail:    'jcafterschool.ca@gmail.com'       // ✓ 템플릿 To Email과 동일
+  };
+
+  const form = document.getElementById('trial-form');
+  if (form) {
+    const okMsg = document.getElementById('trial-ok');
+    const badMsg = document.getElementById('trial-bad');
+    const submitBtn = document.getElementById('trial-submit');
+    const isConfigured = !Object.values(EMAIL_CONFIG).some(v => String(v).startsWith('YOUR_'));
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (isConfigured && typeof emailjs !== 'undefined') {
+      try { emailjs.init({ publicKey: EMAIL_CONFIG.publicKey }); } catch (e) { console.warn('EmailJS init:', e); }
+    }
+
+    const fieldOf = (input) => input.closest('.field');
+    const validate = () => {
+      let ok = true;
+      form.querySelectorAll('[required]').forEach(input => {
+        const bad = !input.value.trim();
+        fieldOf(input)?.classList.toggle('has-error', bad);
+        input.classList.toggle('invalid', bad);
+        if (bad) ok = false;
+      });
+      const email = form.querySelector('#f-email');
+      if (email.value && !emailRe.test(email.value)) {
+        fieldOf(email)?.classList.add('has-error'); email.classList.add('invalid'); ok = false;
+      }
+      return ok;
+    };
+    form.querySelectorAll('input,select,textarea').forEach(el => {
+      el.addEventListener('input', () => { fieldOf(el)?.classList.remove('has-error'); el.classList.remove('invalid'); });
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      okMsg.classList.remove('show'); badMsg.classList.remove('show');
+      if (!validate()) return;
+
+      const data = new FormData(form);
+      const g = (k) => (data.get(k) || '').trim();
+      const now = new Date().toLocaleString('ko-KR');
+
+      // EmailJS 템플릿 본문이 {{name}}/{{message}}만 출력하므로,
+      // 모든 신청 정보를 {{message}} 한 칸에 묶어 보낸다(템플릿 수정 불필요).
+      const composed =
+        `■ 무료 체험 신청\n\n` +
+        `학부모 이름: ${g('name')}\n` +
+        `학생 이름: ${g('student') || '(미입력)'}\n` +
+        `연락처: ${g('phone')}\n` +
+        `이메일: ${g('email') || '(미입력)'}\n` +
+        `학생 학년: ${g('grade') || '(미입력)'}\n` +
+        `관심 프로그램: ${g('program')}\n` +
+        `문의 내용: ${g('message') || '(없음)'}\n\n` +
+        `신청 시각: ${now}`;
+
+      const params = {
+        // 템플릿이 실제 출력하는 두 변수
+        name: g('name'),
+        message: composed,
+        // 제목/회신용 + 추후 템플릿 확장 대비 개별 변수
+        title: `무료체험 신청 · ${g('program')} · ${g('name')}`,
+        email: g('email') || EMAIL_CONFIG.toEmail,
+        student: g('student'),
+        phone: g('phone'),
+        grade: g('grade'),
+        program: g('program'),
+        to_email: EMAIL_CONFIG.toEmail,
+        request_date: now
+      };
+
+      const original = submitBtn.textContent;
+      submitBtn.disabled = true; submitBtn.textContent = '전송 중…';
+      try {
+        if (!isConfigured) {
+          console.log('[데모 모드] EmailJS 미설정. 전송될 내용:', params);
+          await new Promise(r => setTimeout(r, 900));
+        } else {
+          await emailjs.send(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, params);
+        }
+        form.reset();
+        okMsg.classList.add('show');
+        okMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        setTimeout(() => okMsg.classList.remove('show'), 6000);
+      } catch (err) {
+        console.error('EmailJS 전송 실패:', err);
+        badMsg.classList.add('show');
+        setTimeout(() => badMsg.classList.remove('show'), 9000);
+      } finally {
+        submitBtn.disabled = false; submitBtn.textContent = original;
+      }
+    });
+  }
+
+  // ── 구글 리뷰 자동 로드 ───────────────────────────────
+  // web/reviews.json (scripts/fetch-reviews.py가 생성)이 있으면 카드를 교체.
+  // 없으면 위의 하드코딩 후기 카드를 그대로 유지(점진적 적용). 외부 텍스트는 이스케이프.
+  (async () => {
+    try {
+      const res = await fetch('reviews.json', { cache: 'no-store' });
+      if (!res.ok) return;
+      const data = await res.json();
+      const list = (data.reviews || []).filter(r => r && r.text);
+      const grid = document.querySelector('.review-cards');
+      if (!grid || !list.length) return;
+      const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+      const initial = (n) => esc((String(n || '?').trim().charAt(0) || '?').toUpperCase());
+      let html = list.map(r => {
+        const n = Math.max(1, Math.min(5, Math.round(r.rating || 5)));
+        return `<article class="review">
+          <div class="stars" aria-label="별점 ${n}점 만점">${'★'.repeat(n)}</div>
+          <p class="quote">“${esc(r.text)}”</p>
+          <div class="who"><span class="avatar" aria-hidden="true">${initial(r.name)}</span><div><div class="name">${esc(r.name)}</div><div class="src">⭐ Google 리뷰${r.when ? ' · ' + esc(r.when) : ''}</div></div></div>
+        </article>`;
+      }).join('');
+      if (data.total) {
+        html += `<article class="review" style="background:var(--cream-2);justify-content:center;text-align:center"><p class="quote" style="margin:0">⭐️⭐️⭐️⭐️⭐️<br><strong>${esc(data.rating ?? '5.0')}</strong> · 구글 리뷰 ${esc(data.total)}개<br><span style="font-size:13px;color:var(--navy-soft)">더 많은 후기는 구글에서</span></p></article>`;
+      }
+      grid.innerHTML = html;
+    } catch (e) { /* reviews.json 없음 → 하드코딩 카드 유지 */ }
+  })();
+
+  // ── Pretext-native text layout ───────────────────────
+  // Headline + section titles get correct, resize-aware computed heights so
+  // text reflows precisely. Hero headline is contenteditable: edit it and the
+  // height recomputes instantly. Degrades gracefully if Pretext fails to load.
+  try {
+    const { prepare, layout } = await import('./pretext.js');
+    await (document.fonts ? document.fonts.ready : Promise.resolve());
+
+    const els = document.querySelectorAll('[data-pretext]');
+    const handles = new Map();
+
+    const fontOf = (el) => {
+      const s = getComputedStyle(el);
+      return `${s.fontStyle} ${s.fontWeight} ${parseFloat(s.fontSize)}px ${s.fontFamily}`;
+    };
+    const lineHeightOf = (el) => {
+      const s = getComputedStyle(el);
+      const lh = parseFloat(s.lineHeight);
+      return Number.isFinite(lh) ? lh : parseFloat(s.fontSize) * 1.18;
+    };
+    const reprepare = (el) => handles.set(el, prepare(el.textContent, fontOf(el)));
+
+    els.forEach(reprepare);
+
+    function relayout() {
+      for (const [el, h] of handles) {
+        const { height } = layout(h, el.clientWidth, lineHeightOf(el));
+        // min-height (not height) so we never clip if a metric is off
+        el.style.minHeight = `${Math.ceil(height)}px`;
+      }
+    }
+    relayout();
+
+    new ResizeObserver(() => relayout()).observe(document.body);
+
+    // Re-prepare + relayout while editing the headline live
+    els.forEach(el => {
+      if (el.isContentEditable) {
+        new MutationObserver(() => { reprepare(el); relayout(); })
+          .observe(el, { characterData: true, subtree: true, childList: true });
+      }
+    });
+  } catch (e) {
+    console.warn('Pretext unavailable, falling back to native flow layout:', e);
+  }
+</script>
+</body>
+</html>

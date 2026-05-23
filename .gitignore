@@ -1,0 +1,13 @@
+
+# secrets
+.credentials/
+*.key
+*-api-key.txt
+.gstack/
+.claude/
+.venv/
+node_modules/
+.DS_Store
+BENCHMARK.md
+DESIGN.md
+CLAUDE.md
