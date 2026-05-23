@@ -160,28 +160,28 @@
 </style>
 </head>
 <body>
-<a class="skip" href="#main">본문 바로가기</a>
+<a class="skip" href="#main" data-i18n="skip">본문 바로가기</a>
 
 <header>
   <div class="wrap nav">
     <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="sitemenu">☰</button>
-    <a class="logo" href="#" aria-label="정철 애프터스쿨 홈">
+    <a class="logo" href="#" data-i18n-aria="logoHome" aria-label="정철 애프터스쿨 홈">
       <span class="mark" aria-hidden="true">JC</span>
-      <span>정철 애프터스쿨<br><span class="sub">JC AFTER SCHOOL · COQUITLAM</span></span>
+      <span><span data-i18n="brand">정철 애프터스쿨</span><br><span class="sub">JC AFTER SCHOOL · COQUITLAM</span></span>
     </a>
-    <nav class="menu" id="sitemenu" aria-label="주요 메뉴">
-      <a href="#care">방과후 돌봄</a>
-      <a href="#kids">자녀 학습</a>
-      <a href="#adult">성인 어학</a>
-      <a href="#reviews">후기</a>
-      <a href="#contact">문의</a>
+    <nav class="menu" id="sitemenu" data-i18n-aria="mainMenu" aria-label="주요 메뉴">
+      <a href="#care" data-i18n="navCare">방과후 돌봄</a>
+      <a href="#kids" data-i18n="navKids">자녀 학습</a>
+      <a href="#adult" data-i18n="navAdult">성인 어학</a>
+      <a href="#reviews" data-i18n="navReviews">후기</a>
+      <a href="#contact" data-i18n="navContact">문의</a>
     </nav>
     <div class="right">
-      <div class="lang" role="group" aria-label="언어 선택">
-        <button type="button" aria-pressed="true">한국어</button>
-        <button type="button" aria-pressed="false">EN</button>
+      <div class="lang" role="group" data-i18n-aria="langGroup" aria-label="언어 선택">
+        <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="btn btn-primary" href="#contact">무료 체험 신청</a>
+      <a class="btn btn-primary" href="#contact" data-i18n="headerCta">무료 체험 신청</a>
     </div>
   </div>
 </header>
@@ -190,91 +190,88 @@
 <div class="wrap">
   <section class="hero" aria-labelledby="hero-title">
     <div>
-      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Tri-City · Burnaby · Surrey 픽업</span>
-      <h1 id="hero-title" data-pretext contenteditable="true" spellcheck="false">아이 학교 픽업부터 <span class="accent">성적</span>까지, 한 곳에서.</h1>
-      <p class="lead"><span class="tags">픽업 · 돌봄 · 간식 · 수학·과학·영어</span><br>바쁜 부모를 위한 가장 믿음직한 방과후.</p>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> <span data-i18n="eyebrow">Tri-City · Burnaby · Surrey 픽업</span></span>
+      <h1 id="hero-title" data-pretext data-i18n="heroTitle" contenteditable="true" spellcheck="false">아이 학교 픽업부터 <span class="accent">성적</span>까지, 한 곳에서.</h1>
+      <p class="lead" data-i18n="lead"><span class="tags">픽업 · 돌봄 · 간식 · 수학·과학·영어</span><br>바쁜 부모를 위한 가장 믿음직한 방과후.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">무료 체험 신청 →</a>
-        <a class="btn btn-ghost" href="#care">프로그램 보기</a>
+        <a class="btn btn-primary" href="#contact" data-i18n="heroCta1">무료 체험 신청 →</a>
+        <a class="btn btn-ghost" href="#care" data-i18n="heroCta2">프로그램 보기</a>
       </div>
-      <p class="micro"><b>오늘 신청</b> · 카카오톡으로 1분이면 예약 완료</p>
+      <p class="micro" data-i18n="micro"><b>오늘 신청</b> · 카카오톡으로 1분이면 예약 완료</p>
     </div>
-    <div class="hero-art" role="img" aria-label="센터에서 돌봄을 받는 아이들 사진이 들어갈 자리">
+    <div class="hero-art" role="img" data-i18n-aria="heroArt" aria-label="센터에서 돌봄을 받는 아이들 사진이 들어갈 자리">
       <div class="sun" aria-hidden="true"></div>
-      <div class="photo-note">📷 실제 센터·아이들·핫런치 사진이<br>이 자리에 들어갑니다<br><span style="font-size:12px;opacity:.7">(부모는 실제 공간을 봐야 안심합니다)</span></div>
-      <div class="card c1"><span class="ic" style="background:#FDEDEA;color:var(--red)" aria-hidden="true">🚌</span> 학교 앞 안전 픽업</div>
-      <div class="card c2"><span class="ic" style="background:#FBF0DC;color:var(--amber)" aria-hidden="true">🍪</span> 따뜻한 간식 제공</div>
+      <div class="photo-note" data-i18n="photoNote">📷 실제 센터·아이들·핫런치 사진이<br>이 자리에 들어갑니다<br><span style="font-size:12px;opacity:.7">(부모는 실제 공간을 봐야 안심합니다)</span></div>
+      <div class="card c1"><span class="ic" style="background:#FDEDEA;color:var(--red)" aria-hidden="true">🚌</span> <span data-i18n="heroCard1">학교 앞 안전 픽업</span></div>
+      <div class="card c2"><span class="ic" style="background:#FBF0DC;color:var(--amber)" aria-hidden="true">🍪</span> <span data-i18n="heroCard2">따뜻한 간식 제공</span></div>
     </div>
   </section>
 
-  <ul class="strip" aria-label="JC 방과후의 4가지 차별점">
-    <li class="item"><span class="ic" aria-hidden="true">🚌</span><div><div class="t">픽업</div><div class="d">학교 앞에서 안전하게</div></div></li>
-    <li class="item"><span class="ic" aria-hidden="true">🏠</span><div><div class="t">돌봄</div><div class="d">선생님이 함께</div></div></li>
-    <li class="item"><span class="ic" aria-hidden="true">🍪</span><div><div class="t">간식</div><div class="d">매일 따뜻하게</div></div></li>
-    <li class="item"><span class="ic" aria-hidden="true">📈</span><div><div class="t">성적</div><div class="d">수학·과학·영어</div></div></li>
+  <ul class="strip" data-i18n-aria="stripAria" aria-label="JC 방과후의 4가지 차별점">
+    <li class="item"><span class="ic" aria-hidden="true">🚌</span><div><div class="t" data-i18n="stripT1">픽업</div><div class="d" data-i18n="stripD1">학교 앞에서 안전하게</div></div></li>
+    <li class="item"><span class="ic" aria-hidden="true">🏠</span><div><div class="t" data-i18n="stripT2">돌봄</div><div class="d" data-i18n="stripD2">선생님이 함께</div></div></li>
+    <li class="item"><span class="ic" aria-hidden="true">🍪</span><div><div class="t" data-i18n="stripT3">간식</div><div class="d" data-i18n="stripD3">매일 따뜻하게</div></div></li>
+    <li class="item"><span class="ic" aria-hidden="true">📈</span><div><div class="t" data-i18n="stripT4">성적</div><div class="d" data-i18n="stripD4">수학·과학·영어</div></div></li>
   </ul>
 </div>
 
 <div class="wrap">
   <section class="block" id="care" aria-labelledby="prog-title">
     <p class="sec-label">Our Programs</p>
-    <h2 class="sec-title" id="prog-title" data-pretext>맡기면, 성적까지.</h2>
-    <p class="sec-sub">돌봄이 본체입니다. 그 안에서 학업까지 챙깁니다.</p>
+    <h2 class="sec-title" id="prog-title" data-pretext data-i18n="progTitle">맡기면, 성적까지.</h2>
+    <p class="sec-sub" data-i18n="progSub">돌봄이 본체입니다. 그 안에서 학업까지 챙깁니다.</p>
     <div class="cards">
       <article class="card-p badge-star">
-        <span class="tag">★ 간판 프로그램</span>
-        <h3>방과후 돌봄</h3>
-        <p>학교 픽업부터 돌봄·간식·숙제까지, 부모가 퇴근할 때까지 안전하게.</p>
-        <ul><li>Kinder–Grade 7 등원 (픽업)</li><li>Tri-City · Burnaby · Surrey 픽업</li><li>방학 캠프 (핫런치 제공)</li></ul>
-        <a class="more" href="#contact">무료 체험 신청 →</a>
+        <span class="tag" data-i18n="c1tag">★ 간판 프로그램</span>
+        <h3 data-i18n="c1h">방과후 돌봄</h3>
+        <p data-i18n="c1p">학교 픽업부터 돌봄·간식·숙제까지, 부모가 퇴근할 때까지 안전하게.</p>
+        <ul><li data-i18n="c1li1">Kinder–Grade 7 등원 (픽업)</li><li data-i18n="c1li2">Tri-City · Burnaby · Surrey 픽업</li><li data-i18n="c1li3">방학 캠프 (핫런치 제공)</li></ul>
+        <a class="more" href="#contact" data-i18n="c1more">무료 체험 신청 →</a>
       </article>
       <article class="card-p" id="kids">
-        <span class="tag">Grade 7–12</span>
-        <h3>자녀 학습</h3>
-        <p>경력 교사의 소수 정예 수업으로 실력을 끌어올립니다.</p>
-        <ul><li>수학 · 과학 (G7–12)</li><li>ELL 영어 부진 탈출</li><li>SAT · AP · IB 대비</li></ul>
-        <a class="more" href="#contact">자세히 보기 →</a>
+        <span class="tag" data-i18n="c2tag">Grade 7–12</span>
+        <h3 data-i18n="c2h">자녀 학습</h3>
+        <p data-i18n="c2p">경력 교사의 소수 정예 수업으로 실력을 끌어올립니다.</p>
+        <ul><li data-i18n="c2li1">수학 · 과학 (G7–12)</li><li data-i18n="c2li2">ELL 영어 부진 탈출</li><li data-i18n="c2li3">SAT · AP · IB 대비</li></ul>
+        <a class="more" href="#contact" data-i18n="c2more">자세히 보기 →</a>
       </article>
       <article class="card-p" id="adult">
-        <span class="tag">성인 · 이민</span>
-        <h3>성인 어학</h3>
-        <p>이민·시민권·취업에 필요한 점수를 목표 기간 안에.</p>
-        <ul><li>IELTS (이민·유학·취업)</li><li>프랑스어 TEF · TCF</li><li>무료 체험 후 등록</li></ul>
-        <a class="more" href="#contact">무료 체험 신청 →</a>
+        <span class="tag" data-i18n="c3tag">성인 · 이민</span>
+        <h3 data-i18n="c3h">성인 어학</h3>
+        <p data-i18n="c3p">이민·시민권·취업에 필요한 점수를 목표 기간 안에.</p>
+        <ul><li data-i18n="c3li1">IELTS (이민·유학·취업)</li><li data-i18n="c3li2">프랑스어 TEF · TCF</li><li data-i18n="c3li3">무료 체험 후 등록</li></ul>
+        <a class="more" href="#contact" data-i18n="c3more">무료 체험 신청 →</a>
       </article>
     </div>
   </section>
 
-  <section class="block" style="padding-top:0" id="trust" aria-label="신뢰 지표">
+  <section class="block" style="padding-top:0" id="trust" data-i18n-aria="statsAria" aria-label="신뢰 지표">
     <div class="stats">
-      <div><div class="n">15+</div><div class="l">년 동네 학부모의 선택</div></div>
-      <div><div class="n">소수</div><div class="l">정예 개별 관리</div></div>
-      <div><div class="n">K–12</div><div class="l">전 학년 돌봄 + 학습</div></div>
+      <div><div class="n">15+</div><div class="l" data-i18n="statL1">년 동네 학부모의 선택</div></div>
+      <div><div class="n" data-i18n="statN2">소수</div><div class="l" data-i18n="statL2">정예 개별 관리</div></div>
+      <div><div class="n">K–12</div><div class="l" data-i18n="statL3">전 학년 돌봄 + 학습</div></div>
     </div>
   </section>
 
   <section class="block" id="reviews" aria-labelledby="rev-title">
     <p class="sec-label">Reviews</p>
-    <h2 class="sec-title" id="rev-title">학부모들의 진짜 후기</h2>
-    <p class="sec-sub">구글 지도에 직접 남겨주신 실제 후기입니다.</p>
+    <h2 class="sec-title" id="rev-title" data-i18n="revTitle">학부모들의 진짜 후기</h2>
+    <p class="sec-sub" data-i18n="revSub">구글 지도에 직접 남겨주신 실제 후기입니다.</p>
     <div class="review-cards">
-      <!-- 후기 추가: 아래 <article> 한 칸을 복사해서 별점·내용·이름·출처만 바꾸면 됩니다. -->
+      <!-- web/reviews.json 로드되면 JS가 이 카드들을 교체. 안 되면 아래 폴백 표시. -->
       <article class="review">
-        <div class="stars" aria-label="별점 5점 만점">★★★★★</div>
+        <div class="stars" aria-label="5/5">★★★★★</div>
         <p class="quote">“원장님 선생님 너무너무 친절하시고 아이들이 너무 좋아합니다 ^^”</p>
-        <div class="who"><span class="avatar" aria-hidden="true">M</span><div><div class="name">Mk K</div><div class="src">⭐ Google 리뷰 · 2년 전</div></div></div>
+        <div class="who"><span class="avatar" aria-hidden="true">M</span><div><div class="name">Mk K</div><div class="src">⭐ Google · 2년 전</div></div></div>
       </article>
       <article class="review">
-        <div class="stars" aria-label="별점 5점 만점">★★★★★</div>
+        <div class="stars" aria-label="5/5">★★★★★</div>
         <p class="quote">“매우 좋은! <span style="color:var(--gray)">(Excellent!)</span>”</p>
-        <div class="who"><span class="avatar" aria-hidden="true">J</span><div><div class="name">Joshua Kim</div><div class="src">⭐ Google 지역가이드 · 3년 전</div></div></div>
-      </article>
-      <article class="review" style="background:var(--cream-2);justify-content:center;text-align:center">
-        <p class="quote" style="margin:0">⭐️⭐️⭐️⭐️⭐️<br><strong>5.0</strong> · 구글 리뷰 5개<br><span style="font-size:13px;color:var(--navy-soft)">더 많은 후기는 구글에서 확인하세요</span></p>
+        <div class="who"><span class="avatar" aria-hidden="true">J</span><div><div class="name">Joshua Kim</div><div class="src">⭐ Google · 3년 전</div></div></div>
       </article>
     </div>
     <div class="reviews-cta">
-      <a class="btn btn-ghost" href="https://search.google.com/local/reviews?placeid=ChIJ4YzXflV5hlQRVbvCp3d9zhA" target="_blank" rel="noopener">⭐ 구글 리뷰 전체 보기 →</a>
+      <a class="btn btn-ghost" href="https://search.google.com/local/reviews?placeid=ChIJ4YzXflV5hlQRVbvCp3d9zhA" target="_blank" rel="noopener" data-i18n="revCta">⭐ 구글 리뷰 전체 보기 →</a>
     </div>
   </section>
 
@@ -282,61 +279,61 @@
     <div class="apply">
       <div class="apply-intro">
         <p class="sec-label">Free Trial</p>
-        <h2 id="cta-title">먼저 하루, 무료로 맡겨보세요.</h2>
-        <p>아이가 직접 경험하고 결정하세요. 아래 폼을 남겨주시면 빠르게 연락드립니다. 카카오톡이 더 편하시면 1분이면 됩니다.</p>
-        <a class="apply-kakao" href="https://open.kakao.com/o/sn2X2Kii" target="_blank" rel="noopener">💬 카카오톡으로 바로 신청</a>
-        <p class="apply-alt">전화 <a href="tel:+17782582223">778-258-2223</a> · 위치 Coquitlam #130–1140 Austin Ave</p>
+        <h2 id="cta-title" data-i18n="ftTitle">먼저 하루, 무료로 맡겨보세요.</h2>
+        <p data-i18n="ftP">아이가 직접 경험하고 결정하세요. 아래 폼을 남겨주시면 빠르게 연락드립니다. 카카오톡이 더 편하시면 1분이면 됩니다.</p>
+        <a class="apply-kakao" href="https://open.kakao.com/o/sn2X2Kii" target="_blank" rel="noopener" data-i18n="ftKakao">💬 카카오톡으로 바로 신청</a>
+        <p class="apply-alt" data-i18n="ftAlt">전화 <a href="tel:+17782582223">778-258-2223</a> · 위치 Coquitlam #130–1140 Austin Ave</p>
       </div>
 
       <form class="form-card" id="trial-form" novalidate>
         <div class="form-row">
           <div class="field">
-            <label for="f-name">학부모 이름 <span class="req">*</span></label>
-            <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="홍길동">
-            <span class="err">학부모 이름을 입력해 주세요</span>
+            <label for="f-name" data-i18n="lblName">학부모 이름 <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" required autocomplete="name" data-i18n-ph="phName" placeholder="홍길동">
+            <span class="err" data-i18n="errName">학부모 이름을 입력해 주세요</span>
           </div>
           <div class="field">
-            <label for="f-student">학생 이름</label>
-            <input type="text" id="f-student" name="student" placeholder="자녀 이름">
+            <label for="f-student" data-i18n="lblStudent">학생 이름</label>
+            <input type="text" id="f-student" name="student" data-i18n-ph="phStudent" placeholder="자녀 이름">
           </div>
         </div>
         <div class="form-row">
           <div class="field">
-            <label for="f-phone">연락처 <span class="req">*</span></label>
+            <label for="f-phone" data-i18n="lblPhone">연락처 <span class="req">*</span></label>
             <input type="tel" id="f-phone" name="phone" required autocomplete="tel" placeholder="778-000-0000">
-            <span class="err">연락처를 입력해 주세요</span>
+            <span class="err" data-i18n="errPhone">연락처를 입력해 주세요</span>
           </div>
           <div class="field">
-            <label for="f-grade">학생 학년</label>
-            <input type="text" id="f-grade" name="grade" placeholder="예: Grade 5 / Kinder / 성인">
+            <label for="f-grade" data-i18n="lblGrade">학생 학년</label>
+            <input type="text" id="f-grade" name="grade" data-i18n-ph="phGrade" placeholder="예: Grade 5 / Kinder / 성인">
           </div>
         </div>
         <div class="form-row">
           <div class="field">
-            <label for="f-program">관심 프로그램 <span class="req">*</span></label>
+            <label for="f-program" data-i18n="lblProgram">관심 프로그램 <span class="req">*</span></label>
             <select id="f-program" name="program" required>
-              <option value="" selected disabled>선택해 주세요</option>
-              <option>방과후 돌봄 (픽업·돌봄·간식)</option>
-              <option>자녀 학습 (수학·과학·ELL)</option>
-              <option>성인 어학 (IELTS·프랑스어)</option>
-              <option>기타 / 잘 모르겠어요</option>
+              <option value="" selected disabled data-i18n="optDefault">선택해 주세요</option>
+              <option data-i18n="optCare">방과후 돌봄 (픽업·돌봄·간식)</option>
+              <option data-i18n="optKids">자녀 학습 (수학·과학·ELL)</option>
+              <option data-i18n="optAdult">성인 어학 (IELTS·프랑스어)</option>
+              <option data-i18n="optOther">기타 / 잘 모르겠어요</option>
             </select>
-            <span class="err">프로그램을 선택해 주세요</span>
+            <span class="err" data-i18n="errProgram">프로그램을 선택해 주세요</span>
           </div>
           <div class="field">
-            <label for="f-email">이메일 <span style="color:var(--gray);font-weight:600">(선택)</span></label>
+            <label for="f-email" data-i18n="lblEmail">이메일 <span style="color:var(--gray);font-weight:600">(선택)</span></label>
             <input type="email" id="f-email" name="email" autocomplete="email" placeholder="you@example.com">
-            <span class="err">올바른 이메일 형식이 아닙니다</span>
+            <span class="err" data-i18n="errEmail">올바른 이메일 형식이 아닙니다</span>
           </div>
         </div>
         <div class="field">
-          <label for="f-message">문의 내용 <span style="color:var(--gray);font-weight:600">(선택)</span></label>
-          <textarea id="f-message" name="message" placeholder="궁금한 점이나 희망 체험일을 남겨주세요"></textarea>
+          <label for="f-message" data-i18n="lblMessage">문의 내용 <span style="color:var(--gray);font-weight:600">(선택)</span></label>
+          <textarea id="f-message" name="message" data-i18n-ph="phMessage" placeholder="궁금한 점이나 희망 체험일을 남겨주세요"></textarea>
         </div>
-        <button type="submit" class="submit-btn" id="trial-submit">무료 체험 신청하기 →</button>
-        <p class="form-note">신청 후 영업시간 내 빠르게 연락드립니다. 개인정보는 상담 목적으로만 사용됩니다.</p>
-        <div class="form-msg ok" id="trial-ok" role="status">✅ 신청이 접수되었습니다. 곧 연락드릴게요!</div>
-        <div class="form-msg bad" id="trial-bad" role="alert">⚠️ 전송에 실패했습니다. 카카오톡(💬) 또는 778-258-2223으로 연락 부탁드립니다.</div>
+        <button type="submit" class="submit-btn" id="trial-submit" data-i18n="submit">무료 체험 신청하기 →</button>
+        <p class="form-note" data-i18n="formNote">신청 후 영업시간 내 빠르게 연락드립니다. 개인정보는 상담 목적으로만 사용됩니다.</p>
+        <div class="form-msg ok" id="trial-ok" role="status" data-i18n="okMsg">✅ 신청이 접수되었습니다. 곧 연락드릴게요!</div>
+        <div class="form-msg bad" id="trial-bad" role="alert" data-i18n="badMsg">⚠️ 전송에 실패했습니다. 카카오톡(💬) 또는 778-258-2223으로 연락 부탁드립니다.</div>
       </form>
     </div>
   </section>
@@ -346,62 +343,159 @@
 <footer>
   <div class="wrap grid">
     <div>
-      <a class="logo" href="#" style="margin-bottom:12px" aria-label="정철 애프터스쿨"><span class="mark" aria-hidden="true">JC</span><span>정철 애프터스쿨</span></a>
-      <p>#130 – 1140 Austin Ave, Coquitlam, BC<br>믿고 맡기는 방과후, 성적까지 책임집니다.</p>
+      <a class="logo" href="#" style="margin-bottom:12px" data-i18n-aria="logoHome" aria-label="정철 애프터스쿨"><span class="mark" aria-hidden="true">JC</span><span data-i18n="brand">정철 애프터스쿨</span></a>
+      <p data-i18n="ftAddr">#130 – 1140 Austin Ave, Coquitlam, BC<br>믿고 맡기는 방과후, 성적까지 책임집니다.</p>
     </div>
     <div>
-      <b>연락처</b>
+      <b data-i18n="ftContact">연락처</b>
       <a href="tel:+17782582223">778-258-2223</a><br>
-      <a href="https://open.kakao.com/o/sn2X2Kii" target="_blank" rel="noopener">카카오톡 채널 상담</a><br>
+      <a href="https://open.kakao.com/o/sn2X2Kii" target="_blank" rel="noopener" data-i18n="ftKakaoLink">카카오톡 채널 상담</a><br>
       <a href="https://www.instagram.com/jc_afterschool/" target="_blank" rel="noopener">📷 Instagram @jc_afterschool</a><br>
-      <a href="mailto:jcbibleschool@gmail.com">이메일 문의</a>
+      <a href="mailto:jcbibleschool@gmail.com" data-i18n="ftEmailLink">이메일 문의</a>
     </div>
     <div>
-      <b>프로그램</b>
-      <a href="#care">방과후 돌봄</a><br>
-      <a href="#kids">자녀 학습 (수학·과학·ELL)</a><br>
-      <a href="#adult">성인 어학 (IELTS·불어)</a>
+      <b data-i18n="ftPrograms">프로그램</b>
+      <a href="#care" data-i18n="ftCare">방과후 돌봄</a><br>
+      <a href="#kids" data-i18n="ftKids">자녀 학습 (수학·과학·ELL)</a><br>
+      <a href="#adult" data-i18n="ftAdult">성인 어학 (IELTS·불어)</a>
     </div>
   </div>
 </footer>
 
 <script type="module">
+  // ════════════════════════════════════════════════════
+  // i18n — 한국어가 HTML 기본값. 영어는 EN 사전에서 덮어씀.
+  // ════════════════════════════════════════════════════
+  const EN = {
+    skip: `Skip to content`,
+    brand: `JC After School`,
+    navCare: `After School Care`, navKids: `Kids' Tutoring`, navAdult: `Adult Language`,
+    navReviews: `Reviews`, navContact: `Contact`,
+    headerCta: `Free Trial`,
+    eyebrow: `Tri-City · Burnaby · Surrey Pickup`,
+    heroTitle: `From school pickup to <span class="accent">better grades</span> — all in one place.`,
+    lead: `<span class="tags">Pickup · Care · Snacks · Math·Science·English</span><br>The after-school program busy parents trust.`,
+    heroCta1: `Get a Free Trial →`, heroCta2: `See Programs`,
+    micro: `<b>Apply today</b> · just 1 minute on KakaoTalk`,
+    photoNote: `📷 Real photos of our center, kids & hot lunch<br>will go here<br><span style="font-size:12px;opacity:.7">(parents feel safe seeing the real space)</span>`,
+    heroCard1: `Safe school pickup`, heroCard2: `Warm snacks daily`,
+    stripT1: `Pickup`, stripD1: `Safe, from the school door`,
+    stripT2: `Care`, stripD2: `Always with a teacher`,
+    stripT3: `Snacks`, stripD3: `Warm, every day`,
+    stripT4: `Grades`, stripD4: `Math·Science·English`,
+    progTitle: `Leave them with us — grades too.`,
+    progSub: `Care is the foundation. Academics come built in.`,
+    c1tag: `★ Signature Program`, c1h: `After School Care`,
+    c1p: `From school pickup to care, snacks, and homework — safe until you're off work.`,
+    c1li1: `Kinder–Grade 7 pickup`, c1li2: `Tri-City · Burnaby · Surrey pickup`, c1li3: `Break camps (hot lunch included)`,
+    c1more: `Get a Free Trial →`,
+    c2tag: `Grade 7–12`, c2h: `Kids' Tutoring`,
+    c2p: `Small-group classes with experienced teachers that build real skills.`,
+    c2li1: `Math · Science (G7–12)`, c2li2: `ELL English catch-up`, c2li3: `SAT · AP · IB prep`,
+    c2more: `Learn more →`,
+    c3tag: `Adults · Immigration`, c3h: `Adult Language`,
+    c3p: `Reach the scores you need for immigration, citizenship, or work — on time.`,
+    c3li1: `IELTS (immigration·study·work)`, c3li2: `French TEF · TCF`, c3li3: `Free trial, then enroll`,
+    c3more: `Get a Free Trial →`,
+    statN2: `Small`, statL1: `years parents have trusted us`, statL2: `small-group, personal care`, statL3: `care + learning, all grades`,
+    revTitle: `Real parent reviews`, revSub: `Genuine reviews left on Google Maps.`,
+    revCta: `⭐ See all Google reviews →`,
+    ftTitle: `Try a free day first.`,
+    ftP: `Let your child experience it and decide. Leave your details and we'll reach out soon. Prefer KakaoTalk? It only takes a minute.`,
+    ftKakao: `💬 Apply on KakaoTalk`,
+    ftAlt: `Call <a href="tel:+17782582223">778-258-2223</a> · Coquitlam #130–1140 Austin Ave`,
+    lblName: `Parent's name <span class="req">*</span>`, lblStudent: `Student's name`,
+    lblPhone: `Phone <span class="req">*</span>`, lblGrade: `Student grade`,
+    lblProgram: `Program of interest <span class="req">*</span>`,
+    lblEmail: `Email <span style="color:var(--gray);font-weight:600">(optional)</span>`,
+    lblMessage: `Message <span style="color:var(--gray);font-weight:600">(optional)</span>`,
+    optDefault: `Please select`, optCare: `After School Care (pickup·care·snacks)`,
+    optKids: `Kids' Tutoring (Math·Science·ELL)`, optAdult: `Adult Language (IELTS·French)`, optOther: `Other / Not sure`,
+    submit: `Submit Free Trial →`,
+    formNote: `We'll contact you within business hours. Your info is used only for consultation.`,
+    okMsg: `✅ Request received. We'll be in touch soon!`,
+    badMsg: `⚠️ Something went wrong. Please reach us on KakaoTalk (💬) or at 778-258-2223.`,
+    errName: `Please enter the parent's name`, errPhone: `Please enter a phone number`,
+    errProgram: `Please select a program`, errEmail: `Please enter a valid email`,
+    ftAddr: `#130 – 1140 Austin Ave, Coquitlam, BC<br>A trusted after-school that takes grades seriously.`,
+    ftContact: `Contact`, ftKakaoLink: `KakaoTalk consultation`, ftEmailLink: `Email us`,
+    ftPrograms: `Programs`, ftCare: `After School Care`, ftKids: `Kids' Tutoring (Math·Science·ELL)`, ftAdult: `Adult Language (IELTS·French)`,
+  };
+  const EN_PH = {
+    phName: `e.g. John Smith`, phStudent: `Child's name`, phGrade: `e.g. Grade 5 / Kinder / Adult`,
+    phMessage: `Any questions or a preferred trial date`,
+  };
+  const EN_ARIA = {
+    logoHome: `JC After School home`, mainMenu: `Main menu`, langGroup: `Language`,
+    heroArt: `Space for a photo of children being cared for at the center`,
+    stripAria: `4 reasons to choose JC After School`, statsAria: `Trust indicators`,
+  };
+  const META = {
+    ko: { title: `정철 애프터스쿨 JC After School · Coquitlam 방과후 돌봄 · 튜터링`,
+          desc: `Coquitlam 한인 방과후 돌봄. 학교 픽업부터 돌봄·간식, 수학·과학·영어 성적까지 한 곳에서. 무료 체험 신청하세요.` },
+    en: { title: `JC After School · Coquitlam After-School Care & Tutoring`,
+          desc: `Coquitlam Korean after-school care. From school pickup to care, snacks, and Math·Science·English — all in one place. Book a free trial.` },
+  };
+
+  // 한국어 원본(HTML에 이미 있음)을 보관 → 토글 시 복원
+  document.querySelectorAll('[data-i18n]').forEach(el => el.dataset.ko = el.innerHTML);
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => el.dataset.koPh = el.getAttribute('placeholder') || '');
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => el.dataset.koAria = el.getAttribute('aria-label') || '');
+  const metaDesc = document.querySelector('meta[name="description"]');
+
+  let LANG = 'ko';
+  function setLang(lang) {
+    LANG = (lang === 'en') ? 'en' : 'ko';
+    document.documentElement.lang = LANG;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      el.innerHTML = (LANG === 'en') ? (EN[k] ?? el.dataset.ko) : el.dataset.ko;
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+      const k = el.dataset.i18nPh;
+      el.setAttribute('placeholder', (LANG === 'en') ? (EN_PH[k] ?? el.dataset.koPh) : el.dataset.koPh);
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const k = el.dataset.i18nAria;
+      el.setAttribute('aria-label', (LANG === 'en') ? (EN_ARIA[k] ?? el.dataset.koAria) : el.dataset.koAria);
+    });
+    document.title = META[LANG].title;
+    if (metaDesc) metaDesc.setAttribute('content', META[LANG].desc);
+    document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
+    try { localStorage.setItem('jc-lang', LANG); } catch (e) {}
+    window.__renderReviews && window.__renderReviews();   // 후기 라벨 다시
+    window.__pretextRelayout && window.__pretextRelayout(); // Pretext 다시 측정
+  }
+  document.querySelectorAll('.lang button').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+  // 저장된 언어 적용 (기본 ko)
+  let saved = 'ko';
+  try { saved = localStorage.getItem('jc-lang') || 'ko'; } catch (e) {}
+  if (saved === 'en') setLang('en'); else setLang('ko');
+
   // ── Mobile menu toggle ──────────────────────────────
   const toggle = document.querySelector('.menu-toggle');
   const menu = document.getElementById('sitemenu');
   toggle?.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+    const t = { ko: ['메뉴 열기', '메뉴 닫기'], en: ['Open menu', 'Close menu'] }[LANG];
+    toggle.setAttribute('aria-label', open ? t[1] : t[0]);
   });
   menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     menu.classList.remove('open'); toggle?.setAttribute('aria-expanded', 'false');
   }));
 
-  // ── Language toggle (UI only; i18n wiring later) ─────
-  document.querySelectorAll('.lang button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
-    });
-  });
-
-  // ── 무료 체험 신청 폼 → EmailJS ───────────────────────
-  // TODO: EmailJS 대시보드에서 받은 값으로 아래 4개를 교체하세요.
-  //   1) Email Services → Service ID
-  //   2) Email Templates → Template ID
-  //       (템플릿 변수: {{from_name}} {{from_phone}} {{from_email}}
-  //        {{student_grade}} {{program}} {{message}} {{request_date}},
-  //        "To Email"은 JC 수신 주소 또는 {{to_email}})
-  //   3) Account → General → Public Key
-  //   4) toEmail: 문의를 받을 JC 이메일 주소
-  // 값이 placeholder 상태면 실제 전송 대신 데모 모드(접수 성공 표시)로 동작합니다.
+  // ════════════════════════════════════════════════════
+  // 무료 체험 신청 폼 → EmailJS
+  // ════════════════════════════════════════════════════
   const EMAIL_CONFIG = {
-    serviceId:  'service_ejg4a6t',                 // ✓ 입력됨
-    templateId: 'template_ptm8jye',                // ✓ 입력됨
-    publicKey:  'tDrvIwbUI4F5Nr_7g',               // ✓ 입력됨
-    toEmail:    'jcafterschool.ca@gmail.com'       // ✓ 템플릿 To Email과 동일
+    serviceId:  'service_ejg4a6t',
+    templateId: 'template_ptm8jye',
+    publicKey:  'tDrvIwbUI4F5Nr_7g',
+    toEmail:    'jcafterschool.ca@gmail.com'
   };
-
   const form = document.getElementById('trial-form');
   if (form) {
     const okMsg = document.getElementById('trial-ok');
@@ -409,11 +503,9 @@
     const submitBtn = document.getElementById('trial-submit');
     const isConfigured = !Object.values(EMAIL_CONFIG).some(v => String(v).startsWith('YOUR_'));
     const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (isConfigured && typeof emailjs !== 'undefined') {
       try { emailjs.init({ publicKey: EMAIL_CONFIG.publicKey }); } catch (e) { console.warn('EmailJS init:', e); }
     }
-
     const fieldOf = (input) => input.closest('.field');
     const validate = () => {
       let ok = true;
@@ -432,59 +524,39 @@
     form.querySelectorAll('input,select,textarea').forEach(el => {
       el.addEventListener('input', () => { fieldOf(el)?.classList.remove('has-error'); el.classList.remove('invalid'); });
     });
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       okMsg.classList.remove('show'); badMsg.classList.remove('show');
       if (!validate()) return;
-
       const data = new FormData(form);
       const g = (k) => (data.get(k) || '').trim();
       const now = new Date().toLocaleString('ko-KR');
-
-      // EmailJS 템플릿 본문이 {{name}}/{{message}}만 출력하므로,
-      // 모든 신청 정보를 {{message}} 한 칸에 묶어 보낸다(템플릿 수정 불필요).
+      // 수신 메일은 사장님(한국어)이 보므로 본문은 한국어로 구성
       const composed =
-        `■ 무료 체험 신청\n\n` +
-        `학부모 이름: ${g('name')}\n` +
-        `학생 이름: ${g('student') || '(미입력)'}\n` +
-        `연락처: ${g('phone')}\n` +
-        `이메일: ${g('email') || '(미입력)'}\n` +
-        `학생 학년: ${g('grade') || '(미입력)'}\n` +
-        `관심 프로그램: ${g('program')}\n` +
-        `문의 내용: ${g('message') || '(없음)'}\n\n` +
-        `신청 시각: ${now}`;
-
+        `■ 무료 체험 신청 (사이트 언어: ${LANG})\n\n` +
+        `학부모 이름: ${g('name')}\n학생 이름: ${g('student') || '(미입력)'}\n` +
+        `연락처: ${g('phone')}\n이메일: ${g('email') || '(미입력)'}\n` +
+        `학생 학년: ${g('grade') || '(미입력)'}\n관심 프로그램: ${g('program')}\n` +
+        `문의 내용: ${g('message') || '(없음)'}\n\n신청 시각: ${now}`;
       const params = {
-        // 템플릿이 실제 출력하는 두 변수
-        name: g('name'),
-        message: composed,
-        // 제목/회신용 + 추후 템플릿 확장 대비 개별 변수
+        name: g('name'), message: composed,
         title: `무료체험 신청 · ${g('program')} · ${g('name')}`,
         email: g('email') || EMAIL_CONFIG.toEmail,
-        student: g('student'),
-        phone: g('phone'),
-        grade: g('grade'),
-        program: g('program'),
-        to_email: EMAIL_CONFIG.toEmail,
-        request_date: now
+        student: g('student'), phone: g('phone'), grade: g('grade'), program: g('program'),
+        to_email: EMAIL_CONFIG.toEmail, request_date: now
       };
-
       const original = submitBtn.textContent;
-      submitBtn.disabled = true; submitBtn.textContent = '전송 중…';
+      submitBtn.disabled = true;
+      submitBtn.textContent = (LANG === 'en') ? 'Sending…' : '전송 중…';
       try {
-        if (!isConfigured) {
-          console.log('[데모 모드] EmailJS 미설정. 전송될 내용:', params);
-          await new Promise(r => setTimeout(r, 900));
-        } else {
-          await emailjs.send(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, params);
-        }
+        if (!isConfigured) { console.log('[demo] EmailJS not set:', params); await new Promise(r => setTimeout(r, 900)); }
+        else { await emailjs.send(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, params); }
         form.reset();
         okMsg.classList.add('show');
         okMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         setTimeout(() => okMsg.classList.remove('show'), 6000);
       } catch (err) {
-        console.error('EmailJS 전송 실패:', err);
+        console.error('EmailJS send failed:', err);
         badMsg.classList.add('show');
         setTimeout(() => badMsg.classList.remove('show'), 9000);
       } finally {
@@ -493,74 +565,66 @@
     });
   }
 
-  // ── 구글 리뷰 자동 로드 ───────────────────────────────
-  // web/reviews.json (scripts/fetch-reviews.py가 생성)이 있으면 카드를 교체.
-  // 없으면 위의 하드코딩 후기 카드를 그대로 유지(점진적 적용). 외부 텍스트는 이스케이프.
+  // ════════════════════════════════════════════════════
+  // 구글 리뷰 (web/reviews.json) — 언어별 라벨, 토글 시 재렌더
+  // ════════════════════════════════════════════════════
+  let reviewsData = null;
+  const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
+  const initial = (n) => esc((String(n || '?').trim().charAt(0) || '?').toUpperCase());
+  function renderReviews() {
+    if (!reviewsData) return;
+    const grid = document.querySelector('.review-cards');
+    const list = (reviewsData.reviews || []).filter(r => r && r.text);
+    if (!grid || !list.length) return;
+    const L = (LANG === 'en')
+      ? { src: '⭐ Google Review', sum: (t) => `${t} Google reviews`, more: 'See more on Google' }
+      : { src: '⭐ Google 리뷰', sum: (t) => `구글 리뷰 ${t}개`, more: '더 많은 후기는 구글에서' };
+    let html = list.map(r => {
+      const n = Math.max(1, Math.min(5, Math.round(r.rating || 5)));
+      return `<article class="review">
+        <div class="stars" aria-label="${n}/5">${'★'.repeat(n)}</div>
+        <p class="quote">“${esc(r.text)}”</p>
+        <div class="who"><span class="avatar" aria-hidden="true">${initial(r.name)}</span><div><div class="name">${esc(r.name)}</div><div class="src">${L.src}${r.when ? ' · ' + esc(r.when) : ''}</div></div></div>
+      </article>`;
+    }).join('');
+    if (reviewsData.total) {
+      html += `<article class="review" style="background:var(--cream-2);justify-content:center;text-align:center"><p class="quote" style="margin:0">⭐️⭐️⭐️⭐️⭐️<br><strong>${esc(reviewsData.rating ?? '5.0')}</strong> · ${L.sum(esc(reviewsData.total))}<br><span style="font-size:13px;color:var(--navy-soft)">${L.more}</span></p></article>`;
+    }
+    grid.innerHTML = html;
+  }
+  window.__renderReviews = renderReviews;
   (async () => {
     try {
       const res = await fetch('reviews.json', { cache: 'no-store' });
       if (!res.ok) return;
-      const data = await res.json();
-      const list = (data.reviews || []).filter(r => r && r.text);
-      const grid = document.querySelector('.review-cards');
-      if (!grid || !list.length) return;
-      const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;' }[c]));
-      const initial = (n) => esc((String(n || '?').trim().charAt(0) || '?').toUpperCase());
-      let html = list.map(r => {
-        const n = Math.max(1, Math.min(5, Math.round(r.rating || 5)));
-        return `<article class="review">
-          <div class="stars" aria-label="별점 ${n}점 만점">${'★'.repeat(n)}</div>
-          <p class="quote">“${esc(r.text)}”</p>
-          <div class="who"><span class="avatar" aria-hidden="true">${initial(r.name)}</span><div><div class="name">${esc(r.name)}</div><div class="src">⭐ Google 리뷰${r.when ? ' · ' + esc(r.when) : ''}</div></div></div>
-        </article>`;
-      }).join('');
-      if (data.total) {
-        html += `<article class="review" style="background:var(--cream-2);justify-content:center;text-align:center"><p class="quote" style="margin:0">⭐️⭐️⭐️⭐️⭐️<br><strong>${esc(data.rating ?? '5.0')}</strong> · 구글 리뷰 ${esc(data.total)}개<br><span style="font-size:13px;color:var(--navy-soft)">더 많은 후기는 구글에서</span></p></article>`;
-      }
-      grid.innerHTML = html;
+      reviewsData = await res.json();
+      renderReviews();
     } catch (e) { /* reviews.json 없음 → 하드코딩 카드 유지 */ }
   })();
 
-  // ── Pretext-native text layout ───────────────────────
-  // Headline + section titles get correct, resize-aware computed heights so
-  // text reflows precisely. Hero headline is contenteditable: edit it and the
-  // height recomputes instantly. Degrades gracefully if Pretext fails to load.
+  // ════════════════════════════════════════════════════
+  // Pretext — 헤드라인/섹션 제목 정밀 리플로우 (언어 전환 시 재측정)
+  // ════════════════════════════════════════════════════
   try {
     const { prepare, layout } = await import('./pretext.js');
     await (document.fonts ? document.fonts.ready : Promise.resolve());
-
     const els = document.querySelectorAll('[data-pretext]');
     const handles = new Map();
-
-    const fontOf = (el) => {
-      const s = getComputedStyle(el);
-      return `${s.fontStyle} ${s.fontWeight} ${parseFloat(s.fontSize)}px ${s.fontFamily}`;
-    };
-    const lineHeightOf = (el) => {
-      const s = getComputedStyle(el);
-      const lh = parseFloat(s.lineHeight);
-      return Number.isFinite(lh) ? lh : parseFloat(s.fontSize) * 1.18;
-    };
+    const fontOf = (el) => { const s = getComputedStyle(el); return `${s.fontStyle} ${s.fontWeight} ${parseFloat(s.fontSize)}px ${s.fontFamily}`; };
+    const lineHeightOf = (el) => { const s = getComputedStyle(el); const lh = parseFloat(s.lineHeight); return Number.isFinite(lh) ? lh : parseFloat(s.fontSize) * 1.18; };
     const reprepare = (el) => handles.set(el, prepare(el.textContent, fontOf(el)));
-
-    els.forEach(reprepare);
-
     function relayout() {
       for (const [el, h] of handles) {
         const { height } = layout(h, el.clientWidth, lineHeightOf(el));
-        // min-height (not height) so we never clip if a metric is off
         el.style.minHeight = `${Math.ceil(height)}px`;
       }
     }
-    relayout();
-
+    els.forEach(reprepare); relayout();
+    window.__pretextRelayout = () => { els.forEach(reprepare); relayout(); };
     new ResizeObserver(() => relayout()).observe(document.body);
-
-    // Re-prepare + relayout while editing the headline live
     els.forEach(el => {
       if (el.isContentEditable) {
-        new MutationObserver(() => { reprepare(el); relayout(); })
-          .observe(el, { characterData: true, subtree: true, childList: true });
+        new MutationObserver(() => { reprepare(el); relayout(); }).observe(el, { characterData: true, subtree: true, childList: true });
       }
     });
   } catch (e) {
