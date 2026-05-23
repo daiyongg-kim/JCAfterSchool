@@ -112,8 +112,18 @@
     nav.menu a{padding:10px 0}
     .menu-toggle{display:block;order:-1}
     .nav .right .btn-primary{display:none}
+    /* 모바일 헤더: 간격·로고 축소로 빡빡함 해소 */
+    .nav{gap:12px}
+    .logo{font-size:16px;gap:7px;min-width:0}
+    .logo .mark{width:30px;height:30px;font-size:13px}
+    .logo > span{white-space:nowrap}
   }
-  @media(max-width:560px){.strip,.cards,.stats,footer .grid{grid-template-columns:1fr}}
+  @media(max-width:560px){
+    .strip,.cards,.stats,footer .grid{grid-template-columns:1fr}
+    header .logo .sub{display:none}   /* 좁은 화면: 영문 서브라인 숨겨 한 줄로 */
+    .lang button{padding:5px 9px}
+    .wrap{padding:0 18px}
+  }
 
   /* ── 무료 체험 신청 폼 ── */
   .apply{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start;margin-top:28px}
