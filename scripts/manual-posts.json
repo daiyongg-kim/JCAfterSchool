@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "class-update-2026-05-22",
+    "iso": "2026-05-22",
+    "date_ko": "2026. 5. 22.",
+    "date_en": "May 22, 2026",
+    "category_ko": "수업 이야기",
+    "category_en": "Class Update",
+    "ko": {
+      "title": "교실 이야기 — 글쓰기, 팝콘 과학, 그리고 금요 성경수업",
+      "blocks": [
+        {"t": "text", "v": "이번 수업의 글쓰기에서는 동사 시제, 플롯(이야기 구성), 자주 쓰는 관용표현, 인용, 문단 나누기, 그리고 학생들이 관심 있는 분야의 어휘·철자력 키우기, 창의적 글쓰기 ✍️ 능력, 수정(편집)에 주의 기울이기를 함께 다루고 있습니다. 다음 단계에서는 학생들이 글을 다시 쓰고 다듬어, 더 보기 좋고 명확하며 기술적 오류가 적은 글로 완성해 나갈 거예요."},
+        {"t": "img", "v": "man-0522-4.jpg"},
+        {"t": "img", "v": "man-0522-5.jpg"},
+        {"t": "text", "v": "또한 오늘은 신선한 팝콘을 직접 튀기는 건강한 활동에 세 가지 과학 개념을 연결해 보았습니다. 열을 가하면 물질의 밀도가 높아지거나 낮아진다는 것, 온도에 따라 물질이 서로 다른 상태(고체·액체·기체)로 형태를 바꾼다는 것, 상태 변화를 일으키는 온도가 물질마다 다르다는 것, 그리고 한 상태에서 다음 상태로 넘어갈 때 '밀도'가 정확히 무엇을 의미하는지를 함께 살펴봤어요."},
+        {"t": "img", "v": "man-0522-2.jpg"},
+        {"t": "img", "v": "man-0522-3.jpg"},
+        {"t": "img", "v": "man-0522-1.jpg"},
+        {"t": "text", "v": "오늘 금요 성경수업은 요한복음을 이어서 읽었습니다. 처음 세 장은 예수님이 곧 하나님이시라는 것(성부·성자·성령 삼위일체가 하나 되심), 세례의 상징, '거듭남'에 대한 인간의 근본적 필요, 말씀의 능력, 그리고 우리가 기도할 수 있는 자유 같은 핵심적인 기독교 개념으로 곧장 이어집니다. 아주 표면만 다루었으니, 관심과 가정의 상황에 맞게 가족과 함께 이 개념들을 더 깊이 나눠보시길 권합니다. 🙏"},
+        {"t": "text", "v": "모두 복되고 사랑스러운 주말 보내세요. TGIF — 금요일이라 정말 감사합니다 💕💕💕"},
+        {"t": "img", "v": "man-0522-6.jpg"}
+      ]
+    },
+    "en": {
+      "title": "In Class — Creative Writing, Popcorn Science & Friday Bible",
+      "blocks": [
+        {"t": "text", "v": "The writing we are doing in class incorporates the concepts of verb tenses, plot, common idioms, quotations, paragraph divisions, vocabulary and spelling building in areas of student interests, creative writing ✍️ skills, and practice attending to edits. It will be in subsequent steps that the students will work on re-drafting and polishing their work to be more presentable, clear, and with fewer technical errors."},
+        {"t": "img", "v": "man-0522-4.jpg"},
+        {"t": "img", "v": "man-0522-5.jpg"},
+        {"t": "text", "v": "Additionally, today we related three scientific concepts to the healthful activity of popping fresh popcorn. These were concepts about matter being more or less dense with the addition of heat; matter taking on different forms in different states depending on temperature; the temperature causing a change of state varying between different substances; and exactly what density means from one state to the next."},
+        {"t": "img", "v": "man-0522-2.jpg"},
+        {"t": "img", "v": "man-0522-3.jpg"},
+        {"t": "img", "v": "man-0522-1.jpg"},
+        {"t": "text", "v": "Our Friday Bible Lesson today continued our reading from the Gospel of John. The first three chapters lead straight into some essential Christian concepts: Jesus being God (the Trinity of Father, Son, and Holy Spirit, as One), the symbolism of baptism, the essential human need for being “born again,” the power of a word, and our freedom to pray. We barely touched the surface, so please explore these concepts further with your families, as you see fit or according to your interest. 🙏"},
+        {"t": "text", "v": "Have a blessed and lovely weekend, everyone. TGIF — Thank goodness it’s Friday 💕💕💕"},
+        {"t": "img", "v": "man-0522-6.jpg"}
+      ]
+    }
+  }
+]

@@ -22,6 +22,7 @@ KAKAO = "https://open.kakao.com/o/sn2X2Kii"
 ROOT = Path(__file__).parent.parent
 OUT = ROOT / "web" / "blog"
 IMG = OUT / "img"
+MANUAL_JSON = ROOT / "scripts" / "manual-posts.json"
 UA = "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148"
 
 
@@ -104,7 +105,8 @@ h1{font-size:clamp(28px,5vw,38px);line-height:1.25;letter-spacing:-.02em;font-we
 article p{font-size:17px;color:#2b3a4a;margin:0 0 20px}article p.tags{font-size:13.5px;color:var(--amber);font-weight:700;margin-bottom:6px;word-break:keep-all}
 article figure{margin:28px 0}article figure img{width:100%;border-radius:var(--r-lg);border:1px solid var(--line);box-shadow:var(--shadow-sm);display:block}
 .source{margin-top:40px;padding:18px 20px;background:var(--cream-2);border:1px solid var(--line);border-radius:var(--r-md);font-size:13.5px;color:var(--navy-soft)}.source a{color:var(--red);font-weight:700}
-.cta{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}.btn{font-weight:700;border-radius:var(--r-sm);padding:12px 22px;font-size:15px;display:inline-block}.btn-primary{background:var(--red);color:#fff}.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}"""
+.cta{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}.btn{font-weight:700;border-radius:var(--r-sm);padding:12px 22px;font-size:15px;display:inline-block}.btn-primary{background:var(--red);color:#fff}.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
+.langsw{display:inline-flex;gap:2px;font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;margin-bottom:18px}.langsw a{padding:5px 12px;color:var(--gray)}.langsw a.on{background:var(--navy);color:var(--cream)}"""
 
 INDEX_CSS = """.wrap{max-width:1000px;margin:0 auto;padding:48px 24px 80px}
 .head{margin-bottom:36px}.head .lbl{font-family:var(--en);font-style:italic;font-size:16px;color:var(--red)}
@@ -199,12 +201,55 @@ def render_index(cards):
 </html>"""
 
 
+def render_manual(pair, lang):
+    """수동 글(영/한). lang='ko'|'en'. 두 언어 페이지가 서로 토글 링크."""
+    data = pair[lang]
+    other = "en" if lang == "ko" else "ko"
+    other_url = f'{pair["slug"]}-en.html' if lang == "ko" else f'{pair["slug"]}.html'
+    self_url = f'{pair["slug"]}.html' if lang == "ko" else f'{pair["slug"]}-en.html'
+    cat = pair[f"category_{lang}"]
+    date = pair[f"date_{lang}"]
+    L = {"ko": {"home": "../index.html", "back": "← 블로그 목록", "by": "정철 애프터스쿨",
+                "trial": "무료 체험 신청 →", "list": "블로그 목록"},
+         "en": {"home": "../index.html", "back": "← Blog", "by": "JC After School",
+                "trial": "Get a Free Trial →", "list": "Blog"}}[lang]
+    parts = []
+    for b in data["blocks"]:
+        if b["t"] == "text":
+            cls = ' class="tags"' if b["v"].startswith("#") else ""
+            parts.append(f'<p{cls}>{html.escape(b["v"])}</p>')
+        else:
+            parts.append(f'<figure><img src="img/{b["v"]}" alt="" loading="lazy"></figure>')
+    body = "\n      ".join(parts)
+    head = head_html(f'{data["title"]} · {BLOG_NAME}', data["title"],
+                     f'https://jcafterschool.ca/blog/{self_url}')
+    head = head.replace("{extra}", POST_CSS).replace("{home}", L["home"]).replace("{back_href}", "index.html").replace("{back_txt}", L["back"])
+    ko_cls = "on" if lang == "ko" else ""
+    en_cls = "on" if lang == "en" else ""
+    toggle = (f'<div class="langsw"><a href="{pair["slug"]}.html" class="{ko_cls}">한국어</a>'
+              f'<a href="{pair["slug"]}-en.html" class="{en_cls}">EN</a></div>')
+    return head + f"""
+<article>
+  {toggle}
+  <span class="cat">{html.escape(cat)}</span>
+  <h1>{html.escape(data["title"])}</h1>
+  <div class="meta">{L["by"]} · {date}</div>
+  {body}
+  <div class="cta">
+    <a class="btn btn-primary" href="../index.html#contact">{L["trial"]}</a>
+    <a class="btn btn-ghost" href="index.html">{L["list"]}</a>
+  </div>
+</article>
+</body>
+</html>"""
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     IMG.mkdir(parents=True, exist_ok=True)
     posts = get_posts()
     print(f"RSS 글 {len(posts)}개")
-    cards = []
+    cards = []  # (iso, html) 튜플로 모아 날짜순 정렬
     for p in posts:
         try:
             items = parse_post(p["logNo"])
@@ -225,15 +270,37 @@ def main():
         # 인덱스 카드
         thumb = f'<img src="img/{imgmap[1]}" alt="" loading="lazy">' if imgmap.get(1) else ""
         excerpt = next((v for k, v in items if k == "text" and not v.startswith("#") and len(v) > 12), "")
-        cards.append(f'''<a class="post" href="{p["logNo"]}.html">
+        cards.append((p["iso"], f'''<a class="post" href="{p["logNo"]}.html">
       <div class="thumb">{thumb}</div>
       <div class="body"><span class="cat">{html.escape(p["category"] or "소식")}</span>
         <h2>{html.escape(p["title"])}</h2>
         <p class="ex">{html.escape(excerpt[:100])}</p>
-        <div class="date">{p["date"]}</div></div></a>''')
+        <div class="date">{p["date"]}</div></div></a>'''))
         print(f'  ✓ {p["logNo"]} {p["title"][:30]} (이미지 {len(imgmap)})')
-    (OUT / "index.html").write_text(render_index("\n    ".join(cards)), encoding="utf-8")
-    print(f"\n✅ 완료: web/blog/index.html + {len(posts)}개 글")
+
+    # ── 수동 글(영/한) 병합 ──
+    manual = []
+    if MANUAL_JSON.exists():
+        manual = json.loads(MANUAL_JSON.read_text(encoding="utf-8"))
+    for pair in manual:
+        (OUT / f'{pair["slug"]}.html').write_text(render_manual(pair, "ko"), encoding="utf-8")
+        (OUT / f'{pair["slug"]}-en.html').write_text(render_manual(pair, "en"), encoding="utf-8")
+        ko = pair["ko"]
+        thumb_img = next((b["v"] for b in ko["blocks"] if b["t"] == "img"), None)
+        thumb = f'<img src="img/{thumb_img}" alt="" loading="lazy">' if thumb_img else ""
+        excerpt = next((b["v"] for b in ko["blocks"] if b["t"] == "text" and not b["v"].startswith("#")), "")
+        cards.append((pair["iso"], f'''<a class="post" href="{pair["slug"]}.html">
+      <div class="thumb">{thumb}</div>
+      <div class="body"><span class="cat">{html.escape(pair["category_ko"])}</span>
+        <h2>{html.escape(ko["title"])}</h2>
+        <p class="ex">{html.escape(excerpt[:100])}</p>
+        <div class="date">{pair["date_ko"]}</div></div></a>'''))
+        print(f'  ✓ [수동] {pair["slug"]} (한/영)')
+
+    # 날짜 내림차순 정렬
+    cards.sort(key=lambda c: c[0], reverse=True)
+    (OUT / "index.html").write_text(render_index("\n    ".join(h for _, h in cards)), encoding="utf-8")
+    print(f"\n✅ 완료: web/blog/index.html + RSS {len(posts)}개 + 수동 {len(manual)}쌍")
 
 
 if __name__ == "__main__":
