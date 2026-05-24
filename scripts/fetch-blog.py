@@ -309,7 +309,27 @@ def main():
     # 날짜 내림차순 정렬
     cards.sort(key=lambda c: c[0], reverse=True)
     (OUT / "index.html").write_text(render_index("\n    ".join(h for _, h in cards)), encoding="utf-8")
+
+    # ── sitemap.xml 자동 생성 (홈 + 블로그 목록 + 모든 글) ──
+    today = __import__("datetime").date.today().isoformat()
+    urls = [("https://jcafterschool.ca/", today, "1.0"),
+            ("https://jcafterschool.ca/blog/", today, "0.8")]
+    for p in posts:
+        urls.append((f'https://jcafterschool.ca/blog/{p["logNo"]}.html', p["iso"] or today, "0.6"))
+    for pair in manual:
+        lg = pair.get("publish", ["ko", "en"])
+        urls.append((f'https://jcafterschool.ca/blog/{pair["slug"]}.html', pair["iso"], "0.6"))
+        if len(lg) > 1:
+            urls.append((f'https://jcafterschool.ca/blog/{pair["slug"]}-en.html', pair["iso"], "0.6"))
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for loc, mod, pri in urls:
+        sm.append(f'  <url><loc>{loc}</loc><lastmod>{mod}</lastmod><changefreq>weekly</changefreq><priority>{pri}</priority></url>')
+    sm.append('</urlset>')
+    (ROOT / "web" / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
+
     print(f"\n✅ 완료: web/blog/index.html + RSS {len(posts)}개 + 수동 {len(manual)}쌍")
+    print(f"   sitemap.xml: {len(urls)}개 URL")
 
 
 if __name__ == "__main__":
