@@ -196,7 +196,6 @@ def render_index(cards):
     {cards}
   </div>
 </div>
-<footer>더 많은 글은 <a href="https://blog.naver.com/{BLOG_ID}" target="_blank" rel="noopener">네이버 블로그</a>에서 · <a href="../index.html">홈으로</a></footer>
 </body>
 </html>"""
 
