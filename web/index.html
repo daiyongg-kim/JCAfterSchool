@@ -42,16 +42,17 @@
 
   header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--cream) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav{display:flex;align-items:center;gap:28px;height:72px}
-  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;letter-spacing:-.02em}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;letter-spacing:-.02em;flex-shrink:0}
   .logo .mark{display:grid;place-items:center;width:34px;height:34px;border-radius:var(--r-sm);background:var(--red);color:#fff;font-weight:900;font-size:15px;font-family:var(--en)}
-  .logo .sub{font-size:11px;color:var(--gray);font-weight:600;letter-spacing:.04em}
-  nav.menu{display:flex;gap:24px;margin-left:12px;font-weight:600;font-size:15px;color:var(--navy-soft)}
+  .logo .sub{font-size:11px;color:var(--gray);font-weight:600;letter-spacing:.04em;white-space:nowrap}
+  nav.menu{display:flex;gap:20px;margin-left:12px;font-weight:600;font-size:15px;color:var(--navy-soft)}
+  nav.menu a{white-space:nowrap}
   nav.menu a:hover{color:var(--red)}
   .nav .right{margin-left:auto;display:flex;align-items:center;gap:14px}
   .lang{display:flex;gap:2px;font-size:13px;font-weight:700;color:var(--gray);border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
-  .lang button{font:inherit;border:0;background:transparent;color:var(--gray);padding:5px 11px;cursor:pointer}
+  .lang button{font:inherit;border:0;background:transparent;color:var(--gray);padding:5px 11px;cursor:pointer;white-space:nowrap}
   .lang button[aria-pressed="true"]{background:var(--navy);color:var(--cream)}
-  .btn{font-family:var(--kr);font-weight:700;border-radius:var(--r-btn);padding:11px 22px;font-size:15px;cursor:pointer;border:none;transition:.18s;display:inline-block;text-align:center}
+  .btn{font-family:var(--kr);font-weight:700;border-radius:var(--r-btn);padding:11px 22px;font-size:15px;cursor:pointer;border:none;transition:.18s;display:inline-block;text-align:center;white-space:nowrap}
   .btn-primary{background:var(--red);color:#fff;box-shadow:0 12px 24px -12px rgba(214,64,47,.55)}
   .btn-primary:hover{background:var(--red-dark);transform:translateY(-1px)}
   .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
@@ -413,7 +414,7 @@
   const EN = {
     skip: `Skip to content`,
     brand: `JC After School`,
-    navCare: `After School Care`, navKids: `Youth Tutoring`, navAdult: `Adult Language`,
+    navCare: `After-School`, navKids: `Tutoring`, navAdult: `Languages`,
     navReviews: `Reviews`, navBlog: `Blog`, navContact: `Contact`,
     headerCta: `Free Trial`,
     eyebrow: `Tri-City · Burnaby · Surrey Pickup`,
