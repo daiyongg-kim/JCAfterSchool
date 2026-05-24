@@ -180,6 +180,8 @@
   .review .name{font-weight:700;font-size:14px}
   .review .src{font-size:12px;color:var(--gray);display:flex;align-items:center;gap:5px}
   .reviews-cta{margin-top:26px}
+  .reviews-ask{color:var(--navy-soft);font-size:15px;margin-bottom:14px}
+  .reviews-btns{display:flex;gap:12px;flex-wrap:wrap}
   @media(max-width:560px){.review-cards{grid-template-columns:1fr}}
 
   /* ── 갤러리 ── */
@@ -315,7 +317,11 @@
       </article>
     </div>
     <div class="reviews-cta">
-      <a class="btn btn-ghost" href="https://search.google.com/local/reviews?placeid=ChIJ4YzXflV5hlQRVbvCp3d9zhA" target="_blank" rel="noopener" data-i18n="revCta">⭐ 구글 리뷰 전체 보기 →</a>
+      <p class="reviews-ask" data-i18n="revAsk">JC를 경험하셨다면 구글에 따뜻한 후기 한 줄 남겨주세요. 다른 학부모님께 큰 힘이 됩니다 🙏</p>
+      <div class="reviews-btns">
+        <a class="btn btn-primary" href="https://search.google.com/local/writereview?placeid=ChIJ4YzXflV5hlQRVbvCp3d9zhA" target="_blank" rel="noopener" data-i18n="revWrite">✍️ 후기 남기기</a>
+        <a class="btn btn-ghost" href="https://search.google.com/local/reviews?placeid=ChIJ4YzXflV5hlQRVbvCp3d9zhA" target="_blank" rel="noopener" data-i18n="revCta">⭐ 구글 리뷰 전체 보기 →</a>
+      </div>
     </div>
   </section>
 
@@ -445,6 +451,8 @@
     statN2: `Small`, statL1: `years parents have trusted us`, statL2: `small-group, personal care`, statL3: `care + learning, all grades`,
     revTitle: `Real parent reviews`, revSub: `Genuine reviews left on Google Maps.`,
     revCta: `⭐ See all Google reviews →`,
+    revAsk: `Been to JC? Please leave a quick review on Google — it means a lot to other parents 🙏`,
+    revWrite: `✍️ Write a review`,
     galTitle: `A day at JC`, galSub: `Pickup and care, fun activities, and warm snacks.`,
     galCap1: `Cooking class`, galCap2: `Warm snacks`, galCap3: `Fun activities`, galCap4: `Hot lunch`,
     ftTitle: `Try a free day first.`,
