@@ -63,6 +63,11 @@
   .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--amber)}
   h1{font-size:clamp(34px,4.6vw,52px);line-height:1.18;letter-spacing:-.03em;font-weight:800;margin-bottom:20px}
   h1 .accent{color:var(--red)}
+  /* 영문 제목 사이즈·행간 조정 — 한/영 세로 리듬 일치 */
+  html[lang="en"] h1{font-size:clamp(30px,3.4vw,42px);line-height:1.18;letter-spacing:-.02em}
+  html[lang="en"] .sec-title{font-size:26px}
+  html[lang="en"] .lead{font-size:16.5px}
+  html[lang="en"] .ctaband h2,html[lang="en"] .apply-intro h2{font-size:26px}
   .lead{font-size:18px;color:var(--navy-soft);max-width:440px;margin-bottom:14px}
   .lead .tags{font-weight:700;color:var(--navy)}
   .cta-row{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
