@@ -169,9 +169,6 @@ def render_post(post, items, imgmap):
   <h1>{html.escape(post["title"])}</h1>
   <div class="meta">{BLOG_NAME} · {post["date"]}</div>
   {body}
-  <div class="source">이 글은 {BLOG_NAME} 네이버 블로그에서 가져왔습니다. 원문 보기 →
-    <a href="https://blog.naver.com/{BLOG_ID}/{post["logNo"]}" target="_blank" rel="noopener">네이버 블로그</a>
-  </div>
   <div class="cta">
     <a class="btn btn-primary" href="../index.html#contact">무료 체험 신청 →</a>
     <a class="btn btn-ghost" href="index.html">블로그 목록</a>
