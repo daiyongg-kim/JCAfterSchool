@@ -440,7 +440,7 @@
     revTitle: `Real parent reviews`, revSub: `Genuine reviews left on Google Maps.`,
     revCta: `⭐ See all Google reviews →`,
     galTitle: `A day at JC`, galSub: `Pickup and care, fun activities, and warm snacks.`,
-    galCap1: `Cooking class`, galCap2: `Warm snacks`, galCap3: `Fun activities`, galCap4: `Hearty lunch`,
+    galCap1: `Cooking class`, galCap2: `Warm snacks`, galCap3: `Fun activities`, galCap4: `Hot lunch`,
     ftTitle: `Try a free day first.`,
     ftP: `Let your child experience it and decide. Leave your details and we'll reach out soon. Prefer KakaoTalk? It only takes a minute.`,
     ftKakao: `💬 Apply on KakaoTalk`,
@@ -505,7 +505,6 @@
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
     try { localStorage.setItem('jc-lang', LANG); } catch (e) {}
     window.__renderReviews && window.__renderReviews();   // 후기 라벨 다시
-    window.__pretextRelayout && window.__pretextRelayout(); // Pretext 다시 측정
   }
   document.querySelectorAll('.lang button').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
@@ -642,35 +641,6 @@
       renderReviews();
     } catch (e) { /* reviews.json 없음 → 하드코딩 카드 유지 */ }
   })();
-
-  // ════════════════════════════════════════════════════
-  // Pretext — 헤드라인/섹션 제목 정밀 리플로우 (언어 전환 시 재측정)
-  // ════════════════════════════════════════════════════
-  try {
-    const { prepare, layout } = await import('./pretext.js');
-    await (document.fonts ? document.fonts.ready : Promise.resolve());
-    const els = document.querySelectorAll('[data-pretext]');
-    const handles = new Map();
-    const fontOf = (el) => { const s = getComputedStyle(el); return `${s.fontStyle} ${s.fontWeight} ${parseFloat(s.fontSize)}px ${s.fontFamily}`; };
-    const lineHeightOf = (el) => { const s = getComputedStyle(el); const lh = parseFloat(s.lineHeight); return Number.isFinite(lh) ? lh : parseFloat(s.fontSize) * 1.18; };
-    const reprepare = (el) => handles.set(el, prepare(el.textContent, fontOf(el)));
-    function relayout() {
-      for (const [el, h] of handles) {
-        const { height } = layout(h, el.clientWidth, lineHeightOf(el));
-        el.style.minHeight = `${Math.ceil(height)}px`;
-      }
-    }
-    els.forEach(reprepare); relayout();
-    window.__pretextRelayout = () => { els.forEach(reprepare); relayout(); };
-    new ResizeObserver(() => relayout()).observe(document.body);
-    els.forEach(el => {
-      if (el.isContentEditable) {
-        new MutationObserver(() => { reprepare(el); relayout(); }).observe(el, { characterData: true, subtree: true, childList: true });
-      }
-    });
-  } catch (e) {
-    console.warn('Pretext unavailable, falling back to native flow layout:', e);
-  }
 </script>
 </body>
 </html>
