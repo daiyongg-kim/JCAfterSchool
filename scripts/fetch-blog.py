@@ -125,9 +125,9 @@ footer{border-top:1px solid var(--line);padding:30px 24px;text-align:center;font
 @media(max-width:880px){.grid{grid-template-columns:1fr 1fr}}@media(max-width:560px){.grid{grid-template-columns:1fr}}"""
 
 
-def head_html(title, desc, canonical):
+def head_html(title, desc, canonical, htmllang="ko"):
     return f"""<!DOCTYPE html>
-<html lang="ko">
+<html lang="{htmllang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -201,12 +201,10 @@ def render_index(cards):
 </html>"""
 
 
-def render_manual(pair, lang):
-    """수동 글(영/한). lang='ko'|'en'. 두 언어 페이지가 서로 토글 링크."""
+def render_manual(pair, lang, solo=False):
+    """수동 글. lang='ko'|'en'. solo=True면 단일 언어(토글 없음, {slug}.html)."""
     data = pair[lang]
-    other = "en" if lang == "ko" else "ko"
-    other_url = f'{pair["slug"]}-en.html' if lang == "ko" else f'{pair["slug"]}.html'
-    self_url = f'{pair["slug"]}.html' if lang == "ko" else f'{pair["slug"]}-en.html'
+    self_url = f'{pair["slug"]}.html' if (solo or lang == "ko") else f'{pair["slug"]}-en.html'
     cat = pair[f"category_{lang}"]
     date = pair[f"date_{lang}"]
     L = {"ko": {"home": "../index.html", "back": "← 블로그 목록", "by": "정철 애프터스쿨",
@@ -222,12 +220,15 @@ def render_manual(pair, lang):
             parts.append(f'<figure><img src="img/{b["v"]}" alt="" loading="lazy"></figure>')
     body = "\n      ".join(parts)
     head = head_html(f'{data["title"]} · {BLOG_NAME}', data["title"],
-                     f'https://jcafterschool.ca/blog/{self_url}')
+                     f'https://jcafterschool.ca/blog/{self_url}', htmllang=lang)
     head = head.replace("{extra}", POST_CSS).replace("{home}", L["home"]).replace("{back_href}", "index.html").replace("{back_txt}", L["back"])
-    ko_cls = "on" if lang == "ko" else ""
-    en_cls = "on" if lang == "en" else ""
-    toggle = (f'<div class="langsw"><a href="{pair["slug"]}.html" class="{ko_cls}">한국어</a>'
-              f'<a href="{pair["slug"]}-en.html" class="{en_cls}">EN</a></div>')
+    if solo:
+        toggle = ""
+    else:
+        ko_cls = "on" if lang == "ko" else ""
+        en_cls = "on" if lang == "en" else ""
+        toggle = (f'<div class="langsw"><a href="{pair["slug"]}.html" class="{ko_cls}">한국어</a>'
+                  f'<a href="{pair["slug"]}-en.html" class="{en_cls}">EN</a></div>')
     return head + f"""
 <article>
   {toggle}
@@ -283,19 +284,31 @@ def main():
     if MANUAL_JSON.exists():
         manual = json.loads(MANUAL_JSON.read_text(encoding="utf-8"))
     for pair in manual:
-        (OUT / f'{pair["slug"]}.html').write_text(render_manual(pair, "ko"), encoding="utf-8")
-        (OUT / f'{pair["slug"]}-en.html').write_text(render_manual(pair, "en"), encoding="utf-8")
-        ko = pair["ko"]
-        thumb_img = next((b["v"] for b in ko["blocks"] if b["t"] == "img"), None)
+        langs = pair.get("publish", ["ko", "en"])
+        solo = len(langs) == 1
+        if solo:
+            lg = langs[0]
+            (OUT / f'{pair["slug"]}.html').write_text(render_manual(pair, lg, solo=True), encoding="utf-8")
+            # 단일 언어이므로 -en 페이지가 남아있으면 제거
+            stray = OUT / f'{pair["slug"]}-en.html'
+            if stray.exists():
+                stray.unlink()
+            card_lang = lg
+        else:
+            (OUT / f'{pair["slug"]}.html').write_text(render_manual(pair, "ko"), encoding="utf-8")
+            (OUT / f'{pair["slug"]}-en.html').write_text(render_manual(pair, "en"), encoding="utf-8")
+            card_lang = "ko"
+        data = pair[card_lang]
+        thumb_img = next((b["v"] for b in data["blocks"] if b["t"] == "img"), None)
         thumb = f'<img src="img/{thumb_img}" alt="" loading="lazy">' if thumb_img else ""
-        excerpt = next((b["v"] for b in ko["blocks"] if b["t"] == "text" and not b["v"].startswith("#")), "")
+        excerpt = next((b["v"] for b in data["blocks"] if b["t"] == "text" and not b["v"].startswith("#")), "")
         cards.append((pair["iso"], f'''<a class="post" href="{pair["slug"]}.html">
       <div class="thumb">{thumb}</div>
-      <div class="body"><span class="cat">{html.escape(pair["category_ko"])}</span>
-        <h2>{html.escape(ko["title"])}</h2>
+      <div class="body"><span class="cat">{html.escape(pair["category_" + card_lang])}</span>
+        <h2>{html.escape(data["title"])}</h2>
         <p class="ex">{html.escape(excerpt[:100])}</p>
-        <div class="date">{pair["date_ko"]}</div></div></a>'''))
-        print(f'  ✓ [수동] {pair["slug"]} (한/영)')
+        <div class="date">{pair["date_" + card_lang]}</div></div></a>'''))
+        print(f'  ✓ [수동] {pair["slug"]} ({"/".join(langs)})')
 
     # 날짜 내림차순 정렬
     cards.sort(key=lambda c: c[0], reverse=True)
