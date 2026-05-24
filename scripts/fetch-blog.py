@@ -12,7 +12,7 @@ import re, html, json, sys, urllib.request, io
 from pathlib import Path
 from datetime import datetime
 from email.utils import parsedate_to_datetime
-from PIL import Image
+from PIL import Image, ImageOps
 
 BLOG_ID = "8488jy"
 BLOG_NAME = "정철 애프터스쿨"
@@ -78,7 +78,7 @@ def save_image(url, dest, max_w=900, quality=62):
         return True
     try:
         raw = fetch(url + "?type=w800", referer=f"https://blog.naver.com/{BLOG_ID}")
-        im = Image.open(io.BytesIO(raw)).convert("RGB")
+        im = ImageOps.exif_transpose(Image.open(io.BytesIO(raw))).convert("RGB")  # EXIF 방향 적용
         if im.width > max_w:
             im = im.resize((max_w, round(im.height * max_w / im.width)), Image.LANCZOS)
         dest.parent.mkdir(parents=True, exist_ok=True)
