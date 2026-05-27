@@ -106,7 +106,10 @@ article p{font-size:17px;color:#2b3a4a;margin:0 0 20px}article p.tags{font-size:
 article figure{margin:28px 0}article figure img{width:100%;border-radius:var(--r-lg);border:1px solid var(--line);box-shadow:var(--shadow-sm);display:block}
 .source{margin-top:40px;padding:18px 20px;background:var(--cream-2);border:1px solid var(--line);border-radius:var(--r-md);font-size:13.5px;color:var(--navy-soft)}.source a{color:var(--red);font-weight:700}
 .cta{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}.btn{font-weight:700;border-radius:var(--r-sm);padding:12px 22px;font-size:15px;display:inline-block}.btn-primary{background:var(--red);color:#fff}.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
-.langsw{display:inline-flex;gap:2px;font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;margin-bottom:18px}.langsw a{padding:5px 12px;color:var(--gray)}.langsw a.on{background:var(--navy);color:var(--cream)}"""
+.langsw{display:inline-flex;gap:2px;font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;margin-bottom:18px}.langsw a{padding:5px 12px;color:var(--gray)}.langsw a.on{background:var(--navy);color:var(--cream)}
+.post-h{font-size:21px;font-weight:800;letter-spacing:-.01em;margin:32px 0 12px}
+.post-li{font-size:16.5px;color:#2b3a4a;line-height:1.7;padding:6px 0 6px 22px;position:relative}
+.post-li:before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--amber)}"""
 
 INDEX_CSS = """.wrap{max-width:1000px;margin:0 auto;padding:48px 24px 80px}
 .head{margin-bottom:36px}.head .lbl{font-family:var(--en);font-style:italic;font-size:16px;color:var(--red)}
@@ -209,10 +212,17 @@ def render_manual(pair, lang, solo=False):
                 "trial": "Get a Free Trial →", "list": "Blog"}}[lang]
     parts = []
     for b in data["blocks"]:
-        if b["t"] == "text":
+        t = b["t"]
+        if t == "text":
             cls = ' class="tags"' if b["v"].startswith("#") else ""
             parts.append(f'<p{cls}>{html.escape(b["v"])}</p>')
-        else:
+        elif t == "h":
+            parts.append(f'<h2 class="post-h">{html.escape(b["v"])}</h2>')
+        elif t == "li":
+            parts.append(f'<div class="post-li">{html.escape(b["v"])}</div>')
+        elif t == "html":  # 신뢰된 자체 HTML(링크 등)
+            parts.append(b["v"])
+        elif t == "img":
             parts.append(f'<figure><img src="img/{b["v"]}" alt="" loading="lazy"></figure>')
     body = "\n      ".join(parts)
     head = head_html(f'{data["title"]} · {BLOG_NAME}', data["title"],
