@@ -108,6 +108,7 @@ article figure{margin:28px 0}article figure img{width:100%;border-radius:var(--r
 .cta{margin-top:36px;display:flex;gap:12px;flex-wrap:wrap}.btn{font-weight:700;border-radius:var(--r-sm);padding:12px 22px;font-size:15px;display:inline-block}.btn-primary{background:var(--red);color:#fff}.btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
 .langsw{display:inline-flex;gap:2px;font-size:13px;font-weight:700;border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden;margin-bottom:18px}.langsw a{padding:5px 12px;color:var(--gray)}.langsw a.on{background:var(--navy);color:var(--cream)}
 .post-h{font-size:21px;font-weight:800;letter-spacing:-.01em;margin:32px 0 12px}
+.post-h3{font-size:17.5px;font-weight:800;color:var(--navy);margin:22px 0 8px}
 .post-li{font-size:16.5px;color:#2b3a4a;line-height:1.7;padding:6px 0 6px 22px;position:relative}
 .post-li:before{content:"";position:absolute;left:2px;top:15px;width:7px;height:7px;border-radius:50%;background:var(--amber)}"""
 
@@ -218,6 +219,8 @@ def render_manual(pair, lang, solo=False):
             parts.append(f'<p{cls}>{html.escape(b["v"])}</p>')
         elif t == "h":
             parts.append(f'<h2 class="post-h">{html.escape(b["v"])}</h2>')
+        elif t == "h3":
+            parts.append(f'<h3 class="post-h3">{html.escape(b["v"])}</h3>')
         elif t == "li":
             parts.append(f'<div class="post-li">{html.escape(b["v"])}</div>')
         elif t == "html":  # 신뢰된 자체 HTML(링크 등)

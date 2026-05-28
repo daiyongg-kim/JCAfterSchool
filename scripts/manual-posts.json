@@ -221,5 +221,139 @@
         }
       ]
     }
+  },
+  {
+    "slug": "francophone-mobility-workpermit",
+    "publish": [
+      "ko"
+    ],
+    "iso": "2026-05-28",
+    "date_ko": "2026. 5. 28.",
+    "category_ko": "성인 어학 · 이민",
+    "ko": {
+      "title": "🇨🇦 막힌 캐나다 LMIA, '이것' 하나면 패스? 요즘 가장 핫한 캐나다 워크퍼밋 치트키 대공개!",
+      "blocks": [
+        {
+          "t": "img",
+          "v": "franco-mobility.jpg"
+        },
+        {
+          "t": "text",
+          "v": "안녕하세요! 캐나다 이민과 정착의 든든한 파트너 정철 애프터스쿨입니다."
+        },
+        {
+          "t": "text",
+          "v": "요즘 캐나다 취업 비자(워크퍼밋) 받기가 '하늘의 별 따기'라는 말, 많이 들어보셨을 겁니다. 까다로워진 고용주 후원(LMIA) 승인 절차와 높아진 거절률 때문에 캐나다행을 망설이고 계신 분들이 많죠."
+        },
+        {
+          "t": "text",
+          "v": "하지만 지금, 영어가 아닌 '프랑스어(불어)' 점수 하나만으로 이 복잡한 LMIA를 통째로 면제받고 캐나다에 당당히 입국할 수 있는 초고속 치트키 프로그램이 있다는 사실, 알고 계셨나요?"
+        },
+        {
+          "t": "text",
+          "v": "오늘은 캐나다 이민 시장의 절대적 대세로 떠오른 '프랑코폰 모빌리티(Francophone Mobility)'를 핵심만 콕 짚어 정리해 드리겠습니다."
+        },
+        {
+          "t": "h",
+          "v": "💡 프랑코폰 모빌리티(Francophone Mobility)란?"
+        },
+        {
+          "t": "text",
+          "v": "캐나다 연방 정부가 퀘벡주를 제외한 다른 주(BC주, 온타리오주 등)의 불어 인구를 늘리기 위해 파격적인 혜택을 제공하는 'LMIA 면제형 취업 비자' 프로그램입니다."
+        },
+        {
+          "t": "h",
+          "v": "✨ 왜 지금 '불어 점수'가 무기가 될까요?"
+        },
+        {
+          "t": "h3",
+          "v": "1. 고용주의 LMIA 부담 zero (영어로 일해도 OK)"
+        },
+        {
+          "t": "text",
+          "v": "원래 외국인을 고용하려면 수개월의 시간과 비용을 들여 정부의 고용 허가(LMIA)를 받아야 합니다. 하지만 프랑코폰 모빌리티는 LMIA가 면제됩니다. 고용주는 단돈 $230의 수수료만 내면 여러분을 바로 채용할 수 있습니다."
+        },
+        {
+          "t": "text",
+          "v": "많은 분들이 오해하시는데, 직장에서 불어로 일할 필요는 전혀 없습니다. 업무는 영어로 하되, 지원자 본인이 불어 구사 능력이 있다는 것만 증명하면 됩니다."
+        },
+        {
+          "t": "h3",
+          "v": "2. 확 낮아진 자격 요건 — NCLC 5점"
+        },
+        {
+          "t": "text",
+          "v": "2023년 개정 이후 자격 조건이 대폭 완화되어, 불어 시험(TEF 또는 TCF)에서 말하기·듣기 영역 NCLC 5점(중급 수준)만 확보하면 신청이 가능합니다. 전문직뿐 아니라 사실상 대부분의 직종(농업 제외)이 혜택을 받을 수 있습니다."
+        },
+        {
+          "t": "h3",
+          "v": "3. 캐나다 영주권(PR) 초고속 패스"
+        },
+        {
+          "t": "text",
+          "v": "이 비자로 캐나다에 들어와 경력을 쌓은 뒤 영주권을 신청할 때, 불어 구사자 전용 선발(Category-Based Draws)을 통하면 일반 영어권 신청자보다 압도적으로 낮은 점수 커트라인으로 영주권 초대장(ITA)을 받을 수 있습니다."
+        },
+        {
+          "t": "h",
+          "v": "🛠️ 신청 조건 딱 3가지만 기억하세요!"
+        },
+        {
+          "t": "li",
+          "v": "퀘벡 외 지역의 캐나다 고용주로부터 받은 잡 오퍼(Job Offer)"
+        },
+        {
+          "t": "li",
+          "v": "불어 공인 성적 NCLC 5 이상 (말하기·듣기 필수 증빙)"
+        },
+        {
+          "t": "li",
+          "v": "해당 직무를 수행할 수 있는 자격 및 경력"
+        },
+        {
+          "t": "h",
+          "v": "🎯 이런 분들께 강력 추천합니다!"
+        },
+        {
+          "t": "li",
+          "v": "영어가 조금 아쉬워서 영주권 점수가 부족하신 분"
+        },
+        {
+          "t": "li",
+          "v": "캐나다 고용주는 구했으나 LMIA 지원을 부담스러워하는 경우"
+        },
+        {
+          "t": "li",
+          "v": "남들과 차별화된 이민 전략으로 빠르게 캐나다 경력을 시작하고 싶으신 분"
+        },
+        {
+          "t": "html",
+          "v": "<p>캐나다 이민부(IRCC) <a href=\"https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit/temporary/mobility-francophone.html\" target=\"_blank\" rel=\"noopener\">공식 웹사이트</a>에서도 확인할 수 있듯이, 현재 캐나다 정부는 불어 구사자를 유치하기 위해 파격적인 이민 문호를 열어두고 있습니다. <strong>물 들어올 때 노를 저어야 하는 법!</strong> 지금이 바로 불어를 시작할 최고의 타이밍입니다.</p>"
+        },
+        {
+          "t": "h",
+          "v": "📚 공식 참고 자료"
+        },
+        {
+          "t": "html",
+          "v": "<p>📌 <a href=\"https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit/temporary/mobility-francophone.html\" target=\"_blank\" rel=\"noopener\"><strong>IRCC — Francophone Mobility Work Permit</strong></a><br>자격 요건, LMIA 면제 코드 <code>C16</code>, 신청 비용($155 + 고용주 부담금 $230) 등 공식 가이드.</p><p>📌 <a href=\"https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/permit/temporary/mobility-francophone/apply.html\" target=\"_blank\" rel=\"noopener\"><strong>IRCC — Francophone Mobility · How to apply</strong></a><br>불어 NCLC 5(말하기·듣기) 증빙 기준 및 온라인 어카운트 서류 접수 절차.</p>"
+        },
+        {
+          "t": "h",
+          "v": "📞 나도 프랑코폰 모빌리티 가능할까?"
+        },
+        {
+          "t": "text",
+          "v": "나에게 맞는 직종 매칭부터 불어 점수 준비 로드맵까지, 혼자 고민하지 마세요. 정철 애프터스쿨이 1:1 맞춤 전략을 함께 짜드립니다."
+        },
+        {
+          "t": "html",
+          "v": "<p>📞 전화 문의: <a href=\"tel:+17782582223\">778-258-2223</a><br>💬 카톡 문의: <a href=\"https://open.kakao.com/o/sn2X2Kii\" target=\"_blank\" rel=\"noopener\">오픈채팅 바로가기</a><br>📍 위치: Coquitlam #130–1140 Austin Ave</p>"
+        },
+        {
+          "t": "text",
+          "v": "※ 이 포스팅은 캐나다 이민부(IRCC) 최신 가이드라인을 기반으로 작성되었습니다."
+        }
+      ]
+    }
   }
 ]
