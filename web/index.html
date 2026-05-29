@@ -12,6 +12,45 @@
 <meta property="og:url" content="https://jcafterschool.ca/">
 <meta property="og:image" content="https://jcafterschool.ca/img/hero.jpg">
 <meta property="og:locale" content="ko_KR">
+<!-- 로컬 SEO: 구조화 데이터 (LocalBusiness + EducationalOrganization) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["EducationalOrganization", "LocalBusiness"],
+  "name": "정철 애프터스쿨",
+  "alternateName": "JC After School",
+  "description": "Coquitlam 한인 방과후 돌봄 + 튜터링 + 성인 어학 학원. 학교 픽업부터 돌봄·간식, 수학·과학·영어 성적까지 한 곳에서.",
+  "url": "https://jcafterschool.ca/",
+  "image": "https://jcafterschool.ca/img/hero.jpg",
+  "telephone": "+1-778-258-2223",
+  "email": "jcafterschool.ca@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "#130 - 1140 Austin Ave",
+    "addressLocality": "Coquitlam",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "hasMap": "https://www.google.com/maps/place/?q=place_id:ChIJ4YzXflV5hlQRVbvCp3d9zhA",
+  "areaServed": [
+    { "@type": "City", "name": "Coquitlam" },
+    { "@type": "City", "name": "Port Coquitlam" },
+    { "@type": "City", "name": "Port Moody" },
+    { "@type": "City", "name": "Burnaby" },
+    { "@type": "City", "name": "Surrey" }
+  ],
+  "knowsLanguage": ["ko", "en"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "프로그램",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "방과후 돌봄 (학교 픽업·간식·숙제, Kinder–Grade 7)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "자녀 학습 튜터링 (수학·과학·ELL·SAT/AP/IB, Grade 7–12)" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "성인 어학 (IELTS·프랑스어 TEF/TCF)" } }
+    ]
+  }
+}
+</script>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
@@ -558,6 +597,18 @@
     publicKey:  'tDrvIwbUI4F5Nr_7g',
     toEmail:    'jcafterschool.ca@gmail.com'
   };
+  // GA4 전환 이벤트: 카카오톡 / 전화 클릭 추적 (이벤트 위임)
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href]');
+    if (!a || typeof gtag !== 'function') return;
+    const href = a.getAttribute('href') || '';
+    if (href.includes('open.kakao.com')) {
+      gtag('event', 'contact_kakao', { method: 'kakaotalk', location: a.closest('header') ? 'header' : 'page' });
+    } else if (href.startsWith('tel:')) {
+      gtag('event', 'contact_phone', { method: 'phone' });
+    }
+  });
+
   const form = document.getElementById('trial-form');
   if (form) {
     const okMsg = document.getElementById('trial-ok');
@@ -613,6 +664,10 @@
       try {
         if (!isConfigured) { console.log('[demo] EmailJS not set:', params); await new Promise(r => setTimeout(r, 900)); }
         else { await emailjs.send(EMAIL_CONFIG.serviceId, EMAIL_CONFIG.templateId, params); }
+        // GA4 전환 이벤트: 무료체험 폼 제출 성공
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { method: 'form', program: g('program'), site_lang: LANG });
+        }
         form.reset();
         okMsg.classList.add('show');
         okMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
