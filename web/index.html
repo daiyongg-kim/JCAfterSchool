@@ -113,6 +113,17 @@
   .campbanner .cb-cta{flex-shrink:0;background:var(--red);color:#fff;font-weight:700;padding:11px 20px;border-radius:var(--r-btn);font-size:15px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(214,64,47,.55)}
   .campbanner:hover .cb-cta{background:var(--red-dark)}
   @media(max-width:600px){.campbanner{flex-direction:column;align-items:flex-start;gap:14px}.campbanner .cb-cta{width:100%;text-align:center}}
+  .fcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .fcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:.2s;display:flex;flex-direction:column}
+  .fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+  .fcard .thumb{aspect-ratio:16/10;background:linear-gradient(160deg,#FDF3E3,#F4EEE4);overflow:hidden}
+  .fcard .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .fcard .fb{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+  .fcard .cat{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--red)}
+  .fcard h3{font-size:17px;font-weight:800;letter-spacing:-.01em;margin:8px 0 8px;line-height:1.35;color:var(--navy)}
+  .fcard p{font-size:14px;color:var(--navy-soft);flex:1;margin:0}
+  .fcard .go{font-size:13.5px;font-weight:700;color:var(--red);margin-top:14px}
+  @media(max-width:880px){.fcards{grid-template-columns:1fr 1fr}}@media(max-width:560px){.fcards{grid-template-columns:1fr}}
   .menu-toggle{display:none;background:transparent;border:1px solid var(--line);border-radius:var(--r-sm);padding:8px 10px;cursor:pointer;font-size:18px;color:var(--navy)}
 
   .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:72px 0 56px}
@@ -340,9 +351,36 @@
         <h3 data-i18n="c3h">성인 어학</h3>
         <p data-i18n="c3p">이민·시민권·취업에 필요한 점수를 목표 기간 안에.</p>
         <ul><li data-i18n="c3li1">IELTS (이민·유학·취업)</li><li data-i18n="c3li2">프랑스어 TEF · TCF</li><li data-i18n="c3li3">무료 체험 후 등록</li></ul>
-        <a class="more" href="#contact" data-i18n="c3more">무료 체험 신청 →</a>
+        <a class="more" href="#immigration" data-i18n="c3more">자세히 보기 →</a>
       </article>
     </div>
+  </section>
+
+  <section class="block" style="padding-top:0" id="immigration" aria-labelledby="imm-title">
+    <p class="sec-label">Adults · Immigration</p>
+    <h2 class="sec-title" id="imm-title" data-i18n="immTitle">캐나다 이민, 프랑스어가 답입니다</h2>
+    <p class="sec-sub" data-i18n="immSub">LMIA가 막혔다면, 프랑스어가 가장 빠른 우회로입니다. 정철이 전략부터 점수까지 함께합니다.</p>
+    <div class="fcards">
+      <a class="fcard" href="/blog/francophone-mobility-workpermit.html">
+        <div class="thumb"><img src="/blog/img/franco-mobility.jpg" alt="프랑코폰 모빌리티 워크퍼밋 안내" loading="lazy"></div>
+        <div class="fb"><span class="cat" data-i18n="immCat">성인 · 이민</span>
+          <h3 data-i18n="immCard1Title">막힌 LMIA, 프랑코폰 모빌리티로 우회하기</h3>
+          <p data-i18n="immCard1Desc">불어 NCLC 5면 LMIA 면제(C16). 워크퍼밋 치트키 총정리.</p>
+          <span class="go" data-i18n="immGo">자세히 보기 →</span></div></a>
+      <a class="fcard" href="/blog/visa-golden-time-francophone-mobility.html">
+        <div class="thumb"><img src="/blog/img/goldtime-1.jpg" alt="영주권 골든타임 안내" loading="lazy"></div>
+        <div class="fb"><span class="cat" data-i18n="immCat">성인 · 이민</span>
+          <h3 data-i18n="immCard2Title">영주권 골든타임, 지금이 마지막입니다</h3>
+          <p data-i18n="immCard2Desc">"비자 6개월 남았으니 괜찮겠지?" — 이미 늦기 시작했습니다.</p>
+          <span class="go" data-i18n="immGo">자세히 보기 →</span></div></a>
+      <a class="fcard" href="/blog/french-canada-pr-cheatkey.html">
+        <div class="thumb"><img src="/blog/img/french-course.jpg" alt="프랑스어 영주권 치트키 안내" loading="lazy"></div>
+        <div class="fb"><span class="cat" data-i18n="immCat">성인 · 이민</span>
+          <h3 data-i18n="immCard3Title">프랑스어가 가장 빠른 영주권 치트키</h3>
+          <p data-i18n="immCard3Desc">CRS 커트라인이 치솟는 지금, 불어 트랙이 답입니다.</p>
+          <span class="go" data-i18n="immGo">자세히 보기 →</span></div></a>
+    </div>
+    <div style="margin-top:24px"><a class="btn btn-primary" href="#contact" data-i18n="immCta">무료 레벨테스트 신청 →</a></div>
   </section>
 
   <section class="block" style="padding-top:0" id="gallery" aria-labelledby="gal-title">
@@ -517,7 +555,18 @@
     c3tag: `Adults · Immigration`, c3h: `Adult Language`,
     c3p: `Reach the scores you need for immigration, citizenship, or work — on time.`,
     c3li1: `IELTS (immigration·study·work)`, c3li2: `French TEF · TCF`, c3li3: `Free trial, then enroll`,
-    c3more: `Get a Free Trial →`,
+    c3more: `Learn more →`,
+    immTitle: `Canada immigration? French is the answer.`,
+    immSub: `If LMIA is blocking you, French is the fastest detour. JC guides you from strategy to score.`,
+    immCat: `Adults · Immigration`,
+    immGo: `Read more →`,
+    immCard1Title: `Blocked LMIA? Bypass it with Francophone Mobility`,
+    immCard1Desc: `NCLC 5 French = LMIA-exempt (C16). The work-permit cheat sheet.`,
+    immCard2Title: `PR golden time — now is your last window`,
+    immCard2Desc: `"6 months of visa left, I'm fine"? You're already behind.`,
+    immCard3Title: `French is the fastest PR cheat key`,
+    immCard3Desc: `With CRS cutoffs soaring, the French track is the answer.`,
+    immCta: `Book a free level test →`,
     statN2: `Small`, statL1: `years parents have trusted us`, statL2: `small-group, personal care`, statL3: `care + learning, all grades`,
     revTitle: `Real parent reviews`, revSub: `Genuine reviews left on Google Maps.`,
     revCta: `⭐ See all Google reviews →`,
