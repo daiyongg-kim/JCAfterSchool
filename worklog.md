@@ -2,6 +2,14 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-07 — 여름캠프 2주차 2일차(꼬마 작가 스토리북) 블로그
+- **요청**: `pic/20260707/` 사진으로 블로그 포스팅. Diane 코멘트는 메시지로 직접 전달("young writers — wrote, revised, and illustrated their own original stories… Fantastic work, Everyone!!!").
+- **결과**:
+  - 사진 49장 검토, 16장 선별·최적화(`web/blog/img/camp-wk2day2-0707-*.jpg`).
+  - 신규 `web/blog/camp-wk2day2-2026-07-07.html` — 구성: ✍️영 라이터스 워크숍(마인드맵→초고→퇴고→삽화) / 📖대표작 "Stop Giving Up!" by Chloe(주인공 Peace, 표지·첫장·삽화·마지막장 4컷) / 📚다른 완성작("Be Friends!" 등) / 🍕피자 간식 / 🌳놀이터 / 🌸학원 앞 화단 물주기. Diane 메시지 카드. h1만 한글, 본문 영어.
+  - `web/blog/index.html` 카드 추가, `web/sitemap.xml` URL 추가. 저장 이미지 Read 검증 + 헤드리스 크롬 렌더 확인.
+  - 책 표지의 작가 이름(Chloe·Sua·Lona)은 아이가 직접 쓴 표지 사진 그대로 노출. 영상 5개 미사용.
+
 ## 2026-07-06 — 여름캠프 2주차 첫날(월드컵 BINGO·캔디 낚시·공원) 블로그
 - **요청**: `pic/20260706/` 사진으로 2주차 블로그 포스팅. memo(memo.png)의 Diane 코멘트 반영.
 - **결과**:
