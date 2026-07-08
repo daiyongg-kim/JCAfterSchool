@@ -642,9 +642,13 @@
   document.querySelectorAll('.lang button').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
   });
-  // 저장된 언어 적용 (기본 ko)
-  let saved = 'ko';
-  try { saved = localStorage.getItem('jc-lang') || 'ko'; } catch (e) {}
+  // 저장된 언어 > 브라우저 locale > ko. 수동 선택(localStorage)이 항상 우선.
+  let saved = null;
+  try { saved = localStorage.getItem('jc-lang'); } catch (e) {}
+  if (!saved) {
+    const nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'ko';
+    saved = /^ko/i.test(nav) ? 'ko' : 'en';
+  }
   if (saved === 'en') setLang('en'); else setLang('ko');
 
   // ── Mobile menu toggle ──────────────────────────────

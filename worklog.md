@@ -2,6 +2,10 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-07 — 홈페이지 첫 방문 언어를 브라우저 locale로 자동 결정
+- **요청**: 영문 locale 사용자에게는 영문이 먼저 보이게 할 수 없나 → locale 보고 결정하도록.
+- **결과**: `web/index.html` 언어 초기화 로직 변경 — 우선순위: localStorage 수동 선택 > `navigator.languages[0]`(ko*면 한국어, 그 외 영어) > ko. 헤드리스 크롬(en-GB 환경)에서 첫 방문 시 영어 UI 렌더 확인, 판별식(ko/ko-KR→ko, en/fr/ja→en) 단위 검증. 한 번 언어를 고르면(또는 자동 결정되면) localStorage에 저장돼 이후 방문에 유지.
+
 ## 2026-07-07 — 여름캠프 2주차 2일차(꼬마 작가 스토리북) 블로그
 - **요청**: `pic/20260707/` 사진으로 블로그 포스팅. Diane 코멘트는 메시지로 직접 전달("young writers — wrote, revised, and illustrated their own original stories… Fantastic work, Everyone!!!").
 - **결과**:
