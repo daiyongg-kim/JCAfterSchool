@@ -2,6 +2,13 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-13 — 여름캠프 3주차 1일차(주니어 티처 데이·인터랙티브 발표) 블로그
+- **요청**: `pic/20260713/` 사진 + memo.txt(Diane 코멘트: Leah 쥐·SueAh 토끼·Loha·Chloe 갸루, 블루마운틴 파크 필드트립 예고) 반영해 오늘자 블로그 포스팅.
+- **결과**:
+  - 사진 44장 검토, 18장 선별·최적화(`web/blog/img/camp-wk3day1-0713-*.jpg`).
+  - 신규 `web/blog/camp-wk3day1-2026-07-13.html` — 구성: 🎤주니어 티처 데이(hero: Leah & Mouse Family 보드) / 🐭Teacher Leah "Cute Mice"(포인터 강의·1:1 지도·채점·Parts of a Mouse 워크시트) / 🐰Teacher SueAh "Bunnies"(토끼 인형 조교) / 🐱Teacher Loha(첫 발표·고양이 워크시트·최종 과제 수합) / 🎀Junior Teacher Chloe 갸루 발표+페이퍼돌 / 🍱돈까스 점심 / ☀️공원 오후 + 블루마운틴 파크 필드트립 예고 배너. Leah 명언 카드("I would rather be a teacher than a student."). h1만 한글, 본문 영어.
+  - `web/blog/index.html` 카드 추가, `web/sitemap.xml` URL 추가. 이미지 Read 검증 + 헤드리스 크롬 렌더 확인.
+
 ## 2026-07-10 — 여름캠프 2주차 피날레(포스터 갤러리 완성) 블로그
 - **요청**: `pic/20260710/` 사진 + memp.png(Diane 코멘트) 반영해 오늘자 블로그 포스팅.
 - **결과**:
