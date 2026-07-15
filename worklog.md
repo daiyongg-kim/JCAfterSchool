@@ -2,6 +2,13 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-14 — 여름캠프 3주차 2일차(주니어 티처 데이 2일차·새/버블티 발표) 블로그
+- **요청**: `pic/20260714/` 사진 + memo.txt(블루베리 간식 / Sua 새 수업 첫 발표 / Jua·Loha 버블티 수업 / "teaching takes learning to another level") 반영해 오늘자 블로그 포스팅.
+- **결과**:
+  - 사진 49장 검토, 20장 선별·최적화(`web/blog/img/camp-wk3day2-0714-*.jpg`). 첫 hero 후보(00)가 고양이 포스터를 가리켜 새 수업용으로 부적절 → 새 포스터 가리키는 컷(02, 포스터에 "Sua" 서명 확인)으로 교체, 00은 birds-confident로 재활용. 공원 컷은 기울어진 프레임(47) 대신 upright 프레임(48)으로 교체.
+  - 신규 `web/blog/camp-wk3day2-2026-07-14.html` — 구성: hero(Teacher Sua & Cute Birds 보드) / 🫐블루베리 간식 / 🐦Teacher Sua "All About Birds"(포인터 강의·워크시트 배부·1:1 지도·채점·Parrots/Let's Learn About Birds 워크시트·하이파이브) / 🧋Teachers Jua & Loha "Bubble Tea"(Boba Core Components·#Boba Girl·Ms.Rose·버블티 math·booklet·별점) / 🍿오후 팝콘 간식 / ☀️플로어 놀이 + 스플래시 파크 물놀이. Thought-of-the-day 카드(memo 인용). h1만 한글, 본문 영어.
+  - `web/blog/index.html` 카드 추가, `web/sitemap.xml` URL 추가. 이미지 20장 전부 Read 검증 + 헤드리스 크롬 전체 렌더 확인.
+
 ## 2026-07-13 — 여름캠프 3주차 1일차(주니어 티처 데이·인터랙티브 발표) 블로그
 - **요청**: `pic/20260713/` 사진 + memo.txt(Diane 코멘트: Leah 쥐·SueAh 토끼·Loha·Chloe 갸루, 블루마운틴 파크 필드트립 예고) 반영해 오늘자 블로그 포스팅.
 - **결과**:
