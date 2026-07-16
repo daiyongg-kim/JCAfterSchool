@@ -2,6 +2,13 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-15 — 여름캠프 3주차 3일차(주니어 티처 데이 3일차·코치 민우 축구 수학) 블로그
+- **요청**: `pic/20260715/` 사진 + memo.txt(다이엔 글: 민우가 오전 내내 축구 테마 수학 수업 진행·"Would You Rather" 워밍업·"soccer ball" 행맨·원하는 만큼 워크시트 풀기·민우와 다이엔이 별점 채점·Leah 15장 중 13장 완주·팝콘+직접 만든 포도/블루베리 젤리·"grapes or blueberries?" 질문·젤리는 점심때 굳어 불고기 점심 다 먹고 먹음) 반영해 오늘자 블로그 포스팅.
+- **결과**:
+  - memo가 `:wq!` 파일명으로 저장돼 있던 것 확인·판독. 사진 47장 검토, 20장 선별·최적화(`web/blog/img/camp-wk3day3-0715-*.jpg`). hero=민우가 자기 "Keep Playing Soccer/MINWOO" 포스터 가리키며 축구공 든 컷(05). Leah가 별점 가득한 "Odd & Even Soccer" 워크시트 든 자랑 컷(16), 젤리 컵 그룹샷(33) 등 실제 Read로 검증.
+  - 신규 `web/blog/camp-wk3day3-2026-07-15.html` — 구성: hero / ⚽Coach Minwoo 워밍업·행맨(포스터 디테일 포함) / 🧮Pick Your Challenge 축구 수학 워크시트(민우·다이엔 1:1 지도·별점 채점·Goal 협업·워드서치·이름쓰기) / 🌟Star of the Day Leah 13/15 인내상 / 📄워크시트 샘플 갤러리 4종(2자리 뺄셈·Goal·합=25 찾기·축구공 기하) / 🍇팝콘+직접 만든 포도·블루베리 젤리(굳는 데 시간→불고기 점심 완식 notice) / Question of the day(grapes or blueberries?) / Thought of the day(민우 리더십 칭찬). h1만 한글, 본문 영어.
+  - `web/blog/index.html` 카드 추가, `web/sitemap.xml` URL 추가. 이미지 전부 최적화(1200px·q72), 헤드리스 크롬 전체 렌더 확인.
+
 ## 2026-07-14 — 여름캠프 3주차 2일차(주니어 티처 데이 2일차·새/버블티 발표) 블로그
 - **요청**: `pic/20260714/` 사진 + memo.txt(블루베리 간식 / Sua 새 수업 첫 발표 / Jua·Loha 버블티 수업 / "teaching takes learning to another level") 반영해 오늘자 블로그 포스팅.
 - **결과**:
