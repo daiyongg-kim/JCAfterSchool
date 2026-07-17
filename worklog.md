@@ -2,6 +2,13 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-16 — 여름캠프 3주차 4일차(Who/What/Where/When/Why/How 질문의 문법) 블로그
+- **요청**: `pic/20260716/` 사진 + memo.txt(다이엔 글: 오늘 주제는 Who?What?Where?When?Why?How? 질문하고 답하는 문법·민우가 다시 티처 어시스턴트로 딕테이션 읽어주면 학생들이 질문 유형 체크·학생이 유형 고르면 민우가 그 유형으로 질문·레벨+1 워크시트·말풍선으로 직접 만든 그림 대화·큰 아이들은 각자 언어 니즈에 맞춘 보강 워크시트·블루베리+팝콘 간식 빼고 점심까지 열공) 반영해 오늘자 블로그 포스팅.
+- **결과**:
+  - 사진 67장 검토, 28장 선별·최적화(`web/blog/img/camp-wk3day4-0716-*.jpg`). hero=Sua가 말풍선 가득한 "Questions" 포스터 든 컷(11). 저장본 전부 Read로 검증 — `lunch-happy`가 말 동상 컷으로 잘못 들어간 것 발견해 [64]로 교정. 작업 중 cwd가 `web/`로 바뀌어 glob이 빈 배열이 된 케이스도 nullglob 경고로 잡고 절대경로로 수정.
+  - 신규 `web/blog/camp-wk3day4-2026-07-16.html` — 구성: hero / ✍️Warm-Up 민우 딕테이션·벽 차트 체크 / 질문 6종 차트 갤러리(What·Where·When·Why·How·전체, 한글 병기) + Answer of the day("How?"→"With a hug.") / 📄Level Plus One 워크시트(민우 보강 컷 포함) / 🗯️Make Your Own 그림 대화(말풍선 그리기·"Who will play with me?" 토끼·Panda and Rabbit Sharing·Jua Cho 만화·달력 대화) / 🍿팝콘+블루베리 간식 / 🌳공원(집라인·강아지·말 동상) / 🍚김치볶음밥+김 점심 / 오늘의 배움 notice / Thought of the day. h1만 한글, 본문 영어.
+  - `web/blog/index.html` 카드 추가, `web/sitemap.xml` URL 추가. 이미지 전부 최적화(1200px·q72), 헤드리스 크롬 전체 렌더 확인.
+
 ## 2026-07-15 — 여름캠프 3주차 3일차(주니어 티처 데이 3일차·코치 민우 축구 수학) 블로그
 - **요청**: `pic/20260715/` 사진 + memo.txt(다이엔 글: 민우가 오전 내내 축구 테마 수학 수업 진행·"Would You Rather" 워밍업·"soccer ball" 행맨·원하는 만큼 워크시트 풀기·민우와 다이엔이 별점 채점·Leah 15장 중 13장 완주·팝콘+직접 만든 포도/블루베리 젤리·"grapes or blueberries?" 질문·젤리는 점심때 굳어 불고기 점심 다 먹고 먹음) 반영해 오늘자 블로그 포스팅.
 - **결과**:
