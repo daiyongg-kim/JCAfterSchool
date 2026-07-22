@@ -112,6 +112,10 @@
   .campbanner p{font-size:14.5px;color:#D9E0E8;margin:0;word-break:keep-all}
   .campbanner .cb-cta{flex-shrink:0;background:var(--red);color:#fff;font-weight:700;padding:11px 20px;border-radius:var(--r-btn);font-size:15px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(214,64,47,.55)}
   .campbanner:hover .cb-cta{background:var(--red-dark)}
+  .campbanner.fallbanner{background:var(--cream-2);border-color:var(--line);border-left-color:var(--red);margin-top:12px}
+  .campbanner.fallbanner .cb-badge{background:var(--navy);color:#fff}
+  .campbanner.fallbanner h2{color:var(--navy)}
+  .campbanner.fallbanner p{color:var(--navy-soft)}
   @media(max-width:600px){.campbanner{flex-direction:column;align-items:flex-start;gap:14px}.campbanner .cb-cta{width:100%;text-align:center}}
   .fcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
   .fcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:.2s;display:flex;flex-direction:column}
@@ -297,6 +301,14 @@
       <p data-i18n="campSub">물통·식기 준비물 · 간식/알러지 안내 · 8:30~19:00 일정 · 무료돌봄</p>
     </div>
     <span class="cb-cta" data-i18n="campCta">시작 안내 보기 →</span>
+  </a>
+  <a class="campbanner fallbanner" id="fallBanner" href="/blog/fall-2026-afterschool-registration.html" data-i18n-aria="fallBanner" aria-label="2026년 9월 새학기 방과후 모집 안내 보기">
+    <div class="cb-body">
+      <span class="cb-badge" data-i18n="fallBadge">🍂 FALL 2026 · 9월 새학기 모집</span>
+      <h2 data-i18n="fallTitle">학교 픽업부터 돌봄 · 간식 · 숙제 · 학습까지</h2>
+      <p data-i18n="fallSub">Kinder–Grade 7 · 수학·과학·영어 · 새학기 무료 체험 상담</p>
+    </div>
+    <span class="cb-cta" data-i18n="fallCta">모집 안내 보기 →</span>
   </a>
 </div>
 <div class="wrap">
@@ -542,6 +554,10 @@
     campTitle: `What to bring · Daily schedule at a glance`,
     campSub: `Water bottle·utensils · Snack/allergy notice · 8:30–19:00 schedule · Free care`,
     campCta: `See start guide →`,
+    fallBadge: `🍂 FALL 2026 · September Registration`,
+    fallTitle: `School pickup, care, snacks, homework & learning`,
+    fallSub: `Kinder–Grade 7 · Math·Science·English · Free trial consultation`,
+    fallCta: `See registration guide →`,
     progTitle: `Leave them with us — grades too.`,
     progSub: `Care is the foundation. Academics come built in.`,
     c1tag: `★ Signature Program`, c1h: `After School Care`,
@@ -601,6 +617,7 @@
   };
   const EN_ARIA = {
     logoHome: `JC After School home`, mainMenu: `Main menu`, langGroup: `Language`,
+    fallBanner: `View the Fall 2026 after-school registration guide`,
     heroArt: `Space for a photo of children being cared for at the center`,
     stripAria: `4 reasons to choose JC After School`, statsAria: `Trust indicators`,
   };
@@ -635,6 +652,10 @@
     });
     document.title = META[LANG].title;
     if (metaDesc) metaDesc.setAttribute('content', META[LANG].desc);
+    const fallBanner = document.getElementById('fallBanner');
+    if (fallBanner) fallBanner.href = LANG === 'en'
+      ? '/blog/fall-2026-afterschool-registration-en.html'
+      : '/blog/fall-2026-afterschool-registration.html';
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
     try { localStorage.setItem('jc-lang', LANG); } catch (e) {}
     window.__renderReviews && window.__renderReviews();   // 후기 라벨 다시
