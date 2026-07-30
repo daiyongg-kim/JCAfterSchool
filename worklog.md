@@ -2,6 +2,13 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-29 — 여름캠프 5주차 3일차(Idiom Jeopardy 우승·나만의 관용구 책) 블로그
+- **요청**: `pic/20260729/` 사진 + `memo.txt` 참고해 블로그 작성. 제목은 한글 무관, 본문은 반드시 영문.
+- **결과**:
+  - 사진 87장(+영상 1개) 전량을 컨택트시트 8장(PIL)으로 triage 후 34장 선별. bash glob 배열(0-index)로만 인덱싱해 순서 밀림 방지, 저장본 hero·borscht·lincoln-cover·park-help·lunch-plate를 Read로 눈 검증.
+  - 신규 `web/blog/camp-wk5day3-2026-07-29.html` — 구성: hero(Idiom Jeopardy 진행 컷) / 🏆Idiom Jeopardy(6 카테고리 보드, **여학생 팀 우승**) + 주간 관용구 화이트보드 / 📕미니 레퍼런스 북 제작(작업 컷 4) / 학생별 책 섹션 — Chloe&Leah(공동 완성), Sue-ah(내일 완성 예정), Lincoln(삽화 우수·최초 완성), Henry(삽화 우수·제시간 완성), Ian(노트에 13개 기록), Minwoo(플립차트 제작 중 + 보조교사 역할) / 다이엔 메시지 카드(학년 폭이 넓은 반의 협업이 최고의 자산) / 🍲점심 보르시(러시아·동유럽식 소고기+비트)·볶음밥·김치, 간식 블루베리 / 🌳공원 오후 / **Idiom of the day: "On the ball"** 정의·예문 카드(memo FYI 반영) / 오늘의 배움 notice. h1만 한글, 본문 전체 영어.
+  - `web/blog/index.html` 카드 최상단 추가, `web/sitemap.xml` URL 추가. 이미지 전부 1200px·q72(`web/blog/img/camp-wk5day3-0729-*.jpg`), 헤드리스 크롬 전체 렌더 확인. 주차 계산: 7/29(수) = 5주차 3일차.
+
 ## 2026-07-28 — 여름캠프 5주차 2일차(영어 관용구·Idiom Jeopardy) 블로그
 - **요청**: 오늘자(`pic/20260728/`) 캠프 사진 + memo.txt(다이엔 글: 자주 쓰는 영어 관용구를 배운 알찬 오전·이제 학생들이 개인 노트를 갖게 됨·언제든 작업 보고 싶으면 말해달라·Happy Tuesday) 참조해 블로그 포스팅.
 - **결과**:
