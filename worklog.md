@@ -2,6 +2,13 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-07-30 — 여름캠프 5주차 4일차(비유·인체 골격·문장의 뼈대) 블로그
+- **요청**: `pic/20260730/` 사진 + `memo.txt` 참고해 블로그 작성. 제목은 한글 무관, 본문은 반드시 영문.
+- **결과**:
+  - 사진 49장 + 영상 2개. 컨택트시트 5장(PIL)으로 triage, 영상은 ffmpeg 타일 프레임으로 내용 확인(A=아이들 춤, B=중등반 낭독) → 블로그엔 미사용. 30장 선별, bash glob 배열(0-index) 인덱싱, 저장본 hero·minwoo-cover 등 Read로 눈 검증.
+  - 신규 `web/blog/camp-wk5day4-2026-07-30.html` — 구성: hero(윤곽선에 두개골 그리는 컷) / 🔗What Is an Analogy?(Analogy Examples 워크시트 + 여백 메모 rice:water·ratio·proportional·hypothesis, 중등반 토론·커리큘럼 수학 워크시트) / 화이트보드(그날 계획 + analogy·sentence·skeleton 음절 분해) / **🔬과학 실험 카드**: "물구나무 선 채로 먹을 수 있나?" → 식도 근육이 중력을 거슬러 밀어냄, Ian·Minwoo·Sua 자원 (사진 없음 → 텍스트 카드로 처리) / 🦴실물 크기 인체 윤곽(**Leah가 모델**) + Name the Bones 워크시트 / 🏅Minwoo 플립북 완성 — **반 최다 관용구 기록 경신**(페이지 6컷) / ✒️cursive 도입 notice / 🍱점심(돈까스·김·김치) / 🎨오후 자유활동. h1만 한글, 본문 전체 영어.
+  - hero는 초기 "Leah가 종이에 누운 컷"이었으나 인덱스 썸네일 크롭이 약해 **윤곽선 작업 컷으로 교체**(og:image 동일). `web/blog/index.html` 카드 최상단 추가, `web/sitemap.xml` URL 추가. 이미지 전부 1200px·q72(`camp-wk5day4-0730-*.jpg`, 30장), 참조 경로 전수 검사 + 헤드리스 크롬 전체 렌더 확인. 주차 계산: 7/30(목) = 5주차 4일차.
+
 ## 2026-07-29 — 여름캠프 5주차 3일차(Idiom Jeopardy 우승·나만의 관용구 책) 블로그
 - **요청**: `pic/20260729/` 사진 + `memo.txt` 참고해 블로그 작성. 제목은 한글 무관, 본문은 반드시 영문.
 - **결과**:
