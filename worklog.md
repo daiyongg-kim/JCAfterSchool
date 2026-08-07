@@ -5,7 +5,7 @@
 ## 2026-08-06 — 여름캠프 2차 3일차 사진 블로그 (캐나다 지리)
 - **요청**: `pic/20260806` 사진 확인 후 오늘 블로그 작성 (제목 한글, 본문 영어).
 - **결과**: `web/blog/camp-session2-day3-2026-08-06.html` 신규 작성 — 과학 복습·모험책 마무리·블루베리 간식 후 캐나다 지리(주 10·준주 3 라벨링), Canada fun facts 어휘, 15문항 지리 퀴즈, 한식 점심·수영장·놀이터로 구성. 원본 32장 중 19장을 1200px/q72로 최적화해 `web/blog/img/camp-session2-day3-0806-*.jpg`로 저장. `web/blog/index.html`·`web/sitemap.xml` 갱신, 헤드리스 크롬 렌더 확인.
-- **판단**: 배포된 학습지·인포그래픽 스캔(EnchantedLearning·pocketpassport·iSLCollective·LiveWorksheets 등 워터마크 포함) 7장은 제3자 저작물이라 게시하지 않고, 내용만 본문 텍스트로 재구성함.
+- **추가**: 처음엔 제3자 저작물(EnchantedLearning·pocketpassport·iSLCollective·LiveWorksheets 등 워터마크)이라 학습지·인포그래픽 스캔을 제외했으나, 사용자 요청으로 8장 모두 게시하도록 추가함 (어휘 학습지·읽기자료·인포그래픽 2종·주 지도 2종·백지도·퀴즈지).
 
 ## 2026-08-05 — 여름캠프 2차 2일차 사진 블로그 (물의 상태 변화 + 피자 만들기)
 - **요청**: `pic/20260805` 사진으로 오늘 블로그 작성. 제목은 한글, 본문은 영어.
