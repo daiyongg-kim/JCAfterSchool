@@ -2,6 +2,11 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-08-07 — 여름캠프 2차 4일차 사진 블로그 (수료증·깜짝 생일파티)
+- **요청**: `pic/20260807` 사진 확인 후 오늘 블로그 작성.
+- **결과**: `web/blog/camp-session2-day4-2026-08-07.html` 신규 작성 — 고학년 4명 Certificate of Participation 수여(hero), 6세 깜짝 생일파티(손수 만든 ELEMENTAL 카드·롤케이크·기타/우쿨렐레/피아노 라이브), 한식 점심, 오후 수영장. 사진 11장 + 영상 1개(35초) 중 사진 8장 + 영상 스틸 4장(ffmpeg 추출 후 크롭)으로 11장 구성. `web/blog/index.html`·`web/sitemap.xml` 갱신, 헤드리스 크롬 렌더 확인.
+- **판단**: memo.txt 없음. 수료증 이름(Ian/Lincoln/Henry 등)은 일부 판독이 불확실해 본문에 개별 이름을 넣지 않고 "four of our senior students"로 처리. 생일 주인공 이름도 카드 표기(Loha)의 로마자 확정이 어려워 생략.
+
 ## 2026-08-06 — 여름캠프 2차 3일차 사진 블로그 (캐나다 지리)
 - **요청**: `pic/20260806` 사진 확인 후 오늘 블로그 작성 (제목 한글, 본문 영어).
 - **결과**: `web/blog/camp-session2-day3-2026-08-06.html` 신규 작성 — 과학 복습·모험책 마무리·블루베리 간식 후 캐나다 지리(주 10·준주 3 라벨링), Canada fun facts 어휘, 15문항 지리 퀴즈, 한식 점심·수영장·놀이터로 구성. 원본 32장 중 19장을 1200px/q72로 최적화해 `web/blog/img/camp-session2-day3-0806-*.jpg`로 저장. `web/blog/index.html`·`web/sitemap.xml` 갱신, 헤드리스 크롬 렌더 확인.
