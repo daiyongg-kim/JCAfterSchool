@@ -108,6 +108,9 @@
   .campbanner:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
   .campbanner .cb-body{flex:1;min-width:0}
   .campbanner .cb-badge{display:inline-block;background:var(--amber);color:var(--navy);font-size:12.5px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:8px}
+  .campbanner .cb-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:7px;vertical-align:middle;position:relative;top:-1px;animation:cbPulse 2.4s ease-in-out infinite}
+  @keyframes cbPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(214,64,47,.45)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(214,64,47,0)}}
+  @media(prefers-reduced-motion:reduce){.campbanner .cb-dot{animation:none}}
   .campbanner h2{font-family:var(--kr);font-size:clamp(18px,3.2vw,23px);font-weight:800;color:#fff;letter-spacing:-.01em;margin:0 0 4px}
   .campbanner p{font-size:14.5px;color:#D9E0E8;margin:0;word-break:keep-all}
   .campbanner .cb-cta{flex-shrink:0;background:var(--red);color:#fff;font-weight:700;padding:11px 20px;border-radius:var(--r-btn);font-size:15px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(214,64,47,.55)}
@@ -294,13 +297,13 @@
 
 <main id="main">
 <div class="wrap">
-  <a class="campbanner" href="/blog/summer-camp-start-2026.html" data-i18n-aria="campBanner" aria-label="2026 여름캠프 2차 시작 안내 — 준비물·일정 보기">
+  <a class="campbanner" href="/blog/summer-camp-start-2026.html" data-i18n-aria="campBanner" aria-label="2026 여름캠프 2차 진행중 — 중간 합류 및 준비물·일정 안내 보기">
     <div class="cb-body">
-      <span class="cb-badge" data-i18n="campBadge">📢 8/4(화) 여름캠프 2차 시작 안내</span>
-      <h2 data-i18n="campTitle">준비물 · 하루 일정 한눈에 보기</h2>
-      <p data-i18n="campSub">물통·식기 준비물 · 간식/알러지 안내 · 8:30~19:00 일정 · 무료돌봄</p>
+      <span class="cb-badge" data-i18n="campBadge"><span class="cb-dot" aria-hidden="true"></span>진행중 · 2026 여름캠프 2차</span>
+      <h2 data-i18n="campTitle">지금 합류해도 늦지 않았습니다</h2>
+      <p data-i18n="campSub">8/4~8/28 진행중 · 8:30~19:00 · 준비물·간식 안내 · 맞벌이 부모님 무료돌봄</p>
     </div>
-    <span class="cb-cta" data-i18n="campCta">시작 안내 보기 →</span>
+    <span class="cb-cta" data-i18n="campCta">합류 문의하기 →</span>
   </a>
   <a class="campbanner fallbanner" id="fallBanner" href="/blog/fall-2026-afterschool-registration.html" data-i18n-aria="fallBanner" aria-label="2026년 9월 새학기 방과후 모집 안내 보기">
     <div class="cb-body">
@@ -550,10 +553,10 @@
     stripT2: `Care`, stripD2: `Always with a teacher`,
     stripT3: `Snacks`, stripD3: `Warm, every day`,
     stripT4: `Grades`, stripD4: `Math·Science·English`,
-    campBadge: `📢 Summer Camp Session 2 Starts Tue, Aug 4`,
-    campTitle: `What to bring · Daily schedule at a glance`,
-    campSub: `Water bottle·utensils · Snack/allergy notice · 8:30–19:00 schedule · Free care`,
-    campCta: `See start guide →`,
+    campBadge: `<span class="cb-dot" aria-hidden="true"></span>NOW RUNNING · Summer Camp Session 2`,
+    campTitle: `It is not too late to join`,
+    campSub: `Aug 4–28 in progress · 8:30–19:00 · What to bring & snacks · Free care for working parents`,
+    campCta: `Ask about joining →`,
     fallBadge: `🍂 FALL 2026 · September Registration`,
     fallTitle: `School pickup, care, snacks, homework & learning`,
     fallSub: `Kinder–Grade 7 · Math·Science·English · Free trial consultation`,
@@ -617,7 +620,7 @@
   };
   const EN_ARIA = {
     logoHome: `JC After School home`, mainMenu: `Main menu`, langGroup: `Language`,
-    campBanner: `View the Summer Camp Session 2 start guide and packing list`,
+    campBanner: `Summer Camp Session 2 is running now — see how to join mid-session, plus the packing list and daily schedule`,
     fallBanner: `View the Fall 2026 after-school registration guide`,
     heroArt: `Space for a photo of children being cared for at the center`,
     stripAria: `4 reasons to choose JC After School`, statsAria: `Trust indicators`,
