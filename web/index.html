@@ -771,9 +771,11 @@
       ? '/blog/summer-camp-start-2026-en.html'
       : '/blog/summer-camp-start-2026.html';
     const fallBanner = document.getElementById('fallBanner');
-    if (fallBanner) fallBanner.href = nonKo
-      ? '/blog/fall-2026-afterschool-registration-en.html'
-      : '/blog/fall-2026-afterschool-registration.html';
+    if (fallBanner) fallBanner.href = (LANG === 'zh')
+      ? '/blog/fall-2026-afterschool-registration-zh.html'
+      : nonKo
+        ? '/blog/fall-2026-afterschool-registration-en.html'
+        : '/blog/fall-2026-afterschool-registration.html';
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
     try { localStorage.setItem('jc-lang', LANG); } catch (e) {}
     window.__renderReviews && window.__renderReviews();   // 후기 라벨 다시
