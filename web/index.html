@@ -781,12 +781,18 @@
   document.querySelectorAll('.lang button').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
   });
-  // 저장된 언어 > 브라우저 locale > ko. 수동 선택(localStorage)이 항상 우선.
+  // URL(?lang=zh) > 저장된 언어 > 브라우저 locale > ko.
+  // URL 파라미터를 최우선으로 두어야 小红书·WeChat 등에 뿌린 링크가 그 언어로 열린다.
   let saved = null;
-  try { saved = localStorage.getItem('jc-lang'); } catch (e) {}
-  if (!saved) {
-    const nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'ko';
-    saved = /^ko/i.test(nav) ? 'ko' : (/^zh/i.test(nav) ? 'zh' : 'en');
+  const urlLang = new URLSearchParams(location.search).get('lang');
+  if (urlLang && LANGS.includes(urlLang)) {
+    saved = urlLang;
+  } else {
+    try { saved = localStorage.getItem('jc-lang'); } catch (e) {}
+    if (!saved) {
+      const nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'ko';
+      saved = /^ko/i.test(nav) ? 'ko' : (/^zh/i.test(nav) ? 'zh' : 'en');
+    }
   }
   setLang(saved);
 

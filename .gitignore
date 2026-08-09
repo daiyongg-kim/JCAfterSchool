@@ -8,9 +8,6 @@
 .venv/
 node_modules/
 .DS_Store
-BENCHMARK.md
-DESIGN.md
-CLAUDE.md
 
-# 원본 사진(최적화본 web/img/만 사용)
+# 원본 사진 4.4GB — 최적화본 web/blog/img/·web/img/만 커밋
 pic/
