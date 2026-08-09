@@ -2,6 +2,15 @@
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
 
+## 2026-08-08 — 여름캠프 2차 안내 영문판 신규 제작
+- **요청**: `summer-camp-start-2026.html`의 영문 버전도 함께 만들어 줄 것.
+- **결과**:
+  - `web/blog/summer-camp-start-2026-en.html` 신규 — 한글판과 동일 구조(진행중 뱃지 / 기본정보 카드 / 4칸 quicknav / 추가 모집 섹션+CTA / 준비물 체크리스트 / 간식·알러지 안내 / 하루 일정 타임라인 / 2차 캠프 일지 3장 / 1차 회고 3장 / 연락처 / 파이널 밴드). CSS는 한글판 `<style>` 블록을 그대로 복사해 두 페이지 스타일이 갈라지지 않게 함.
+  - 시간 표기를 북미식으로 현지화(9:30am–4:00pm, free extended care 6:00–7:00pm), JSON-LD를 `EducationEvent` 영문판으로 재작성(`inLanguage:"en"`).
+  - 양방향 `hreflang` ko/en 태그 추가, 양쪽 헤더에 언어 토글(EN ↔ 한국어) 추가. 한글판 nav의 "← Blog"도 "← 블로그"로 정리.
+  - `web/index.html`: 캠프 배너에 `id="campBanner"` 부여하고, 기존 fallBanner와 동일한 방식으로 언어 전환 시 href가 영문 페이지로 바뀌도록 `setLang()`에 추가.
+  - 파이널 밴드의 세 번째 버튼은 영문판에선 한글 전용 `summer-camp-2026.html` 대신 `fall-2026-afterschool-registration-en.html`로 연결. `web/sitemap.xml` 항목 추가, 이미지·내부 링크 경로 전수 검사(누락 0), 헤드리스 크롬 렌더 확인.
+
 ## 2026-08-08 — 9월 새학기 방과후 모집 페이지에 실제 사진 반영 (학습·무료 간식)
 - **요청**: `fall-2026-afterschool-registration.html`을 `pic/` 및 블로그 사진으로 업데이트. 학습 특화 + 간식 무료 제공을 잘 보여줄 것.
 - **결과**:

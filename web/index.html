@@ -297,7 +297,7 @@
 
 <main id="main">
 <div class="wrap">
-  <a class="campbanner" href="/blog/summer-camp-start-2026.html" data-i18n-aria="campBanner" aria-label="2026 여름캠프 2차 절찬 진행중 — 남은 기간 추가 모집 및 준비물·일정 안내 보기">
+  <a class="campbanner" id="campBanner" href="/blog/summer-camp-start-2026.html" data-i18n-aria="campBanner" aria-label="2026 여름캠프 2차 절찬 진행중 — 남은 기간 추가 모집 및 준비물·일정 안내 보기">
     <div class="cb-body">
       <span class="cb-badge" data-i18n="campBadge"><span class="cb-dot" aria-hidden="true"></span>2026 여름캠프 2차 · 절찬 진행중</span>
       <h2 data-i18n="campTitle">아침 8:30부터 저녁 7시까지, 여름방학을 통째로</h2>
@@ -656,6 +656,10 @@
     });
     document.title = META[LANG].title;
     if (metaDesc) metaDesc.setAttribute('content', META[LANG].desc);
+    const campBanner = document.getElementById('campBanner');
+    if (campBanner) campBanner.href = LANG === 'en'
+      ? '/blog/summer-camp-start-2026-en.html'
+      : '/blog/summer-camp-start-2026.html';
     const fallBanner = document.getElementById('fallBanner');
     if (fallBanner) fallBanner.href = LANG === 'en'
       ? '/blog/fall-2026-afterschool-registration-en.html'
