@@ -289,6 +289,7 @@
       <div class="lang" role="group" data-i18n-aria="langGroup" aria-label="언어 선택">
         <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
       </div>
       <a class="btn btn-primary" href="#contact" data-i18n="headerCta">무료 체험 신청</a>
     </div>
@@ -625,12 +626,112 @@
     heroArt: `Space for a photo of children being cared for at the center`,
     stripAria: `4 reasons to choose JC After School`, statsAria: `Trust indicators`,
   };
+  // 중국어(간체) — 코퀴틀람 중국계 학부모 대상. GSC에 `课后补习` 검색이 실제로 잡혀
+  // 수요를 확인하고 추가했다. 지명은 현지 표기인 高贵林 을 쓴다.
+  const ZH = {
+    skip: `跳到主要内容`,
+    brand: `JC 课后学堂`,
+    navCare: `课后托管`, navKids: `学生补习`, navAdult: `成人语言`,
+    navReviews: `家长评价`, navBlog: `博客`, navContact: `咨询`,
+    headerCta: `免费试听`,
+    eyebrow: `三联市 · 本拿比 · 素里 接送`,
+    heroTitle: `从学校接送到<span class="accent">成绩提升</span> — 一站式解决。`,
+    lead: `<span class="tags">接送 · 托管 · 点心 · 数学·科学·英文</span><br>忙碌家长信赖的课后班。`,
+    heroCta1: `预约免费试听 →`, heroCta2: `查看课程`,
+    micro: `<b>今天就报名</b> · 一分钟填写即可`,
+    photoNote: `📷 中心、孩子与热午餐的实景照片<br>将放在这里<br><span style="font-size:12px;opacity:.7">(看到真实空间，家长更安心)</span>`,
+    heroCard1: `安全的学校接送`, heroCard2: `每天新鲜点心`,
+    stripT1: `接送`, stripD1: `从校门口安全接走`,
+    stripT2: `托管`, stripD2: `全程有老师看护`,
+    stripT3: `点心`, stripD3: `每天温热供应`,
+    stripT4: `成绩`, stripD4: `数学·科学·英文`,
+    campBadge: `<span class="cb-dot" aria-hidden="true"></span>暑期营 第二期 · 正在进行`,
+    campTitle: `早上 8:30 到晚上 7 点 — 整个暑假都安排好`,
+    campSub: `8月4日–28日 · <b>剩余周次仍可报名</b> · 科学·烹饪·英文·户外活动 · 双职工家庭免费托管`,
+    campCta: `咨询插班 →`,
+    fallBadge: `🍂 2026 秋季 · 九月开学报名`,
+    fallTitle: `学校接送、托管、点心、作业与学习`,
+    fallSub: `幼儿园–7年级 · 数学·科学·英文 · 免费试听咨询`,
+    fallCta: `查看报名指南 →`,
+    progTitle: `交给我们 — 连成绩一起。`,
+    progSub: `托管是基础，学习本就包含在内。`,
+    c1tag: `★ 招牌课程`, c1h: `课后托管`,
+    c1p: `从学校接送到看护、点心与作业 — 直到您下班都安心。`,
+    c1li1: `幼儿园–7年级 接送`, c1li2: `三联市 · 本拿比 · 素里 接送`, c1li3: `假期营(含热午餐)`,
+    c1more: `预约免费试听 →`,
+    c2tag: `7–12年级`, c2h: `青少年补习`,
+    c2p: `经验丰富的老师小班授课，真正打好基础。`,
+    c2li1: `数学 · 科学 (7–12年级)`, c2li2: `ELL 英文强化`, c2li3: `SAT · AP · IB 备考`,
+    c2more: `了解详情 →`,
+    c3tag: `成人 · 移民`, c3h: `成人语言`,
+    c3p: `移民、入籍或工作所需的分数 — 按时达成。`,
+    c3li1: `雅思 IELTS (移民·留学·工作)`, c3li2: `法语 TEF · TCF`, c3li3: `先免费试听，再报名`,
+    c3more: `了解详情 →`,
+    immTitle: `想移民加拿大？法语就是答案。`,
+    immSub: `如果 LMIA 卡住了您，法语是最快的绕行路线。JC 从策略到分数全程带您走。`,
+    immCat: `成人 · 移民`,
+    immGo: `阅读更多 →`,
+    immCard1Title: `LMIA 受阻？用法语类流动性绕过去`,
+    immCard1Desc: `NCLC 5 法语 = 免 LMIA (C16)。工签攻略。`,
+    immCard2Title: `PR 黄金期 — 现在是最后的窗口`,
+    immCard2Desc: `"签证还有6个月，没事的"？其实您已经落后了。`,
+    immCard3Title: `法语是通往 PR 最快的捷径`,
+    immCard3Desc: `CRS 分数线不断上涨，法语通道就是出路。`,
+    immCta: `预约免费试听 →`,
+    statN2: `小班`, statL1: `年来家长的信赖`, statL2: `小班制，贴心照顾`, statL3: `托管 + 学习，各年级适用`,
+    revTitle: `真实家长评价`, revSub: `来自 Google 地图的真实评价。`,
+    revCta: `⭐ 查看全部 Google 评价 →`,
+    revAsk: `来过 JC 吗？请在 Google 上留下简短评价 — 这对其他家长很有帮助 🙏`,
+    revWrite: `✍️ 写评价`,
+    galTitle: `JC 的一天`, galSub: `接送与托管、有趣的活动，还有温热的点心。`,
+    galCap1: `烹饪课`, galCap2: `温热点心`, galCap3: `趣味活动`, galCap4: `热午餐`,
+    ftTitle: `先来免费体验一天。`,
+    ftP: `让孩子亲身体验后再决定。留下联系方式，我们会尽快联系您。`,
+    ftKakao: `💬 用 KakaoTalk 咨询`,
+    ftAlt: `致电 <a href="tel:+17782582223">778-258-2223</a> · #130 – 1140 Austin Ave, Coquitlam, BC`,
+    lblName: `家长姓名 <span class="req">*</span>`, lblStudent: `学生姓名`,
+    lblPhone: `电话 <span class="req">*</span>`, lblGrade: `学生年级`,
+    lblProgram: `想了解的课程 <span class="req">*</span>`,
+    lblEmail: `电子邮箱 <span style="color:var(--gray);font-weight:600">(选填)</span>`,
+    lblMessage: `留言 <span style="color:var(--gray);font-weight:600">(选填)</span>`,
+    optDefault: `请选择`, optCare: `课后托管 (接送·看护·点心)`,
+    optKids: `青少年补习 (数学·科学·ELL)`, optAdult: `成人语言 (雅思·法语)`, optOther: `其他 / 还不确定`,
+    submit: `提交免费试听申请 →`,
+    formNote: `我们会在营业时间内与您联系。您的信息仅用于咨询。`,
+    okMsg: `✅ 已收到申请，我们会尽快联系您！`,
+    badMsg: `⚠️ 提交出错了。请通过 KakaoTalk (💬) 或致电 778-258-2223 联系我们。`,
+    errName: `请输入家长姓名`, errPhone: `请输入电话号码`,
+    errProgram: `请选择课程`, errEmail: `请输入有效的邮箱地址`,
+    ftAddr: `#130 – 1140 Austin Ave, Coquitlam, BC<br>认真对待成绩、值得信赖的课后班。`,
+    ftContact: `联系方式`, ftKakaoLink: `KakaoTalk 咨询`, ftBlogLink: `📝 博客`, ftEmailLink: `发邮件给我们`,
+    ftPrograms: `课程`, ftCare: `课后托管`, ftKids: `青少年补习 (数学·科学·ELL)`, ftAdult: `成人语言 (雅思·法语)`,
+  };
+  const ZH_PH = {
+    phName: `例：王小明`, phStudent: `孩子姓名`, phGrade: `例：5年级 / 幼儿园 / 成人`,
+    phMessage: `任何问题，或希望试听的日期`,
+  };
+  const ZH_ARIA = {
+    logoHome: `JC 课后学堂 首页`, mainMenu: `主菜单`, langGroup: `语言`,
+    campBanner: `暑期营第二期正在进行，仍可报名 — 查看插班方式、物品清单与每日安排`,
+    fallBanner: `查看 2026 秋季课后班报名指南`,
+    heroArt: `中心内照顾孩子的照片位置`,
+    stripAria: `选择 JC 课后学堂的 4 个理由`, statsAria: `信赖指标`,
+  };
+
   const META = {
     ko: { title: `정철 애프터스쿨 JC After School · Coquitlam 방과후 돌봄 · 튜터링`,
           desc: `Coquitlam 한인 방과후 돌봄. 학교 픽업부터 돌봄·간식, 수학·과학·영어 성적까지 한 곳에서. 무료 체험 신청하세요.` },
     en: { title: `JC After School · Coquitlam After-School Care & Tutoring`,
           desc: `Coquitlam Korean after-school care. From school pickup to care, snacks, and Math·Science·English — all in one place. Book a free trial.` },
+    zh: { title: `JC 课后学堂 · 高贵林课后托管与补习`,
+          desc: `高贵林(Coquitlam)课后托管。从学校接送到看护、点心，再到数学·科学·英文成绩，一站式解决。欢迎预约免费试听。` },
   };
+
+  // 언어별 사전. 한국어는 HTML 원본이라 사전이 없다(빈 값이면 원본으로 복원).
+  const DICT = { en: EN, zh: ZH };
+  const DICT_PH = { en: EN_PH, zh: ZH_PH };
+  const DICT_ARIA = { en: EN_ARIA, zh: ZH_ARIA };
+  const LANGS = ['ko', 'en', 'zh'];
 
   // 한국어 원본(HTML에 이미 있음)을 보관 → 토글 시 복원
   document.querySelectorAll('[data-i18n]').forEach(el => el.dataset.ko = el.innerHTML);
@@ -640,28 +741,31 @@
 
   let LANG = 'ko';
   function setLang(lang) {
-    LANG = (lang === 'en') ? 'en' : 'ko';
-    document.documentElement.lang = LANG;
+    LANG = LANGS.includes(lang) ? lang : 'ko';
+    document.documentElement.lang = (LANG === 'zh') ? 'zh-Hans' : LANG;
+    const D = DICT[LANG], DP = DICT_PH[LANG], DA = DICT_ARIA[LANG];
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const k = el.dataset.i18n;
-      el.innerHTML = (LANG === 'en') ? (EN[k] ?? el.dataset.ko) : el.dataset.ko;
+      el.innerHTML = D ? (D[k] ?? el.dataset.ko) : el.dataset.ko;
     });
     document.querySelectorAll('[data-i18n-ph]').forEach(el => {
       const k = el.dataset.i18nPh;
-      el.setAttribute('placeholder', (LANG === 'en') ? (EN_PH[k] ?? el.dataset.koPh) : el.dataset.koPh);
+      el.setAttribute('placeholder', DP ? (DP[k] ?? el.dataset.koPh) : el.dataset.koPh);
     });
     document.querySelectorAll('[data-i18n-aria]').forEach(el => {
       const k = el.dataset.i18nAria;
-      el.setAttribute('aria-label', (LANG === 'en') ? (EN_ARIA[k] ?? el.dataset.koAria) : el.dataset.koAria);
+      el.setAttribute('aria-label', DA ? (DA[k] ?? el.dataset.koAria) : el.dataset.koAria);
     });
     document.title = META[LANG].title;
     if (metaDesc) metaDesc.setAttribute('content', META[LANG].desc);
+    // 중국어 블로그 글은 아직 없으므로 영어판으로 보낸다(한글판보다 읽을 수 있다).
+    const nonKo = (LANG !== 'ko');
     const campBanner = document.getElementById('campBanner');
-    if (campBanner) campBanner.href = LANG === 'en'
+    if (campBanner) campBanner.href = nonKo
       ? '/blog/summer-camp-start-2026-en.html'
       : '/blog/summer-camp-start-2026.html';
     const fallBanner = document.getElementById('fallBanner');
-    if (fallBanner) fallBanner.href = LANG === 'en'
+    if (fallBanner) fallBanner.href = nonKo
       ? '/blog/fall-2026-afterschool-registration-en.html'
       : '/blog/fall-2026-afterschool-registration.html';
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
@@ -676,9 +780,9 @@
   try { saved = localStorage.getItem('jc-lang'); } catch (e) {}
   if (!saved) {
     const nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'ko';
-    saved = /^ko/i.test(nav) ? 'ko' : 'en';
+    saved = /^ko/i.test(nav) ? 'ko' : (/^zh/i.test(nav) ? 'zh' : 'en');
   }
-  if (saved === 'en') setLang('en'); else setLang('ko');
+  setLang(saved);
 
   // ── Mobile menu toggle ──────────────────────────────
   const toggle = document.querySelector('.menu-toggle');
@@ -686,7 +790,8 @@
   toggle?.addEventListener('click', () => {
     const open = menu.classList.toggle('open');
     toggle.setAttribute('aria-expanded', String(open));
-    const t = { ko: ['메뉴 열기', '메뉴 닫기'], en: ['Open menu', 'Close menu'] }[LANG];
+    const t = { ko: ['메뉴 열기', '메뉴 닫기'], en: ['Open menu', 'Close menu'],
+                zh: ['打开菜单', '关闭菜单'] }[LANG];
     toggle.setAttribute('aria-label', open ? t[1] : t[0]);
   });
   menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
@@ -798,9 +903,11 @@
     const grid = document.querySelector('.review-cards');
     const list = (reviewsData.reviews || []).filter(r => r && r.text);
     if (!grid || !list.length) return;
-    const L = (LANG === 'en')
-      ? { src: '⭐ Google Review', sum: (t) => `${t} Google reviews`, more: 'See more on Google' }
-      : { src: '⭐ Google 리뷰', sum: (t) => `구글 리뷰 ${t}개`, more: '더 많은 후기는 구글에서' };
+    const L = {
+      en: { src: '⭐ Google Review', sum: (t) => `${t} Google reviews`, more: 'See more on Google' },
+      zh: { src: '⭐ Google 评价', sum: (t) => `${t} 条 Google 评价`, more: '在 Google 查看更多' },
+      ko: { src: '⭐ Google 리뷰', sum: (t) => `구글 리뷰 ${t}개`, more: '더 많은 후기는 구글에서' },
+    }[LANG] || { src: '⭐ Google 리뷰', sum: (t) => `구글 리뷰 ${t}개`, more: '더 많은 후기는 구글에서' };
     let html = list.map(r => {
       const n = Math.max(1, Math.min(5, Math.round(r.rating || 5)));
       return `<article class="review">
