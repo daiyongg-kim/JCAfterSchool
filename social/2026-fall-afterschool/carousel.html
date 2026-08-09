@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>2026 가을 방과후 — 간식과 학습 인스타그램 캐러셀</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+:root{--cream:#FBF8F3;--cream2:#F4EEE4;--navy:#1C2A3A;--red:#D6402F;--amber:#E8A33D;--muted:#675F57;--line:#E7DFD3}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1440px;overflow:hidden;background:var(--cream);
+  font-family:Pretendard,-apple-system,sans-serif;color:var(--navy);-webkit-font-smoothing:antialiased}
+.slide{position:relative;width:1080px;height:1440px;overflow:hidden;padding:92px}
+.brand{display:flex;align-items:center;gap:16px;font-size:27px;font-weight:800}
+.mark{display:grid;place-items:center;width:54px;height:54px;border-radius:10px;background:var(--red);color:#fff;font-size:22px;font-weight:900}
+.num{position:absolute;right:92px;top:103px;font-size:23px;font-weight:800;color:var(--muted)}
+.eyebrow{font-size:28px;font-weight:900;color:var(--red);letter-spacing:.05em;margin-top:120px}
+.title{font-size:88px;line-height:1.1;letter-spacing:-.05em;margin:22px 0 30px;font-weight:900}
+.lead{font-size:33px;line-height:1.5;font-weight:650;color:#2b3a4a}
+.dots{position:absolute;right:92px;bottom:82px;display:flex;gap:10px}
+.dots i{width:11px;height:11px;border-radius:50%;background:#c9bfb2}
+.dots i.on{width:34px;border-radius:8px;background:var(--red)}
+.swipe{position:absolute;left:92px;bottom:78px;font-size:25px;font-weight:800;color:var(--red)}
+
+/* dark slides */
+.dark{background:var(--navy);color:#fff}
+.dark .num{color:#8fa0b2}.dark .eyebrow{color:var(--amber)}.dark .lead{color:#DCE3E9}
+.dark .dots i{background:#4a5a6b}.dark .dots i.on{background:var(--amber)}
+.dark .swipe{color:var(--amber)}
+
+/* full-bleed photo slides */
+.photo{padding:0}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,42,58,.62) 0%,rgba(28,42,58,.06) 38%,rgba(28,42,58,.30) 62%,rgba(28,42,58,.88) 100%)}
+.photo .top{position:absolute;left:92px;right:92px;top:103px;display:flex;align-items:center;justify-content:space-between;color:#fff}
+.photo .top .brand{color:#fff}
+.photo .cap{position:absolute;left:92px;right:92px;bottom:150px;color:#fff}
+.photo .cap .eyebrow{margin:0 0 18px;color:var(--amber)}
+.photo .cap .title{font-size:76px;margin:0;text-shadow:0 6px 40px rgba(0,0,0,.45)}
+.photo .dots i{background:rgba(255,255,255,.45)}
+.photo .dots i.on{background:#fff}
+
+/* fact cards */
+.facts{display:grid;gap:26px;margin-top:56px}
+.fact{display:flex;gap:26px;align-items:flex-start;padding:34px 36px;background:#fff;border:2px solid var(--line);border-radius:18px;box-shadow:0 16px 38px rgba(28,42,58,.08)}
+.fact .ic{display:grid;place-items:center;flex:none;width:74px;height:74px;border-radius:50%;background:var(--cream2);font-size:36px}
+.fact strong{display:block;font-size:34px;line-height:1.25}
+.fact p{margin:8px 0 0;font-size:24px;line-height:1.45;color:var(--muted);font-weight:600}
+.alert{margin-top:32px;padding:28px 32px;border-left:8px solid var(--red);border-radius:12px;background:#FDEFEC;color:#7a2418;font-size:25px;font-weight:750;line-height:1.45}
+
+/* steps */
+.steps{counter-reset:s;display:grid;gap:24px;margin-top:56px}
+.step{counter-increment:s;position:relative;padding:32px 36px 32px 108px;background:#fff;border:2px solid var(--line);border-radius:18px}
+.step::before{content:counter(s);position:absolute;left:36px;top:32px;width:50px;height:50px;border-radius:12px;background:var(--red);color:#fff;font-size:26px;font-weight:900;display:grid;place-items:center}
+.step strong{display:block;font-size:33px;line-height:1.25}
+.step p{margin:8px 0 0;font-size:24px;color:var(--muted);font-weight:600;line-height:1.45}
+
+/* outro contact */
+.contact{margin-top:64px;background:#fff;color:var(--navy);border-radius:20px;padding:44px 48px;display:grid;gap:28px}
+.contact div{font-size:32px;font-weight:850}
+.contact span{display:block;font-size:20px;color:var(--red);letter-spacing:.09em;margin-bottom:4px}
+.location{position:absolute;left:92px;bottom:140px;color:#bfc8d2;font-size:22px}
+.offer{display:inline-block;margin-top:26px;background:var(--red);color:#fff;padding:22px 34px;border-radius:14px;font-size:32px;font-weight:900;box-shadow:0 18px 36px rgba(214,64,47,.45)}
+</style></head><body><main id="app"></main>
+<script>
+const N=8;
+const slide=Number(new URLSearchParams(location.search).get('slide')||1);
+const brand=`<div class="brand"><span class="mark">JC</span>정철 애프터스쿨</div>`;
+const num=`<div class="num">${slide} / ${N}</div>`;
+const dots=`<div class="dots">${Array.from({length:N},(_,i)=>`<i class="${i+1===slide?'on':''}"></i>`).join('')}</div>`;
+const IMG='../../web/blog/img/';
+
+const photo=(src,eyebrow,title)=>`<section class="slide photo">
+  <img src="${IMG}${src}"><div class="scrim"></div>
+  <div class="top">${brand}<div style="font-size:23px;font-weight:800;opacity:.85">${slide} / ${N}</div></div>
+  <div class="cap"><div class="eyebrow">${eyebrow}</div><h1 class="title">${title}</h1></div>
+  ${dots}</section>`;
+
+const slides={
+1:`<section class="slide dark">${brand}${num}
+  <div class="eyebrow">FALL 2026 · 9월 새학기 방과후</div>
+  <h1 class="title">돌봄만 하는<br>방과후가<br>아닙니다</h1>
+  <p class="lead">간식은 매일, 무료로.<br>그 다음 시간은 숙제와 학습으로.</p>
+  <div class="swipe">넘겨서 실제 모습 보기 →</div>${dots}</section>`,
+
+2:photo('fall-2026-snack-plate.jpg','간식 / SNACKS','도착하면 제일 먼저,<br>각자 한 접시씩'),
+
+3:`<section class="slide">${brand}${num}
+  <div class="eyebrow">간식 / SNACKS</div>
+  <h1 class="title">간식은 매일,<br>무료로 제공합니다</h1>
+  <div class="facts">
+    <div class="fact"><div class="ic">🍪</div><div><strong>별도 비용 없이 매일</strong><p>간식비 명목의 추가 청구가 없습니다.</p></div></div>
+    <div class="fact"><div class="ic">🍎</div><div><strong>과자 한 봉지로 때우지 않습니다</strong><p>과일 · 시리얼 · 구운 간식 · 따뜻한 간식을 그날그날 바꿔 가며.</p></div></div>
+  </div>
+  <div class="alert">🥜 땅콩 · 견과류는 일절 사용하지 않습니다. 알러지는 상담 때 꼭 알려 주세요.</div>${dots}</section>`,
+
+4:photo('camp-wk4day3-0722-snack-friends.jpg','간식 시간 / EVERY DAY','아이들이 제일<br>기다리는 시간'),
+
+5:`<section class="slide dark">${brand}${num}
+  <div class="eyebrow">그리고 여기서부터</div>
+  <h1 class="title">배가 고픈 채로는<br>숙제도 학습도<br>되지 않습니다</h1>
+  <p class="lead">그래서 간식을 먼저 챙깁니다.<br>그 다음이 진짜 방과후입니다.</p>${dots}</section>`,
+
+6:photo('fall-2026-study-duo.jpg','학습 / STUDY','옆에서 봐주되,<br>대신 해주지는<br>않습니다'),
+
+7:`<section class="slide">${brand}${num}
+  <div class="eyebrow">학습 / STUDY</div>
+  <h1 class="title">방과후의<br>나머지 절반</h1>
+  <p class="lead">안전하게 데리고 있는 건 절반입니다.<br>나머지 절반은 <b>그 시간에 무엇을 하느냐</b>.</p>
+  <div class="steps">
+    <div class="step"><strong>숙제를 먼저 끝냅니다</strong><p>미루지 않도록 곁에서 살피고, 스스로 마무리하는 습관을 만듭니다.</p></div>
+    <div class="step"><strong>남는 시간에 부족한 과목</strong><p>수학 · 과학 · 영어를 학년과 현재 수준에 맞춰 보완합니다.</p></div>
+    <div class="step"><strong>학년이 올라가도 그대로</strong><p>Kinder–G7 방과후와 G7–12 수학·과학·영어가 같은 공간에서 이어집니다.</p></div>
+  </div>${dots}</section>`,
+
+8:`<section class="slide dark">${brand}${num}
+  <div class="eyebrow">9월 새학기 등록 접수 중</div>
+  <h1 class="title">먼저 하루,<br>무료 체험</h1>
+  <p class="lead">설명을 듣는 것보다 아이가 하루를 직접 보내보는 편이<br>훨씬 정확합니다. 픽업부터 간식 · 숙제 · 학습까지<br>실제 하루를 그대로 경험해 보세요.</p>
+  <div class="offer">Kinder ~ Grade 7 · 무료 체험 하루</div>
+  <div class="contact">
+    <div><span>PICKUP</span>Tri-City · Burnaby · Surrey</div>
+    <div><span>문의 / CONTACT</span>프로필 링크 · DM · 카카오톡</div>
+  </div>
+  <div class="location">#130 – 1140 Austin Ave, Coquitlam, BC</div>${dots}</section>`
+};
+document.getElementById('app').innerHTML=slides[slide];
+</script></body></html>
