@@ -383,19 +383,19 @@
     <h2 class="sec-title" id="imm-title" data-i18n="immTitle">캐나다 이민, 프랑스어가 답입니다</h2>
     <p class="sec-sub" data-i18n="immSub">LMIA가 막혔다면, 프랑스어가 가장 빠른 우회로입니다. 정철이 전략부터 점수까지 함께합니다.</p>
     <div class="fcards">
-      <a class="fcard" href="/blog/francophone-mobility-workpermit.html">
+      <a class="fcard" id="immCard1" href="/blog/francophone-mobility-workpermit.html">
         <div class="thumb"><img src="/blog/img/franco-mobility.jpg" alt="프랑코폰 모빌리티 워크퍼밋 안내" loading="lazy"></div>
         <div class="fb"><span class="cat" data-i18n="immCat">성인 · 이민</span>
           <h3 data-i18n="immCard1Title">막힌 LMIA, 프랑코폰 모빌리티로 우회하기</h3>
           <p data-i18n="immCard1Desc">불어 NCLC 5면 LMIA 면제(C16). 워크퍼밋 치트키 총정리.</p>
           <span class="go" data-i18n="immGo">자세히 보기 →</span></div></a>
-      <a class="fcard" href="/blog/visa-golden-time-francophone-mobility.html">
+      <a class="fcard" id="immCard2" href="/blog/visa-golden-time-francophone-mobility.html">
         <div class="thumb"><img src="/blog/img/goldtime-1.jpg" alt="영주권 골든타임 안내" loading="lazy"></div>
         <div class="fb"><span class="cat" data-i18n="immCat">성인 · 이민</span>
           <h3 data-i18n="immCard2Title">영주권 골든타임, 지금이 마지막입니다</h3>
           <p data-i18n="immCard2Desc">"비자 6개월 남았으니 괜찮겠지?" — 이미 늦기 시작했습니다.</p>
           <span class="go" data-i18n="immGo">자세히 보기 →</span></div></a>
-      <a class="fcard" href="/blog/french-canada-pr-cheatkey.html">
+      <a class="fcard" id="immCard3" href="/blog/french-canada-pr-cheatkey.html">
         <div class="thumb"><img src="/blog/img/french-course.jpg" alt="프랑스어 영주권 치트키 안내" loading="lazy"></div>
         <div class="fb"><span class="cat" data-i18n="immCat">성인 · 이민</span>
           <h3 data-i18n="immCard3Title">프랑스어가 가장 빠른 영주권 치트키</h3>
@@ -770,6 +770,13 @@
     if (campBanner) campBanner.href = nonKo
       ? '/blog/summer-camp-start-2026-en.html'
       : '/blog/summer-camp-start-2026.html';
+    const SFX = (LANG === 'zh') ? '-zh' : (LANG === 'en') ? '-en' : '';
+    [['immCard1','francophone-mobility-workpermit'],
+     ['immCard2','visa-golden-time-francophone-mobility'],
+     ['immCard3','french-canada-pr-cheatkey']].forEach(([id, slug]) => {
+      const el = document.getElementById(id);
+      if (el) el.href = `/blog/${slug}${SFX}.html`;
+    });
     const fallBanner = document.getElementById('fallBanner');
     if (fallBanner) fallBanner.href = (LANG === 'zh')
       ? '/blog/fall-2026-afterschool-registration-zh.html'
