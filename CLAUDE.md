@@ -48,7 +48,14 @@ When the user's request matches an available skill, invoke it via the Skill tool
   EOF
   ```
 - **검증 필수:** 변환 후 **저장된 파일을 실제로 Read(이미지로 열어)** hero·핵심 컷이 의도한 사진인지 눈으로 확인하고, 헤드리스 크롬으로 페이지 렌더까지 본 뒤 마무리한다.
-- 원본은 용량이 크므로 항상 `sips`로 가로 1200px·q72 최적화본만 `web/blog/img/`에 둔다. (`pic/`는 .gitignore 처리됨.)
+- **EXIF 회전 주의 (2026-08-11 입고):** `sips`는 픽셀을 돌리지 않고 EXIF `Orientation` 값만 남긴다. 브라우저는 이를 해석해 바로 보여주지만, PIL·Read 툴 등 EXIF를 무시하는 곳에서는 눕혀 보인다(2026-08-11 사진은 52장 중 45장이 회전값 6/8). 검증할 때 헷갈리므로 **PIL `ImageOps.exif_transpose()`로 회전을 픽셀에 구워 저장**하는 쪽이 안전하다:
+  ```python
+  from PIL import Image, ImageOps
+  im = ImageOps.exif_transpose(Image.open(src))
+  im.thumbnail((1200,1200), Image.LANCZOS)
+  im.convert("RGB").save(dst, quality=76, optimize=True)
+  ```
+- 원본은 용량이 크므로 항상 가로 1200px·q72~76 최적화본만 `web/blog/img/`에 둔다. (`pic/`는 .gitignore 처리됨.)
 - 아이 얼굴 사진: 학부모 동의는 이미 확보되어 있으므로 매번 확인하지 않고 바로 게시한다 (2026-07-07 사용자 확인). 단, 민감한 컷(우는 얼굴 등)은 알아서 제외.
 
 ## Worklog 규칙 (2026-06-21 입고)
