@@ -20,6 +20,16 @@
 - **후속(같은 날)**: 언어가 버튼·브라우저 locale 로만 정해져 **중국어로 바로 여는 URL이 없었다.** 小红书·WeChat 에 링크를 뿌리는 것이 목적인데 링크가 한국어로 열리면 의미가 없다. `?lang=` 쿼리 파라미터를 **최우선**으로 읽도록 추가 — `?lang=zh` / `?lang=en` / `?lang=ko`. 선택은 기존대로 localStorage 에 저장돼 재방문 시 유지된다.
 - **비고(전략)**: 중국어 페이지의 가치는 SEO 순위가 아니라 **전환**이다. 도메인 신뢰도가 낮아(전체 노출 76회) 중국어 검색어 순위는 당장 기대하기 어렵다. 小红书·WeChat·지인 소개로 들어온 사람이 이탈하지 않게 하는 것이 목적. **발견 경로(Google Business Profile, 小红书)가 선행되어야 한다.**
 
+## 2026-08-14 — 여름캠프 2차 9일차 사진 블로그 (발표 포스터) + 모바일 오버플로 일괄 수정
+- **요청**: 오늘자 블로그. (메모: 발표 포스터 거의 완성, 다음 주 마무리·발표. facts/ideas/opinions/illustrations/demonstrations 포함)
+- **결과**:
+  - `web/blog/camp-session2-day9-2026-08-14.html` 신규 — 📋 과제 요건 5가지를 카드로 시각화 / 🎹 "How to play piano — from Minwoo and Leo"(직접 그린 오선·건반 C~B 라벨링·피아노 사진·음악 장르, 그리고 의견란 두 문장 인용) / 🧸 "TOYS for Girls"(Barbies·Stuffies·Squishies·DIY·Slime 5개 섹션, 슬라임 레시피=시연, "What is your favourite slime?"=청중 질문) / ✂️ 제작 중 컷 / 점심 / 금요일 오후.
+  - **앵글**: 요건 5가지가 왜 함께 있어야 하는지를 짚음 — "사실만 있으면 보고서, 의견만 있으면 잡담". 포스터 두 장이 그 요건을 각각 어떻게 충족했는지 실물로 대응시킴.
+  - 사진 30장 중 14장 사용(1200px, EXIF 회전 반영).
+  - **🚨 모바일 오버플로 일괄 점검·수정**: 어제 배운 측정법으로 2차 캠프 9편 전수 검사 → **day1(9px)·day2(16px)·day5(7px)·day6(51px)·day7(28px)·day9(111px) 총 6편에서 360px 가로 넘침** 확인. 공통 원인은 **grid/flex 카드의 `min-width:auto`** (Demonstrations·Mathematicians·Hydrogen 등 긴 단어가 칸 축소를 막음). `.flow/.cats/.teams/.el/.vs/.five`에 `min-width:0` + `overflow-wrap:anywhere` 추가하고 day9의 `.five`는 모바일 2칸으로 조정 → **9편 전부 OK**. 데스크톱 레이아웃 무변경 확인.
+  - 재발 방지로 `CLAUDE.md`에 측정 스니펫과 원인을 입고.
+  - `web/blog/index.html` 카드, `web/sitemap.xml` 추가. 참조·미사용 전수 검사(0).
+
 ## 2026-08-13 — 여름캠프 2차 8일차 사진 블로그 (영어 문법 + How-To 프로젝트)
 - **요청**: 오늘자 블로그 (사진 15장, memo 없음).
 - **결과**:

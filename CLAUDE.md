@@ -47,6 +47,13 @@ When the user's request matches an available skill, invoke it via the Skill tool
   opt 0 first.jpg   # FILES[0] = 첫 사진
   EOF
   ```
+- **모바일 가로 오버플로 검증 (2026-08-14 입고):** 헤드리스 크롬은 `--window-size`를 줘도 레이아웃 뷰포트를 500px로 고정하므로 **모바일 스크린샷은 그냥 잘려 보인다(정상 페이지도 잘림)**. 폭 문제는 스크린샷으로 판단하지 말고 아래처럼 측정할 것:
+  ```python
+  # 파일에 주입 후 --dump-dom 으로 title 읽기
+  inject = "<style>html,body{width:360px!important;max-width:360px!important}</style>"
+  probe  = "<script>onload=()=>{document.title='R '+(document.body.scrollWidth>360?'OVERFLOW':'OK')}</script>"
+  ```
+  자주 걸리는 원인: **grid/flex 카드의 `min-width:auto`** — `Demonstrations`·`Mathematicians` 같은 긴 단어가 칸을 못 줄이게 막아 페이지 전체가 넘침. 카드형 그리드를 새로 만들면 항상 `min-width:0` + `overflow-wrap:anywhere`를 같이 넣는다.
 - **검증 필수:** 변환 후 **저장된 파일을 실제로 Read(이미지로 열어)** hero·핵심 컷이 의도한 사진인지 눈으로 확인하고, 헤드리스 크롬으로 페이지 렌더까지 본 뒤 마무리한다.
 - **EXIF 회전 주의 (2026-08-11 입고):** `sips`는 픽셀을 돌리지 않고 EXIF `Orientation` 값만 남긴다. 브라우저는 이를 해석해 바로 보여주지만, PIL·Read 툴 등 EXIF를 무시하는 곳에서는 눕혀 보인다(2026-08-11 사진은 52장 중 45장이 회전값 6/8). 검증할 때 헷갈리므로 **PIL `ImageOps.exif_transpose()`로 회전을 픽셀에 구워 저장**하는 쪽이 안전하다:
   ```python
