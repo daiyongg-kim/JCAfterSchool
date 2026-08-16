@@ -114,18 +114,11 @@
   .campbanner:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
   .campbanner .cb-body{flex:1;min-width:0}
   .campbanner .cb-badge{display:inline-block;background:var(--amber);color:var(--navy);font-size:12.5px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:8px}
-  .campbanner .cb-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:7px;vertical-align:middle;position:relative;top:-1px;animation:cbPulse 2.4s ease-in-out infinite}
-  @keyframes cbPulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(214,64,47,.45)}50%{opacity:.5;box-shadow:0 0 0 5px rgba(214,64,47,0)}}
-  @media(prefers-reduced-motion:reduce){.campbanner .cb-dot{animation:none}}
   .campbanner h2{font-family:var(--kr);font-size:clamp(18px,3.2vw,23px);font-weight:800;color:#fff;letter-spacing:-.01em;margin:0 0 4px}
   .campbanner p{font-size:14.5px;color:#D9E0E8;margin:0;word-break:keep-all}
   .campbanner .cb-cta{flex-shrink:0;background:var(--red);color:#fff;font-weight:700;padding:11px 20px;border-radius:var(--r-btn);font-size:15px;white-space:nowrap;box-shadow:0 12px 24px -12px rgba(214,64,47,.55)}
   .campbanner:hover .cb-cta{background:var(--red-dark)}
-  .campbanner.fallbanner{background:var(--cream-2);border-color:var(--line);border-left-color:var(--red);margin-top:12px}
-  .campbanner.fallbanner .cb-badge{background:var(--navy);color:#fff}
-  .campbanner.fallbanner h2{color:var(--navy)}
-  .campbanner.fallbanner p{color:var(--navy-soft)}
-  @media(max-width:600px){.campbanner{flex-direction:column;align-items:flex-start;gap:14px}.campbanner .cb-cta{width:100%;text-align:center}}
+    @media(max-width:600px){.campbanner{flex-direction:column;align-items:flex-start;gap:14px}.campbanner .cb-cta{width:100%;text-align:center}}
   .fcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
   .fcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm);transition:.2s;display:flex;flex-direction:column}
   .fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
@@ -304,14 +297,6 @@
 
 <main id="main">
 <div class="wrap">
-  <a class="campbanner" id="campBanner" href="/blog/summer-camp-start-2026.html" data-i18n-aria="campBanner" aria-label="2026 여름캠프 2차 절찬 진행중 — 남은 기간 추가 모집 및 준비물·일정 안내 보기">
-    <div class="cb-body">
-      <span class="cb-badge" data-i18n="campBadge"><span class="cb-dot" aria-hidden="true"></span>2026 여름캠프 2차 · 절찬 진행중</span>
-      <h2 data-i18n="campTitle">아침 8:30부터 저녁 7시까지, 여름방학을 통째로</h2>
-      <p data-i18n="campSub">8/4~8/28 · <b>남은 기간 추가 모집</b> · 과학·쿠킹·영어·야외활동 · 맞벌이 부모님 무료돌봄</p>
-    </div>
-    <span class="cb-cta" data-i18n="campCta">추가 모집 문의 →</span>
-  </a>
   <a class="campbanner fallbanner" id="fallBanner" href="/blog/fall-2026-afterschool-registration.html" data-i18n-aria="fallBanner" aria-label="2026년 9월 새학기 방과후 모집 안내 보기">
     <div class="cb-body">
       <span class="cb-badge" data-i18n="fallBadge">🍂 FALL 2026 · 9월 새학기 모집</span>
@@ -560,10 +545,6 @@
     stripT2: `Care`, stripD2: `Always with a teacher`,
     stripT3: `Snacks`, stripD3: `Warm, every day`,
     stripT4: `Grades`, stripD4: `Math·Science·English`,
-    campBadge: `<span class="cb-dot" aria-hidden="true"></span>SUMMER CAMP SESSION 2 · NOW RUNNING`,
-    campTitle: `From 8:30am to 7pm — the whole summer day covered`,
-    campSub: `Aug 4–28 · <b>Still taking sign-ups for the remaining weeks</b> · Science·cooking·English·outdoors · Free care for working parents`,
-    campCta: `Ask about joining →`,
     fallBadge: `🍂 FALL 2026 · September Registration`,
     fallTitle: `School pickup, care, snacks, homework & learning`,
     fallSub: `Kinder–Grade 7 · Math·Science·English · Free trial consultation`,
@@ -627,7 +608,6 @@
   };
   const EN_ARIA = {
     logoHome: `JC After School home`, mainMenu: `Main menu`, langGroup: `Language`,
-    campBanner: `Summer Camp Session 2 is running now and still taking sign-ups — see how to join, plus the packing list and daily schedule`,
     fallBanner: `View the Fall 2026 after-school registration guide`,
     heroArt: `Space for a photo of children being cared for at the center`,
     stripAria: `4 reasons to choose JC After School`, statsAria: `Trust indicators`,
@@ -651,10 +631,6 @@
     stripT2: `托管`, stripD2: `全程有老师看护`,
     stripT3: `点心`, stripD3: `每天温热供应`,
     stripT4: `成绩`, stripD4: `数学·科学·英文`,
-    campBadge: `<span class="cb-dot" aria-hidden="true"></span>暑期营 第二期 · 正在进行`,
-    campTitle: `早上 8:30 到晚上 7 点 — 整个暑假都安排好`,
-    campSub: `8月4日–28日 · <b>剩余周次仍可报名</b> · 科学·烹饪·英文·户外活动 · 双职工家庭免费托管`,
-    campCta: `咨询插班 →`,
     fallBadge: `🍂 2026 秋季 · 九月开学报名`,
     fallTitle: `学校接送、托管、点心、作业与学习`,
     fallSub: `幼儿园–7年级 · 数学·科学·英文 · 免费试听咨询`,
@@ -718,7 +694,6 @@
   };
   const ZH_ARIA = {
     logoHome: `JC 课后学堂 首页`, mainMenu: `主菜单`, langGroup: `语言`,
-    campBanner: `暑期营第二期正在进行，仍可报名 — 查看插班方式、物品清单与每日安排`,
     fallBanner: `查看 2026 秋季课后班报名指南`,
     heroArt: `中心内照顾孩子的照片位置`,
     stripAria: `选择 JC 课后学堂的 4 个理由`, statsAria: `信赖指标`,
@@ -766,10 +741,6 @@
     if (metaDesc) metaDesc.setAttribute('content', META[LANG].desc);
     // 중국어 블로그 글은 아직 없으므로 영어판으로 보낸다(한글판보다 읽을 수 있다).
     const nonKo = (LANG !== 'ko');
-    const campBanner = document.getElementById('campBanner');
-    if (campBanner) campBanner.href = nonKo
-      ? '/blog/summer-camp-start-2026-en.html'
-      : '/blog/summer-camp-start-2026.html';
     const SFX = (LANG === 'zh') ? '-zh' : (LANG === 'en') ? '-en' : '';
     [['immCard1','francophone-mobility-workpermit'],
      ['immCard2','visa-golden-time-francophone-mobility'],
