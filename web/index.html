@@ -104,6 +104,7 @@
   .nav .right{margin-left:auto;display:flex;align-items:center;gap:14px}
   .lang{display:flex;gap:2px;font-size:13px;font-weight:700;color:var(--gray);border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
   .lang button{font:inherit;border:0;background:transparent;color:var(--gray);padding:5px 11px;cursor:pointer;white-space:nowrap}
+  .lg-short{display:none}
   .lang button[aria-pressed="true"]{background:var(--navy);color:var(--cream)}
   .btn{font-family:var(--kr);font-weight:700;border-radius:var(--r-btn);padding:11px 22px;font-size:15px;cursor:pointer;border:none;transition:.18s;display:inline-block;text-align:center;white-space:nowrap}
   .btn-primary{background:var(--red);color:#fff;box-shadow:0 12px 24px -12px rgba(214,64,47,.55)}
@@ -208,8 +209,15 @@
   @media(max-width:560px){
     .strip,.cards,.stats,footer .grid{grid-template-columns:1fr}
     header .logo .sub{display:none}   /* 좁은 화면: 영문 서브라인 숨겨 한 줄로 */
-    .lang button{padding:5px 9px}
+    .lang button{padding:5px 8px;font-size:12px}
+    .lg-full{display:none}.lg-short{display:inline}
+    .right{gap:8px}
     .wrap{padding:0 18px}
+  }
+  /* very narrow: keep the JC mark, drop the wordmark so the row still fits */
+  @media(max-width:430px){
+    header .logo>span:last-child{display:none}
+    .nav{gap:10px}
   }
 
   /* ── 무료 체험 신청 폼 ── */
@@ -286,9 +294,9 @@
     </nav>
     <div class="right">
       <div class="lang" role="group" data-i18n-aria="langGroup" aria-label="언어 선택">
-        <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
-        <button type="button" data-lang="en" aria-pressed="false">EN</button>
-        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        <button type="button" data-lang="ko" aria-pressed="true"><span class="lg-full">한국어</span><span class="lg-short" aria-hidden="true">KO</span></button>
+        <button type="button" data-lang="en" aria-pressed="false"><span class="lg-full">EN</span><span class="lg-short" aria-hidden="true">EN</span></button>
+        <button type="button" data-lang="zh" aria-pressed="false"><span class="lg-full">中文</span><span class="lg-short" aria-hidden="true">中</span></button>
       </div>
       <a class="btn btn-primary" href="#contact" data-i18n="headerCta">무료 체험 신청</a>
     </div>
