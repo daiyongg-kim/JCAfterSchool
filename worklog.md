@@ -27,9 +27,8 @@
   - 카톡 공지는 앞 2~3줄만 보이고 접히므로 **프로모션(등록비 면제·첫 달 50%)을 상단으로** 배치. 마크다운이 안 먹어 구분선은 텍스트 괘선으로 처리.
   - 해시태그는 카톡 공지에선 노이즈라 제거(인스타 캡션용으로만 유지).
   - 오픈카톡 링크는 사이트와 동일한 `open.kakao.com/o/sn2X2Kii` 사용, 인스타 게시물 링크와 센터 주소 추가.
-- **사용자 확인 필요(본문엔 원문대로 두고 별도 고지)**:
-  - **이메일 불일치** — 원문 `jcbibleschool@gmail.com` vs 사이트 푸터 `jcafterschool.ca@gmail.com`.
-  - **픽업 지역 불일치** — 원문 "Burnaby & Tri-Cities" vs 사이트·인스타 광고 "Tri-City · Burnaby · Surrey"(Surrey 누락).
+- **불일치 2건 → 사이트 값으로 확정(사용자 결정)**: 이메일 `jcbibleschool@gmail.com` → `jcafterschool.ca@gmail.com`, 픽업 "Burnaby & Tri-Cities" → "Tri-City · Burnaby · Surrey 전 지역"(Surrey 복원).
+- **미해결(사용자 확인 대기)**:
   - 프로모션 **마감일 미정** — 희소성 문구는 기한이 있어야 효과가 큼.
   - 그랜드 오픈·프로모션이 **웹사이트에는 전혀 없음**(0건).
 
