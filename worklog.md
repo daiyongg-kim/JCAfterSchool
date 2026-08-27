@@ -1,3 +1,14 @@
+## 2026-08-26 — 8/26 캠프 블로그(마지막 발표: 민우 피아노 · 루호 군대) 작성
+
+- **요청**: "오늘의 블로그 만들어줘" + 다이엔 선생님의 민우/루호 발표 피드백과 학부모–선생님 감사 메시지 원문 전달
+- **결과**:
+  - `web/blog/camp-session2-day17-2026-08-26.html` 신규 작성 (Session 2 Day 17)
+  - 섹션: 민우의 "How to Play Piano" 발표 · 루호의 Army/Navy/Air Force + S.W.A.T. 발표 · 워크시트 · Blue Mountain Park(말·수영장·축구) · 점심 · 학부모↔선생님 편지(💌 A Letter, Both Ways)
+  - 공지 블록: 화이트보드 일정 반영 — **목(8/27) 다이엔 선생님 댁 방문 / 금(8/28) 졸업식**, 졸업장용 영문 이름 7명 정리됨
+  - 사진 `pic/20260826` 100장 중 24장 선별·EXIF 회전 반영·1200px q76 최적화 → `web/blog/img/camp-session2-day17-0826-*.jpg`
+  - `web/blog/index.html`, `web/sitemap.xml` 항목 추가
+  - 360px 오버플로 프로브 OK, 헤드리스 렌더 확인 완료
+
 # Worklog — JCAfterSchool
 
 요청 내역과 결과 기록. 최신 항목이 맨 위. 규칙은 CLAUDE.md "Worklog 규칙" 참조.
