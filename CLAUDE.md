@@ -53,6 +53,8 @@ When the user's request matches an available skill, invoke it via the Skill tool
   inject = "<style>html,body{width:360px!important;max-width:360px!important}</style>"
   probe  = "<script>onload=()=>{document.title='R '+(document.body.scrollWidth>360?'OVERFLOW':'OK')}</script>"
   ```
+  **크롬 플래그에 `--window-size=500,900`를 반드시 붙일 것 (2026-08-30 입고).** 이 플래그가 없으면 레이아웃 뷰포트가 **756px**가 되어 미디어쿼리가 데스크톱으로 평가되고, body만 360px로 눌린 상태로 측정돼 **정상 페이지도 OVERFLOW로 나온다**(실제로 홈 `index.html`을 455px 오버플로로 오진한 적 있음 — 플래그를 붙이니 360px로 정상). 플래그를 주면 뷰포트가 500px로 고정되므로 `max-width:560px` 이하 블록은 적용되지만 `max-width:430px` 블록은 적용되지 않는다. 더 좁은 브레이크포인트까지 확인하려면 그 블록의 규칙을 `!important`로 함께 주입해 흉내 낼 것.
+  블로그 글처럼 미디어쿼리가 거의 없는 페이지는 영향이 적지만, `index.html`처럼 브레이크포인트가 많은 페이지는 플래그 없이는 측정 자체가 무의미하다.
   자주 걸리는 원인: **grid/flex 카드의 `min-width:auto`** — `Demonstrations`·`Mathematicians` 같은 긴 단어가 칸을 못 줄이게 막아 페이지 전체가 넘침. 카드형 그리드를 새로 만들면 항상 `min-width:0` + `overflow-wrap:anywhere`를 같이 넣는다.
 - **검증 필수:** 변환 후 **저장된 파일을 실제로 Read(이미지로 열어)** hero·핵심 컷이 의도한 사진인지 눈으로 확인하고, 헤드리스 크롬으로 페이지 렌더까지 본 뒤 마무리한다.
 - **EXIF 회전 주의 (2026-08-11 입고):** `sips`는 픽셀을 돌리지 않고 EXIF `Orientation` 값만 남긴다. 브라우저는 이를 해석해 바로 보여주지만, PIL·Read 툴 등 EXIF를 무시하는 곳에서는 눕혀 보인다(2026-08-11 사진은 52장 중 45장이 회전값 6/8). 검증할 때 헷갈리므로 **PIL `ImageOps.exif_transpose()`로 회전을 픽셀에 구워 저장**하는 쪽이 안전하다:
