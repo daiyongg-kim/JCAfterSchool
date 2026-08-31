@@ -166,6 +166,9 @@
   .sec-label{font-family:var(--en);font-style:italic;font-size:16px;color:var(--red);margin-bottom:8px}
   .sec-title{font-size:30px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
   .sec-sub{color:var(--navy-soft);margin-bottom:36px}
+  .gal-more{margin:20px 0 0;text-align:center}
+  .gal-more a{color:var(--red);font-weight:700;font-size:15px}
+  .gal-more a:hover{text-decoration:underline}
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .card-p{background:var(--cream);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;transition:.2s;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
   .card-p:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:transparent}
@@ -305,13 +308,13 @@
 
 <main id="main">
 <div class="wrap">
-  <a class="campbanner fallbanner" id="fallBanner" href="/blog/fall-2026-afterschool-registration.html" data-i18n-aria="fallBanner" aria-label="2026년 9월 새학기 방과후 모집 안내 보기">
+  <a class="campbanner promobanner" id="promoBanner" href="/blog/grand-open-2026.html" data-i18n-aria="promoBanner" aria-label="그랜드 오픈 프로모션 안내 보기">
     <div class="cb-body">
-      <span class="cb-badge" data-i18n="fallBadge">🍂 FALL 2026 · 9월 새학기 모집</span>
-      <h2 data-i18n="fallTitle">학교 픽업부터 돌봄 · 간식 · 숙제 · 학습까지</h2>
-      <p data-i18n="fallSub">Kinder–Grade 7 · 수학·과학·영어 · 새학기 무료 체험 상담</p>
+      <span class="cb-badge" data-i18n="promoBadge">✨ NEW OWNERSHIP · GRAND OPEN</span>
+      <h2 data-i18n="promoTitle">등록비 100% 면제 · 첫 달 교육비 50% 할인</h2>
+      <p data-i18n="promoSub">9월 새학기 접수 중 · Kinder–Grade 7 · 소수정예로 자리가 한정됩니다</p>
     </div>
-    <span class="cb-cta" data-i18n="fallCta">모집 안내 보기 →</span>
+    <span class="cb-cta" data-i18n="promoCta">그랜드 오픈 안내 보기 →</span>
   </a>
 </div>
 <div class="wrap">
@@ -408,6 +411,7 @@
       <figure><img src="img/care2.jpg" alt="떡볶이 만들기 활동" loading="lazy"><figcaption data-i18n="galCap3">신나는 활동</figcaption></figure>
       <figure><img src="img/lunch3.jpg" alt="정성껏 차린 핫런치 — 잡곡밥과 닭갈비" loading="lazy"><figcaption data-i18n="galCap4">든든한 런치</figcaption></figure>
     </div>
+    <p class="gal-more"><a href="/blog/" data-i18n="galMore">2026 여름캠프 8주 기록 보기 →</a></p>
   </section>
 
   <section class="block" style="padding-top:0" id="trust" data-i18n-aria="statsAria" aria-label="신뢰 지표">
@@ -553,10 +557,10 @@
     stripT2: `Care`, stripD2: `Always with a teacher`,
     stripT3: `Snacks`, stripD3: `Warm, every day`,
     stripT4: `Grades`, stripD4: `Math·Science·English`,
-    fallBadge: `🍂 FALL 2026 · September Registration`,
-    fallTitle: `School pickup, care, snacks, homework & learning`,
-    fallSub: `Kinder–Grade 7 · Math·Science·English · Free trial consultation`,
-    fallCta: `See registration guide →`,
+    promoBadge: `✨ NEW OWNERSHIP · GRAND OPEN`,
+    promoTitle: `Registration fee waived · 50% off the first month`,
+    promoSub: `September intake open · Kinder–Grade 7 · Small groups, limited spots`,
+    promoCta: `See the grand open offer →`,
     progTitle: `Leave them with us — grades too.`,
     progSub: `Care is the foundation. Academics come built in.`,
     c1tag: `★ Signature Program`, c1h: `After School Care`,
@@ -589,6 +593,7 @@
     revWrite: `✍️ Write a review`,
     galTitle: `A day at JC`, galSub: `Pickup and care, fun activities, and warm snacks.`,
     galCap1: `Cooking class`, galCap2: `Warm snacks`, galCap3: `Fun activities`, galCap4: `Hot lunch`,
+    galMore: `See eight weeks of the 2026 summer camp →`,
     ftTitle: `Try a free day first.`,
     ftP: `Let your child experience it and decide. Leave your details and we'll reach out soon. Prefer KakaoTalk? It only takes a minute.`,
     ftKakao: `💬 Apply on KakaoTalk`,
@@ -616,7 +621,7 @@
   };
   const EN_ARIA = {
     logoHome: `JC After School home`, mainMenu: `Main menu`, langGroup: `Language`,
-    fallBanner: `View the Fall 2026 after-school registration guide`,
+    promoBanner: `View the grand open offer — registration fee waived, 50% off the first month`,
     heroArt: `Space for a photo of children being cared for at the center`,
     stripAria: `4 reasons to choose JC After School`, statsAria: `Trust indicators`,
   };
@@ -639,10 +644,10 @@
     stripT2: `托管`, stripD2: `全程有老师看护`,
     stripT3: `点心`, stripD3: `每天温热供应`,
     stripT4: `成绩`, stripD4: `数学·科学·英文`,
-    fallBadge: `🍂 2026 秋季 · 九月开学报名`,
-    fallTitle: `学校接送、托管、点心、作业与学习`,
-    fallSub: `幼儿园–7年级 · 数学·科学·英文 · 免费试听咨询`,
-    fallCta: `查看报名指南 →`,
+    promoBadge: `✨ NEW OWNERSHIP · 盛大开业`,
+    promoTitle: `注册费全免 · 首月学费五折`,
+    promoSub: `九月开学报名中 · 幼儿园–7年级 · 小班制，名额有限`,
+    promoCta: `查看开业优惠 →`,
     progTitle: `交给我们 — 连成绩一起。`,
     progSub: `托管是基础，学习本就包含在内。`,
     c1tag: `★ 招牌课程`, c1h: `课后托管`,
@@ -675,6 +680,7 @@
     revWrite: `✍️ 写评价`,
     galTitle: `JC 的一天`, galSub: `接送与托管、有趣的活动，还有温热的点心。`,
     galCap1: `烹饪课`, galCap2: `温热点心`, galCap3: `趣味活动`, galCap4: `热午餐`,
+    galMore: `查看 2026 夏令营八周记录 →`,
     ftTitle: `先来免费体验一天。`,
     ftP: `让孩子亲身体验后再决定。留下联系方式，我们会尽快联系您。`,
     ftKakao: `💬 用 KakaoTalk 咨询`,
@@ -702,7 +708,7 @@
   };
   const ZH_ARIA = {
     logoHome: `JC 课后学堂 首页`, mainMenu: `主菜单`, langGroup: `语言`,
-    fallBanner: `查看 2026 秋季课后班报名指南`,
+    promoBanner: `查看开业优惠 — 注册费全免、首月五折`,
     heroArt: `中心内照顾孩子的照片位置`,
     stripAria: `选择 JC 课后学堂的 4 个理由`, statsAria: `信赖指标`,
   };
@@ -756,12 +762,12 @@
       const el = document.getElementById(id);
       if (el) el.href = `/blog/${slug}${SFX}.html`;
     });
-    const fallBanner = document.getElementById('fallBanner');
-    if (fallBanner) fallBanner.href = (LANG === 'zh')
-      ? '/blog/fall-2026-afterschool-registration-zh.html'
+    const promoBanner = document.getElementById('promoBanner');
+    if (promoBanner) promoBanner.href = (LANG === 'zh')
+      ? '/blog/grand-open-2026-zh.html'
       : nonKo
-        ? '/blog/fall-2026-afterschool-registration-en.html'
-        : '/blog/fall-2026-afterschool-registration.html';
+        ? '/blog/grand-open-2026-en.html'
+        : '/blog/grand-open-2026.html';
     document.querySelectorAll('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === LANG)));
     try { localStorage.setItem('jc-lang', LANG); } catch (e) {}
     window.__renderReviews && window.__renderReviews();   // 후기 라벨 다시

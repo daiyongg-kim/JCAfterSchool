@@ -1,3 +1,18 @@
+## 2026-08-30 — 웹사이트: 그랜드 오픈 프로모션 반영 + 여름캠프 종료 정리
+
+- **요청**: "jc 웹사이트 업데이트 좀 해볼까?" → 범위 확인 결과 **그랜드 오픈 프로모션 반영**과 **여름캠프 마무리 반영** 두 가지 선택
+- **결과**:
+  - **신규 랜딩 페이지** `web/blog/grand-open-2026.html` + `-en` + `-zh` (ko/en/zh 3개 국어, hreflang 상호 연결)
+    - 구성: 그랜드 오픈 프로모션(등록비 100% 면제 · 첫 달 50% 할인) → 소수정예 경고 → 하루 흐름(픽업·돌봄·간식·학습) → 돌봄만 하는 방과후가 아닙니다 → 운영 안내 표 → 무료 체험 CTA → 9월 방과후 안내 링크
+    - 사진은 **얼굴 비노출 컷만** 사용 (poster-work / poster-math / snack-popcorn / worksheets)
+    - OG 이미지: 캐러셀 1번 슬라이드를 `web/blog/img/grand-open-2026.png`로 복사
+  - **홈 상단 배너 교체**: `fallBanner`(🍂 FALL 2026 모집) → `promoBanner`(✨ NEW OWNERSHIP · GRAND OPEN / 등록비 100% 면제 · 첫 달 50% 할인). i18n 키(`promoBadge/Title/Sub/Cta`)·aria·언어별 href 매핑까지 en/zh 모두 갱신. 가을 모집 페이지는 그랜드 오픈 페이지 안에서 링크로 연결
+  - **홈 갤러리**에 `2026 여름캠프 8주 기록 보기 →` 링크 추가 (`.gal-more`, i18n `galMore` en/zh 포함)
+  - **`web/blog/summer-camp-2026.html` 종료 처리**: 상단 종료 배지·안내 박스 추가, 제목/메타에서 "모집" 제거, 하단 CTA를 그랜드 오픈으로 연결 (URL은 SEO 위해 유지)
+  - `web/blog/index.html` 최상단 카드 추가, `web/sitemap.xml`에 3개 국어 URL 추가
+  - 360px 오버플로 프로브: 신규 3개 페이지·summer-camp 모두 OK. **홈(index)은 455px로 넘치지만 변경 전 원본도 동일 — 기존 이슈이며 이번 변경과 무관**
+  - 언어별 배너 링크(ko/en/zh) 헤드리스로 실제 확인 완료
+
 ## 2026-08-30 — 그랜드 오픈(NEW OWNERSHIP) 인스타그램 캐러셀 제작
 
 - **요청**: 기존 그랜드 오픈 카톡 공지 문구를 그대로 주며 "이걸로 캐러셀 만들어 줄 수 있어?"
