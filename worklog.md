@@ -5,7 +5,8 @@
   - `social/2026-grandopen/carousel.html` + 렌더본 `01~08.png` (1080×1440, 3:4) + `caption.txt`
   - 기존 `social/2026-fall-afterschool/`의 `?slide=N` + 헤드리스 크롬 스크린샷 방식·CSS 토큰을 그대로 따름
   - 슬라이드 구성: 1) NEW OWNERSHIP / GRAND OPEN 표지(프로모션 배지 포함) 2) 사진 "더 따뜻하게, 더 세심하게" 3) 그랜드 오픈 프로모션(등록비 100% 면제 · 첫 달 50% 할인 + 소수정예 경고) 4) 하루 흐름 4단계(픽업·간식·돌봄·학습) 5) 사진 "돌봄만 하는 방과후가 아닙니다" 6) 왜 다른가 7) 운영 안내(대상/정원/차량/픽업/등록) 8) 무료 체험 + 연락처
-  - 사용 사진: `fall-2026-snack-plate.jpg`, `fall-2026-study-duo.jpg`
+  - 사용 사진(얼굴 비노출 요건 반영해 교체): 2번 `camp-session2-day9-0814-poster-work.jpg`(포스터 작업 뒷모습), 5번 `camp-session2-day7-0812-poster-math.jpg`(BASIC MATHEMATICS 손글씨 포스터, 인물 없음)
+  - 최초에는 `fall-2026-snack-plate.jpg` / `fall-2026-study-duo.jpg`를 썼으나 아이 얼굴이 노출되어 교체함 (다이엔 선생님 얼굴은 허용, 그 외 얼굴 불가)
   - 로컬 커밋만 (푸시 여부는 사용자 확인 대기)
 
 ## 2026-08-28 — 8/28 캠프 마지막 날 블로그 작성
