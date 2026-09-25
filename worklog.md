@@ -1,3 +1,21 @@
+## 2026-09-24 — 학부모/성인 동선 분리: 성인 어학 전용 페이지 `/adult/` (마케팅 진단 B04)
+
+- **요청**: MarketingTeam 인계 계획 B04 — 메인 돌봄 흐름 중간의 큰 성인 이민/불어 섹션을 분리하고, 각 독자를 맞는 프로그램·신청으로 보낸다
+- **결과**:
+  - `web/adult/index.html` 신설(ko 기본 + en/zh, index와 같은 i18n·헤더·푸터·스타일·GA4). 성인 과정 카드(IELTS / 프랑스어 TEF·TCF) + 기존 #immigration의 블로그 카드 3개 이동(언어별 -en/-zh 글 링크 유지) + IRCC 공식 링크. CTA "무료 레벨테스트 신청" → `/?program=adult#contact`
+  - `web/index.html`: #immigration 섹션을 한 줄 안내 + `/adult/` 링크로 축소(앵커 id 유지), 성인 카드·nav·footer "성인 어학" → `/adult/`, `?program=adult`면 폼의 "성인 어학" 옵션 자동 선택. EmailJS·폼 필드·GA4 이벤트(generate_lead·contact_phone·contact_kakao) 변경 없음(`/adult/`에도 kakao·phone 클릭 이벤트)
+  - 문구 정리(ko/en/zh): "프랑스어가 답입니다", "지금이 마지막입니다", "이미 늦기 시작했습니다", "치트키", "목표 기간 안에" 등 긴박감·보장 표현 제거 → 정보형 제목/설명. 블로그 본문은 건드리지 않음
+  - **사실 정정**: 카드의 "불어 NCLC 5면 LMIA 면제(C16)"는 **고용 제안 조건이 빠져 있었다.** IRCC 공식(수정일 2026-04-20): 퀘벡 외 지역 고용 제안 + 불어 **말하기·듣기** NCLC 5 이상 + 1차 농업(TEER 4·5) 제외 → LMIA 면제 코드 C16. 출처 https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada/special-instructions/francophone-mobility/eligibility.html
+  - `web/sitemap.xml`에 `/adult/` 추가, canonical·description·OG 설정
+- **검증**: 로컬 http.server — `/`·`/adult/`·sitemap·블로그 -en 글 200. iframe 측정으로 390/768/1440px 가로 넘침 없음(scrollWidth = 폭), ko/en/zh 전환·언어별 블로그 링크 정상, `/?program=adult` → "성인 어학 (IELTS·프랑스어)" 선택 확인
+- **사업자 확인 필요** (검증 전 사이트에 쓰지 않음):
+  1. 운영시간(학기 중 / 방학 캠프)
+  2. 비용 또는 견적 방식(돌봄·튜터링·성인 과정별)
+  3. 픽업 가능 학교 목록(현재 "Tri-City · Burnaby · Surrey"만 표기)
+  4. 무료 체험 / 무료 레벨테스트 절차(소요 시간, 준비물, 가능 요일)
+  5. 문의 회신 예상 시간(폼 안내는 "영업시간 내 빠르게"만 있음)
+  6. 성인 과정 형태(개인/그룹, 온라인/대면, 수업 시간)
+
 ## 2026-09-14 — 9월 새학기 시작 안내 블로그 (사진 없음)
 
 - **요청**: "블로그는 새로 만들었어?" → 8/28 이후 새 글 없음을 확인하고, "사진 없이 9월 새학기 시작 안내 글로 써줘"
